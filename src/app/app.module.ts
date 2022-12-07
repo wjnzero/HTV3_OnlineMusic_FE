@@ -9,12 +9,20 @@ import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 import {AngularFireModule} from "@angular/fire/compat";
 import {environment} from "../enronments/environment";
 import {SongService} from "./service/song.service";
+import { ListSongComponent } from './song/list-song/list-song.component';
+import { EditSongComponent } from './song/edit-song/edit-song.component';
+import { DeleteSongComponent } from './song/delete-song/delete-song.component';
+import { CreateSongComponent } from './song/create-song/create-song.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AddSongComponent,
+    ListSongComponent,
+    EditSongComponent,
+    DeleteSongComponent,
+    CreateSongComponent,
   ],
   imports: [
     BrowserModule,
