@@ -9,6 +9,9 @@ import {environment} from "../enronments/environment";
 import {FormUploadComponent} from "./upload/form-upload/form-upload.component";
 import {ListUploadComponent} from "./upload/list-upload/list-upload.component";
 import {DetailsUploadComponent} from "./upload/details-upload/details-upload.component";
+import { ListSongComponent } from './song/list-song/list-song.component';
+import { DeleteSongComponent } from './song/delete-song/delete-song.component';
+import { UpdateSongComponent } from './song/update-song/update-song.component';
 
 
 @NgModule({
@@ -16,7 +19,10 @@ import {DetailsUploadComponent} from "./upload/details-upload/details-upload.com
     AppComponent,
     FormUploadComponent,
     ListUploadComponent,
-    DetailsUploadComponent
+    DetailsUploadComponent,
+    ListSongComponent,
+    DeleteSongComponent,
+    UpdateSongComponent
 
   ],
   imports: [
