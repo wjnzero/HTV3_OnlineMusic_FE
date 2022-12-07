@@ -1,0 +1,15 @@
+.button1 {
+  background-color: white;
+  color: black;
+  border: 2px solid gold;
+}
+.button2 {
+  background-color: white;
+  color: black;
+  border: 2px solid green;
+}
+.button3 {
+  background-color: white;
+  color: black;
+  border: 2px solid red;
+}
