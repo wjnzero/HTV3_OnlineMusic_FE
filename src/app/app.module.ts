@@ -17,7 +17,10 @@ import {NavbarLoginResisterComponent} from "./home/navbar-login-resister/navbar-
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {RouterModule} from "@angular/router";
+import { SearchComponent } from './song/search/search.component';
 import { ListSongComponent } from './song/list-song/list-song.component';
+import {SongModule} from "./song/song.module";
+
 
 
 @NgModule({
@@ -31,7 +34,12 @@ import { ListSongComponent } from './song/list-song/list-song.component';
     LayoutComponent,
     NavbarMenuComponent,
     NavbarLoginResisterComponent,
+<<<<<<< HEAD
+
+=======
+    SearchComponent,
     ListSongComponent,
+>>>>>>> 90d2cdc9cde9767775680d106c25e4a1dc1863ac
 
   ],
   imports: [
@@ -43,7 +51,8 @@ import { ListSongComponent } from './song/list-song/list-song.component';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    SongModule
   ],
   providers: [],
   bootstrap: [AppComponent]

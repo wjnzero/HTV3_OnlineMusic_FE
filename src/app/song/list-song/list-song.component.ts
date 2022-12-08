@@ -1,4 +1,3 @@
-
 import {Component, OnInit} from '@angular/core';
 import {Song} from "../../model/song";
 import {SongService} from "../../service/song.service";
@@ -8,7 +7,7 @@ import {SongService} from "../../service/song.service";
   templateUrl: './list-song.component.html',
   styleUrls: ['./list-song.component.css']
 })
-export class ListSongComponent implements OnInit {
+export class ListSongComponent implements OnInit{
 
   songs: Song[] = [];
 
