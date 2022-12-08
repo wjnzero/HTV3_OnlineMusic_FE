@@ -34,13 +34,7 @@ import {SongModule} from "./song/song.module";
     LayoutComponent,
     NavbarMenuComponent,
     NavbarLoginResisterComponent,
-<<<<<<< HEAD
-
-=======
     SearchComponent,
-    ListSongComponent,
->>>>>>> 90d2cdc9cde9767775680d106c25e4a1dc1863ac
-
   ],
   imports: [
     BrowserModule,
@@ -52,7 +46,7 @@ import {SongModule} from "./song/song.module";
     HttpClientModule,
     FormsModule,
     RouterModule,
-    SongModule
+    SongModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
