@@ -9,6 +9,12 @@ import {environment} from "../enronments/environment";
 import {FormUploadComponent} from "./upload/form-upload/form-upload.component";
 import {ListUploadComponent} from "./upload/list-upload/list-upload.component";
 import {DetailsUploadComponent} from "./upload/details-upload/details-upload.component";
+import {PosterComponent} from "./core/poster/poster.component";
+import {FooterComponent} from "./home/footer/footer.component";
+import {LayoutComponent} from "./home/layout/layout.component";
+import {NavbarMenuComponent} from "./home/navbar-menu/navbar-menu.component";
+import {NavbarLoginResisterComponent} from "./home/navbar-login-resister/navbar-login-resister.component";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -16,7 +22,12 @@ import {DetailsUploadComponent} from "./upload/details-upload/details-upload.com
     AppComponent,
     FormUploadComponent,
     ListUploadComponent,
-    DetailsUploadComponent
+    DetailsUploadComponent,
+    PosterComponent,
+    FooterComponent,
+    LayoutComponent,
+    NavbarMenuComponent,
+    NavbarLoginResisterComponent,
 
   ],
   imports: [
@@ -24,7 +35,8 @@ import {DetailsUploadComponent} from "./upload/details-upload/details-upload.com
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
