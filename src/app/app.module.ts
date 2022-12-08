@@ -17,6 +17,8 @@ import {NavbarLoginResisterComponent} from "./home/navbar-login-resister/navbar-
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {RouterModule} from "@angular/router";
+import { LoginComponent } from './core/login/login.component';
+import { RegisterComponent } from './core/register/register.component';
 
 
 @NgModule({
@@ -30,6 +32,8 @@ import {RouterModule} from "@angular/router";
     LayoutComponent,
     NavbarMenuComponent,
     NavbarLoginResisterComponent,
+    LoginComponent,
+    RegisterComponent,
 
   ],
   imports: [
