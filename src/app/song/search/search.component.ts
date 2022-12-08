@@ -11,7 +11,7 @@ import {SongService} from "../../service/song.service";
 export class SearchComponent implements OnInit{
 
   // @ts-ignore
-  song: Song;
+  songs: Song;
 
   constructor(
     private activateRoute: ActivatedRoute,
@@ -19,7 +19,7 @@ export class SearchComponent implements OnInit{
   }
 
   ngOnInit():void{
-    this.song = {
+    this.songs = {
       name: '', describeSong: '', avatar: '',author: '', singer: '', album: '', view:''}
 
     this.activateRoute.paramMap.subscribe((paraMap: ParamMap) => {
@@ -30,7 +30,7 @@ export class SearchComponent implements OnInit{
 
   getByName(id: any) {
     this.songService.getById(id).subscribe((yy: Song) => {
-      this.song = yy;
+      this.songs = yy;
     })
   }
 }
