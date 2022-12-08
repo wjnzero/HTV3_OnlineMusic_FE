@@ -23,6 +23,16 @@ export class ListSongComponent implements OnInit{
       this.songs = songs;
     });
   }
+  delete(id: any) {
+    if (confirm('Bạn có muốn xóa?')) {
+      this.songService.delete(id).subscribe(() => {
+        alert("Ok");
+        this.getAll()
+      }, e => {
+        console.error(e)
+      });
+    }
+  }
 }
 
 

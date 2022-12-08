@@ -11,6 +11,12 @@
     <td>{{song.name}}</td>
     <td  class="img thumbnail pull-left mr-2" > <img width="40" height="40" src="{{song.avatar}}"> </td>
     <td>{{song.view}}</td>
+    <td>
+      <a routerLink="edit/{{song.id}}" class="btn btn-warning">Edit</a>
+    </td>
+    <td>
+      <button (click)="delete(song.id)" class="btn btn-danger" >Delete</button>
+    </td>
   </tr>
   <body>
   <h2 style="color: #e74809">Bên trên tầng lầu - Tăng Duy Tân</h2>
