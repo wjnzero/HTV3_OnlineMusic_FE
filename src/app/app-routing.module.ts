@@ -15,10 +15,10 @@ const routes: Routes = [
     path: 'song',
     loadChildren: () => import('./song/song.module').then(module => module.SongModule)
   },
-  {
-    path: "edit-song/:id",
-    component: EditSongComponent
-  },
+  // {
+  //   path: "edit/:id",
+  //   component: EditSongComponent
+  // },
   {
     path: '', component: LayoutComponent
   },
