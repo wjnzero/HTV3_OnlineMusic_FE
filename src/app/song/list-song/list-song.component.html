@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <!-- Mirrored from www.kri8thm.in/html/listen/theme/demo/music.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Dec 2022 02:30:18 GMT -->
@@ -1094,3 +1095,63 @@
 </body>
 <!-- Mirrored from www.kri8thm.in/html/listen/theme/demo/music.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Dec 2022 02:30:34 GMT -->
 </html>
+=======
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="add-song">Thêm bài hát mới</a>
+      </li>
+      <li style="margin-left: 550%" class="nav-item">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+            Sắp xếp bài hát
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" (click)="sortByView()" >Tăng dần</a>
+            <a class="dropdown-item" (click)="sortByViewDesc()">Giảm dần</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+<table border="1" class="table">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">STT</th>
+    <th scope="col">Tên bài hát</th>
+    <th scope="col">Mô tả</th>
+    <th scope="col">Đường dẫn</th>
+    <th scope="col">Ảnh minh hoạ</th>
+    <th scope="col">Nhạc sĩ</th>
+    <th scope="col">Ca sĩ thể hiện</th>
+    <th scope="col">Người tạo</th>
+    <th scope="col">Thể loại</th>
+    <th scope="col">Album</th>
+    <th scope="col">Lượt xem</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr  *ngFor = "let item of list,let indexOfelement=index;">
+    <th scope="row">{{indexOfelement+1}}</th>
+    <td routerLink="search-song/{{item.id}}">{{item.name}}</td>
+    <td>{{item.name}}</td>
+    <td>{{item.describeSong}}</td>
+    <td>{{item.fileMp3}}</td>
+    <td>{{item.avatar}}</td>
+    <td>{{item.author}}</td>
+    <td>{{item.singer}}</td>
+    <td>{{item.nameCreate}}</td>
+    <td>{{item.songTypeSet}}</td>
+    <td>{{item.album}}</td>
+    <td>{{item.view}}</td>
+    <td><button class="button3" routerLink="delete-song/{{item.id}}">  xóa  </button></td>
+    <td><button class="button2" routerLink="update-song/{{item.id}}">  sửa  </button></td>
+  </tr>
+  </tbody>
+</table>
+
+>>>>>>> feature/13.1_search_song_by_name
