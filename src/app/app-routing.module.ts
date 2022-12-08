@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {LayoutComponent} from "./home/layout/layout.component";
 import {LoginComponent} from "./core/login/login.component";
 import {RegisterComponent} from "./core/register/register.component";
+import {EditSongComponent} from "./song/edit-song/edit-song.component";
 
 
 const routes: Routes = [
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: 'song',
     loadChildren: () => import('./song/song.module').then(module => module.SongModule)
+  },
+  {
+    path: "edit-song/:id",
+    component: EditSongComponent
   },
   {
     path: '', component: LayoutComponent
