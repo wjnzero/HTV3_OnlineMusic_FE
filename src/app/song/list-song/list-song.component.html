@@ -1,0 +1,19 @@
+<h1>Danh sách bài hát</h1>
+
+<table>
+  <tr>
+    <td>Name</td>
+    <td>Mô tả</td>
+    <td>Avatar</td>
+    <td>Singer</td>
+    <td>Type</td>
+    <td colspan="2"></td>
+  </tr>
+  <tr *ngFor="let song of songs;index as i" >
+    <td>{{i + 1}}</td>
+    <td>{{song.describeSong}}</td>
+    <td>{{song.avatar}}</td>
+    <td>{{song.singer}}</td>
+    <td>{{song.songTypeSet}}</td>
+  </tr>
+</table>

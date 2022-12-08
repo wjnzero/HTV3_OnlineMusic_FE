@@ -18,6 +18,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {RouterModule} from "@angular/router";
 import { SearchComponent } from './song/search/search.component';
+import { ListSongComponent } from './song/list-song/list-song.component';
+
 
 
 @NgModule({
@@ -32,6 +34,7 @@ import { SearchComponent } from './song/search/search.component';
     NavbarMenuComponent,
     NavbarLoginResisterComponent,
     SearchComponent,
+    ListSongComponent,
 
   ],
   imports: [
