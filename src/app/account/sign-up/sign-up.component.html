@@ -1,0 +1,157 @@
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registration Form</h3>
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+
+              <div class="row">
+                <div class="col-md-6 mb-4">
+
+                  <div class="form-outline">
+                    <input type="email" id="email" class="form-control form-control-lg"  formControlName="email">
+                    <label class="form-label" for="email">Email</label>
+                  </div>
+                  <div *ngIf="!email?.valid && (email?.dirty ||email?.touched)">
+                    <div [hidden]="!email?.errors?.['required']">
+                      <p style="color: red">email is required</p>
+                    </div>
+                    <div [hidden]="!email?.errors?.['email']">
+                      <p style="color: red">invalid email id</p>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-4">
+
+                  <div class="form-outline">
+                    <input type="number" id="age" class="form-control form-control-lg" min="1" max="200" formControlName="age">
+                    <label class="form-label" for="age">Age</label>
+                  </div>
+                  <div *ngIf="!age?.valid && (age?.dirty ||age?.touched)">
+                    <div [hidden]="!age?.errors?.['required']">
+                      <p style="color: red">age is required</p>
+                    </div>
+                    <div [hidden]="!age?.errors?.['min']">
+                      <p style="color: red">18 or higher</p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4 d-flex align-items-center">
+
+                  <div class="form-outline datepicker w-100">
+                    <input type="text" class="form-control form-control-lg" id="phone" formControlName="phone">
+                    <label for="phone" class="form-label">Phone</label>
+                  </div>
+
+                </div>
+                <div *ngIf="!phone?.valid && (phone?.dirty ||phone?.touched)">
+                  <div [hidden]="!phone?.errors?.['required']">
+                    <p style="color: red">phone is required</p>
+                  </div>
+                  <div [hidden]="!phone?.errors?.['pattern']">
+                    <p style="color: red">Incorrect phone format</p>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+
+                  <h6 class="mb-2 pb-1">Gender: </h6>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="femaleGender"
+                           value="female" checked formControlName="gender">
+                    <label class="form-check-label" for="femaleGender">Female</label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="maleGender"
+                           value="male" formControlName="gender">
+                    <label class="form-check-label" for="maleGender">Male</label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="otherGender"
+                           value="other" formControlName="gender">
+                    <label class="form-check-label" for="otherGender">Other</label>
+                  </div>
+
+                </div>
+                <div *ngIf="!gender?.valid && (gender?.dirty ||gender?.touched)">
+                  <div [hidden]="!gender?.errors?.['required']">
+                    <p style="color: red">gender is required</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4 pb-2">
+
+                  <div class="form-outline">
+                    <input type="password" id="password" class="form-control form-control-lg" formControlName="password">
+                    <label class="form-label" for="password">Password</label>
+                  </div>
+                  <div *ngIf="!password?.valid && (password?.dirty ||password?.touched)">
+                    <div [hidden]="!password?.errors?.['required']">
+                      <p style="color: red">password is required</p>
+                    </div>
+                    <div [hidden]="!password?.errors?.['minlength']">
+                      <p style="color: red">6 character or higher</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+
+                  <div class="form-outline">
+                    <input type="password" id="confirmPassword" class="form-control form-control-lg" formControlName="confirmPassword">
+                    <label class="form-label" for="confirmPassword">Confirm Password</label>
+                  </div>
+                  <div *ngIf="!confirmPassword?.valid && (confirmPassword?.dirty ||confirmPassword?.touched)">
+                    <div [hidden]="!confirmPassword?.errors?.['required']">
+                      <p style="color: red">required</p>
+                    </div>
+                    <div [hidden]="!confirmPassword?.errors?.['minlength']">
+                      <p style="color: red">6 character or higher</p>
+                    </div>
+                  </div>
+                  <div *ngIf="confirmPassword?.touched">
+                  <div [hidden]="!contactForm.errors?.['notSame']">
+                    <p style="color: red">mismatch </p>
+                  </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <label class="form-label select-label">Country</label>
+                <div class="col-12">
+
+                  <select class="select form-control-lg" formControlName="country">
+                    <option [ngValue]="c.id" *ngFor="let c of countryList">
+                      {{c.name}}
+                    </option>
+                  </select>
+                  <div *ngIf="!country?.valid && (country?.dirty ||country?.touched)">
+                    <div [hidden]="!country?.errors?.['required']">
+                      <p style="color: red">country is required</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-4 pt-2">
+                <input class="btn btn-primary btn-lg" type="submit" value="Submit" [disabled]="!contactForm.valid" ngs>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
