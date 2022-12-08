@@ -35,7 +35,6 @@ import {SongModule} from "./song/song.module";
     NavbarMenuComponent,
     NavbarLoginResisterComponent,
     SearchComponent,
-    ListSongComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +46,7 @@ import {SongModule} from "./song/song.module";
     HttpClientModule,
     FormsModule,
     RouterModule,
-    SongModule
+    SongModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
