@@ -1,13 +1,17 @@
+import {SongType} from "./songType";
+import {Playlist} from "./playlist";
+
 export interface Song {
-  id?: any;
-  name?: any;
-  describeSong?: any;
-  fileMp3?: any;
-  avatar?: any;
-  author?: any;
-  singer?: any;
-  nameCreate?: any;
-  songTypeSet?: any;
+  id?: number;
+  name?: string;
+  describeSong?: string;
+  fileMp3?: string;
+  avatar?: string;
+  author?: string;
+  singer?: string;
+  user?: any;
+  songTypeSet?: SongType;
+  playListSet?:Playlist;
   album?: any;
   view?: any;
 }

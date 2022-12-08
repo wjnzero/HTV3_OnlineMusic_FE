@@ -9,6 +9,10 @@ const routes: Routes = [
     loadChildren: () => import('./account/account.module').then(module => module.AccountModule)
   },
   {
+    path: 'song',
+    loadChildren: () => import('./song/song.module').then(module => module.SongModule)
+  },
+  {
     path: '', component: LayoutComponent
   }
 ];

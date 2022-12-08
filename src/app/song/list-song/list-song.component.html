@@ -3,17 +3,13 @@
 <table>
   <tr>
     <td>Name</td>
-    <td>Mô tả</td>
     <td>Avatar</td>
-    <td>Singer</td>
-    <td>Type</td>
+    <td>View</td>
     <td colspan="2"></td>
   </tr>
   <tr *ngFor="let song of songs;index as i" >
-    <td>{{i + 1}}</td>
-    <td>{{song.describeSong}}</td>
-    <td>{{song.avatar}}</td>
-    <td>{{song.singer}}</td>
-    <td>{{song.songTypeSet}}</td>
+    <td>{{song.name}}</td>
+    <td  class="img thumbnail pull-left mr-2" > <img width="40" height="40" src="{{song.avatar}}"> </td>
+    <td>{{song.view}}</td>
   </tr>
 </table>

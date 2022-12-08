@@ -18,6 +18,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {RouterModule} from "@angular/router";
 import { ListSongComponent } from './song/list-song/list-song.component';
+import {SongModule} from "./song/song.module";
 
 
 @NgModule({
@@ -31,7 +32,7 @@ import { ListSongComponent } from './song/list-song/list-song.component';
     LayoutComponent,
     NavbarMenuComponent,
     NavbarLoginResisterComponent,
-    ListSongComponent,
+
 
   ],
   imports: [
@@ -43,7 +44,8 @@ import { ListSongComponent } from './song/list-song/list-song.component';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    SongModule
   ],
   providers: [],
   bootstrap: [AppComponent]

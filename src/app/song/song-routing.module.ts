@@ -4,7 +4,7 @@ import {ListSongComponent} from "./list-song/list-song.component";
 
 const routes: Routes = [
   {
-    path: 'list',
+    path: '',
     component:ListSongComponent
   },
 
