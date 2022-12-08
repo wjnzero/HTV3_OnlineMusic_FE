@@ -12,6 +12,15 @@ import {DetailsUploadComponent} from "./upload/details-upload/details-upload.com
 import {CreateSongComponent} from "./song/create-song/create-song.component";
 import {DeleteSongComponent} from "./song/delete-song/delete-song.component";
 import {EditSongComponent} from "./song/edit-song/edit-song.component";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
+import {RouterModule} from "@angular/router";
+import { LayoutComponent } from './home/layout/layout.component';
+import { FooterComponent } from './home/footer/footer.component';
+import { NavbarLoginResisterComponent } from './home/navbar-login-resister/navbar-login-resister.component';
+import {ListSongComponent} from "./song/list-song/list-song.component";
+import { NavbarMenuComponent } from './home/navbar-menu/navbar-menu.component';
+import { PosterComponent } from './core/poster/poster.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,14 +30,24 @@ import {EditSongComponent} from "./song/edit-song/edit-song.component";
     CreateSongComponent,
     DeleteSongComponent,
     EditSongComponent,
-    ListUploadComponent
+    ListUploadComponent,
+    ListSongComponent,
+    LayoutComponent,
+    FooterComponent,
+    NavbarLoginResisterComponent,
+    NavbarMenuComponent,
+    PosterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
