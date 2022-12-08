@@ -29,7 +29,7 @@ export class PlaylistService {
     return this.http.get<Playlist>(API_URL + '/home/playlist/' + idPlaylist);
   }
 
-  getPlaylistByName(search: string): Observable<Playlist[]> {
+    getPlaylistByName(search: string | undefined): Observable<Playlist[]> {
     let params = new HttpParams().set('search', search);
     return this.http.get<Playlist[]>(API_URL + '/home/playlist/search', {params});
   }
