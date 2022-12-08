@@ -1,12 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {ListSongComponent} from "./list-song/list-song.component";
+import {SearchComponent} from "./search/search.component";
 
 const routes: Routes = [
   {
     path: 'list',
     component:ListSongComponent
   },
+  {
+    path: 'search',
+    component:SearchComponent },
 
 ];
 

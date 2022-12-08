@@ -8,7 +8,7 @@ import {SongService} from "../../service/song.service";
   templateUrl: './list-song.component.html',
   styleUrls: ['./list-song.component.css']
 })
-export class ListSongComponent implements OnInit {
+export class ListSongComponent implements OnInit{
 
   songs: Song[] = [];
 
