@@ -13,7 +13,6 @@ export class SongService {
   constructor(private httpClient: HttpClient) {
   }
   getAll(): Observable<Song[]> {
-    alert(1)
     let url = API_URL + '/songs/';
     console.log(url)
     return this.httpClient.get<Song[]>( url);

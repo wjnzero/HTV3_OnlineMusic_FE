@@ -4,11 +4,11 @@ import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
-  selector: 'app-delete-song',
-  templateUrl: './delete-song.component.html',
-  styleUrls: ['./delete-song.component.css']
+  selector: 'app-delete',
+  templateUrl: './delete.component.html',
+  styleUrls: ['./delete.component.css']
 })
-export class DeleteSongComponent implements OnInit{
+export class DeleteComponent implements OnInit{
   id: any;
   songs: any;
 

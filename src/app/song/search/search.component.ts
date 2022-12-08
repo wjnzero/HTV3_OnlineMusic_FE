@@ -9,7 +9,6 @@ import {SongService} from "../../service/song.service";
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit{
-
   // @ts-ignore
   songs: Song;
 
