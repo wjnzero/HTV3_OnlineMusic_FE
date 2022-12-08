@@ -14,7 +14,9 @@ import {FooterComponent} from "./home/footer/footer.component";
 import {LayoutComponent} from "./home/layout/layout.component";
 import {NavbarMenuComponent} from "./home/navbar-menu/navbar-menu.component";
 import {NavbarLoginResisterComponent} from "./home/navbar-login-resister/navbar-login-resister.component";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
+import {RouterModule} from "@angular/router";
 
 
 @NgModule({
@@ -36,7 +38,10 @@ import {ReactiveFormsModule} from "@angular/forms";
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireStorageModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
