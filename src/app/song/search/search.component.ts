@@ -18,19 +18,17 @@ export class SearchComponent implements OnInit{
     private songService: SongService) {
   }
 
-  ngOnInit(): void {
+  ngOnInit():void{
     this.song = {
-      name: '', describeSong: '', avatar: '',author: '', singer: '', album: '', view:{
-        id: "1"
-      }
-    }
+      name: '', describeSong: '', avatar: '',author: '', singer: '', album: '', view:''}
+
     this.activateRoute.paramMap.subscribe((paraMap: ParamMap) => {
       const id = paraMap.get('id');
-      this.getSong(id);
+      this.getByName(id);
     });
   }
 
-  getSong(id: any) {
+  getByName(id: any) {
     this.songService.getById(id).subscribe((yy: Song) => {
       this.song = yy;
     })
