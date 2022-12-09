@@ -5,10 +5,11 @@ import {SongService} from "../../service/song/song.service";
 
 @Component({
   selector: 'app-search',
-  templateUrl: './search.component.html',
+  templateUrl: "./search.component.html",
   styleUrls: ['./search.component.css']
 })
-export class SearchComponent implements OnInit{
+export class SearchComponent implements OnInit {
+
   // @ts-ignore
   songs: Song;
 
@@ -17,9 +18,10 @@ export class SearchComponent implements OnInit{
     private songService: SongService) {
   }
 
-  ngOnInit():void{
+  ngOnInit(): void {
     this.songs = {
-      name: '', describeSong: '', avatar: '',author: '', singer: '', album: '', view:''}
+      name: '', describeSong: '', avatar: '', author: '', singer: '', album: '', view: ''
+    }
 
     this.activateRoute.paramMap.subscribe((paraMap: ParamMap) => {
       const id = paraMap.get('id');
@@ -33,4 +35,41 @@ export class SearchComponent implements OnInit{
     })
   }
 }
+
+  // search: string;
+  // songs: Song[] = [];
+  // playLists: Playlist[] = [];
+  // p: any;
+  // page: any;
+  //
+  // constructor(private songService: SongService,
+  //             private playlistService: PlaylistService,
+  //             private activatedRoute: ActivatedRoute) { }
+  //
+  // ngOnInit(): void {
+  //   this.activatedRoute.queryParams.subscribe(params => {
+  //     this.search = params['name'];
+  //     this.songService.getByName(this.search).subscribe((res: Song[]) => {
+  //       this.songs = res;
+  //     });
+  //     this.playlistService.getPlaylistByName(this.search).subscribe(res => {
+  //       this.playLists = res;
+  //     });
+  //   });
+  // }
+  // getAllSong() {
+  //   this.songService.getAll().subscribe((data: any) => this.songs = data);
+  // }
+  //
+  // Search() {
+  //   if (this.search == "") {
+  //     this.getAllSong()
+  //   } else {
+  //     this.songService.getByName(this.search).subscribe(data => {
+  //       console.log(data);
+  //       this.songs = data;
+  //     })
+  //   }
+//   // }
+// }
 

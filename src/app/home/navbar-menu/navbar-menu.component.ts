@@ -23,7 +23,7 @@ export class NavbarMenuComponent {
       {
         nameSearch: ['']
       });
-    if (sessionStorage.getItem('auth-token')){
+    if (localStorage.getItem('auth-token')){
       this.isLoggedIn = true;
     }
   }

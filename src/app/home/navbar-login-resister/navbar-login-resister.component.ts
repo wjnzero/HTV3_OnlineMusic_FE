@@ -22,7 +22,7 @@ export class NavbarLoginResisterComponent {
       {
         nameSearch: ['']
       });
-    if (sessionStorage.getItem('auth-token')){
+    if (localStorage.getItem('auth-token')){
       this.isLoggedIn = true;
     }
   }

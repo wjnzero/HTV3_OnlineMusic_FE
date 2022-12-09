@@ -4,6 +4,8 @@ import {LayoutComponent} from "./home/layout/layout.component";
 import {LoginComponent} from "./core/login/login.component";
 import {RegisterComponent} from "./core/register/register.component";
 import {EditSongComponent} from "./song/edit-song/edit-song.component";
+import {UserProfileComponent} from "./user/user-profile/user-profile.component";
+import {AuthGuardGuard} from "./guard/auth-guard.guard";
 
 
 const routes: Routes = [
@@ -27,6 +29,11 @@ const routes: Routes = [
   },
   {
     path: 'register', component: RegisterComponent
+  },
+  {
+    path: 'userProfile',
+    component: UserProfileComponent,
+    canActivate: [AuthGuardGuard]
   }
 ];
 

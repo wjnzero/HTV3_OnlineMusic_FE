@@ -10,7 +10,7 @@ export interface User {
   phoneNumber?: string;
   avatar?: string;
   email?: string;
- username?: string;
+  username?: string;
   password?: string;
   role?: Role[];
   playlist?: Playlist[];
