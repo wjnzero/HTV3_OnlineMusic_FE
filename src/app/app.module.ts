@@ -21,8 +21,11 @@ import { LoginComponent } from './core/login/login.component';
 import { RegisterComponent } from './core/register/register.component';
 import {SongModule} from "./song/song.module";
 import {EditSongComponent} from "./song/edit-song/edit-song.component";
+import { UserSongComponent } from './user/song/user-song/user-song.component';
+import { UserCreateSongComponent } from './user/song/user-create-song/user-create-song.component';
+import { UserEditSongComponent } from './user/song/user-edit-song/user-edit-song.component';
 import {UserProfileComponent} from "./user/user-profile/user-profile.component";
-import { NavbarUserComponent } from './user/navbar-user/navbar-user.component';
+import {NavbarUserComponent} from "./user/navbar-user/navbar-user.component";
 
 
 @NgModule({
@@ -39,6 +42,9 @@ import { NavbarUserComponent } from './user/navbar-user/navbar-user.component';
     NavbarLoginResisterComponent,
     LoginComponent,
     RegisterComponent,
+    UserSongComponent,
+    UserCreateSongComponent,
+    UserEditSongComponent,
     UserProfileComponent,
     NavbarUserComponent
 

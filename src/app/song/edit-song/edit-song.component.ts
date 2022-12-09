@@ -2,7 +2,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, ParamMap} from "@angular/router";
 import {FormControl, FormGroup} from "@angular/forms";
-import {SongService} from "../../service/song.service";
+import {SongService} from "../../service/song/song.service";
 
 @Component({
   selector: 'app-edit-song',

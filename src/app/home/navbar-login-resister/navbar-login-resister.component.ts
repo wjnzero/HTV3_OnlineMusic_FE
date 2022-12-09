@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
-import {SongService} from "../../service/song.service";
+import {SongService} from "../../service/song/song.service";
 import {Router} from "@angular/router";
 
 @Component({
