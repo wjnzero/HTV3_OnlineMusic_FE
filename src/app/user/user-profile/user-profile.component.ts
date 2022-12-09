@@ -64,8 +64,8 @@ export class UserProfileComponent {
       username: this.user.username,
       password:  this.user.password,
       address: this.userForm.value.address,
-      phone: this.userForm.value.phoneNumber,
-      avatar: this.userForm.value.avatar,
+      phoneNumber: this.userForm.value.phoneNumber,
+      avatar: this.avatar,
       role: this.user.role
     };
     this.userService.updateUser(user1.id, user1).subscribe(res => {

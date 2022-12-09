@@ -30,6 +30,6 @@ export class UserService {
   }
 
   updateUser(idUser: number | undefined, user: User): Observable<any> {
-    return this.http.put(API_URL + `/home/user/${idUser}`, user , this.httpService.getHttp());
+    return this.http.put(API_URL + `/users/${idUser}`, user , this.httpService.getHttp());
   }
 }

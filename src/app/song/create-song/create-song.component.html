@@ -1,1 +1,58 @@
-<p>create-song works!</p>
+<h1>Tạo sản phẩm mới</h1>
+<form [formGroup]="songForm" (ngSubmit)="saveSong()">
+  <table>
+    <tr>
+      <td>Tên:</td>
+      <td><input type="text" formControlName="name"></td>
+    </tr>
+    <tr>
+      <td>Mô tả:</td>
+      <td><input type="text" formControlName="describeSong"></td>
+    </tr>
+    <tr>
+      <td>File mp3:</td>
+      <td><input type="file" formControlName="fileMp3"></td>
+    </tr>
+
+    <tr>
+      <td>Avatar:</td>
+      <td><input type="file" formControlName="avatar"></td>
+    </tr>
+
+    <tr>
+      <td>Author</td>
+      <td><input type="text" formControlName="author"></td>
+    </tr>
+    <tr>
+      <td>Singer</td>
+      <td><input type="text" formControlName="singer"></td>
+    </tr>
+    <tr>
+      <td>Song Type:</td>
+<!--      <select class="select form-control-lg" formControlName="songTypeSet">-->
+<!--        <option [ngValue]="c.id" *ngFor="let c of songType">-->
+<!--          {{c.name}}-->
+<!--        </option>-->
+<!--      </select>-->
+
+      <td><input type="text" formControlName="songTypeSet"></td>
+    </tr>
+
+    <tr>
+      <td>Play List:</td>
+      <td><input type="text" formControlName="playListSet"></td>
+    </tr>
+
+    <tr>
+      <td>Album:</td>
+      <td><input type="text" formControlName="album"></td>
+    </tr>
+
+    <tr>
+      <td></td>
+      <td>
+        <button>Tạo mới</button>
+      </td>
+    </tr>
+  </table>
+</form>
