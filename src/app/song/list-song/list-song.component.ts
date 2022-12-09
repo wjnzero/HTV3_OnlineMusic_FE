@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
+import { HttpService } from 'src/app/service/http-service.service';
 import {Song} from "../../model/song";
 import {SongService} from "../../service/song.service";
-import {HttpService} from "../../service/htth-service.service";
+
 
 @Component({
   selector: 'app-list-song',
