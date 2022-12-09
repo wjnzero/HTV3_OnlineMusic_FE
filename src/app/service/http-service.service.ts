@@ -28,8 +28,8 @@ export class HttpService {
   }
 
   // tslint:disable-next-line:typedef
-  getID(): string {
+  getID(): any {
     // @ts-ignore
-    return this.idUser = sessionStorage.getItem('id_User');
+    return this.idUser = sessionStorage.getItem('user_id');
   }
 }

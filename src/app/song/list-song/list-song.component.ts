@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import { HttpService } from 'src/app/service/http-service.service';
 import {Song} from "../../model/song";
 import {SongService} from "../../service/song.service";
 
@@ -12,9 +11,8 @@ import {SongService} from "../../service/song.service";
 export class ListSongComponent implements OnInit{
 
   songs: Song[] = [];
-  userId:any;
-  constructor(private songService: SongService,
-              private httpService:HttpService) {
+
+  constructor(private songService: SongService) {
   }
 
   ngOnInit() {
@@ -24,8 +22,6 @@ export class ListSongComponent implements OnInit{
   getAll() {
     this.songService.getAll().subscribe(songs => {
       this.songs = songs;
-      this.userId = Number(this.httpService.getID());
-
     });
   }
   delete(id: any) {
