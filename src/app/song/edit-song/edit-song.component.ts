@@ -5,13 +5,14 @@ import {FormControl, FormGroup} from "@angular/forms";
 import {SongService} from "../../service/song.service";
 
 @Component({
-  selector: 'app-song-edit',
-  templateUrl: './song-edit.component.html',
-  styleUrls: ['./song-edit.component.css']
+  selector: 'app-edit-song',
+  templateUrl: './edit-song.component.html',
+  styleUrls: ['./edit-song.component.css']
 })
 export class EditSongComponent implements OnInit {
 // @ts-ignore
   id: number;
+
   // @ts-ignore
   songForm: FormGroup;
 
@@ -37,9 +38,9 @@ export class EditSongComponent implements OnInit {
     })
   }
 
-  editSong() {
+  update() {
     const editSong = this.songForm.value
-    this.songService.editSong(editSong.id, editSong).subscribe(() => {
+    this.songService.update(editSong.id, editSong).subscribe(() => {
       alert("Cập nhập thành công");
     })
   }

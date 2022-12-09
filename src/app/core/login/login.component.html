@@ -20,8 +20,13 @@
   </div>
   <br>
 
-  <div class="alert alert-danger" *ngIf="f.submitted && isLoginFailed">
-    Đăng nhập thất bại: {{errorMessage}}
+  <div class="alert alert-danger alert-dismissible fade show" *ngIf="f.submitted && isLoginFailed">
+    <strong>Lỗi đăng nhập!</strong>
+    <br>
+    Sai tên tài khoản hoặc mật khẩu.
+<!--    <button type="button" class="btn-close-white" data-bs-dismiss="alert"></button>-->
+
+    <!--    Đăng nhập thất bại: {{errorMessage}}-->
   </div>
 </form>
 

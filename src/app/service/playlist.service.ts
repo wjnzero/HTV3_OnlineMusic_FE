@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {environment} from "../../enronments/environment";
-import {HttpService} from "./htth-service.service";
+import {HttpService} from "./http-service.service";
 import {Observable} from "rxjs";
 import {Playlist} from "../model/playlist";
 
@@ -30,7 +30,8 @@ export class PlaylistService {
   }
 
     getPlaylistByName(search: string | undefined): Observable<Playlist[]> {
-    let params = new HttpParams().set('search', search);
+    // @ts-ignore
+      let params = new HttpParams().set('search', search);
     return this.http.get<Playlist[]>(API_URL + '/home/playlist/search', {params});
   }
 
