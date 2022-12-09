@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Song} from "../model/song";
+import {Song} from "../../model/song";
 import { environment } from 'src/enronments/environment';
 
 const API_URL = `${environment.apiUrl}`
@@ -21,7 +21,7 @@ export class SongService {
   save(song: Song): Observable<any> {
     return this.httpClient.post(API_URL, song)
   }
-
+  //lấy
   getById(id: any): Observable<any> {
     return this.httpClient.get(API_URL + `/${id}`);
   }
@@ -31,7 +31,9 @@ export class SongService {
   }
 
   delete(id: number) {
-    return this.httpClient.delete(API_URL + `/${id}`)
+    let url = API_URL + '/songs/delete/' +`${id}`
+    console.log(url)
+    return this.httpClient.delete(url);
 
   }
   // editSong(id: number, temp: Song) {

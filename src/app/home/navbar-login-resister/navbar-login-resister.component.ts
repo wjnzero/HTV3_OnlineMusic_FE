@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
-import {SongService} from "../../service/song.service";
+import {SongService} from "../../service/song/song.service";
 import {Router} from "@angular/router";
 
 @Component({
@@ -22,7 +22,7 @@ export class NavbarLoginResisterComponent {
       {
         nameSearch: ['']
       });
-    if (sessionStorage.getItem('auth-token')){
+    if (localStorage.getItem('auth-token')){
       this.isLoggedIn = true;
     }
   }

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Song} from "../../model/song";
 import {ActivatedRoute, ParamMap} from "@angular/router";
-import {SongService} from "../../service/song.service";
 import {PlaylistService} from "../../service/playlist.service";
 import {Playlist} from "../../model/playlist";
+import {SongService} from "../../service/song/song.service";
 
 @Component({
   selector: 'app-search',
