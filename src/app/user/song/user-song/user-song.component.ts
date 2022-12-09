@@ -25,12 +25,13 @@ export class UserSongComponent implements OnInit {
 
   }
 
-  getSongByUser() {
-    this.userid = Number(this.httpService.getID());
-    this.userService.getUserById(String(this.userid)).subscribe(userId => {
-      this.user = userId;
-    })
-  }
-
-
+  // getSongByUser(id: any) {
+  //   return this.userService.getUserById(id).subscribe(user =>{
+  //     this.songService.getSongByUser(id).subscribe(() => {
+  //       this.getSongByUser(id);
+  //     })
+  //   })
+  // }
 }
+
+

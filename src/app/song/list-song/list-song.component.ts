@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Song} from "../../model/song";
 import {SongService} from "../../service/song/song.service";
+import {SongType} from "../../model/songType";
 
 
 @Component({
@@ -11,7 +12,7 @@ import {SongService} from "../../service/song/song.service";
 export class ListSongComponent implements OnInit{
 
   songs: Song[] = [];
-
+  songType:SongType[] =[];
   constructor(private songService: SongService) {
   }
 
@@ -24,9 +25,11 @@ export class ListSongComponent implements OnInit{
       this.songs = songs;
     });
   }
+
   delete(id: any) {
     if (confirm('Bạn có muốn xóa?')) {
-      this.songService.delete(id).subscribe(() => {
+      this.songService.delete(id).subscribe(data => {
+        console.log(data)
         alert("Ok");
         this.getAll()
       }, e => {
