@@ -31,7 +31,9 @@ export class SongService {
   }
 
   delete(id: number) {
-    return this.httpClient.delete(API_URL + `/${id}`)
+    let url = API_URL + '/songs/delete/' +`${id}`
+    console.log(url)
+    return this.httpClient.delete(url);
 
   }
   editSong(id: number, temp: Song) {
