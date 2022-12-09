@@ -13,8 +13,8 @@ export class EditSongComponent implements OnInit {
 // @ts-ignore
   id: number;
 
-  // @ts-ignore
-  songForm: FormGroup;
+
+  songForm!: FormGroup;
 
   constructor(private songService: SongService, private activateRoute: ActivatedRoute) {
     this.activateRoute.paramMap.subscribe((paraMap: ParamMap) => {
@@ -31,9 +31,11 @@ export class EditSongComponent implements OnInit {
     return this.songService.getById(id).subscribe(song => {
       this.songForm = new FormGroup({
         id: new FormControl(song.id),
-        title: new FormControl(song.title),
-        price: new FormControl(song.price),
-        description: new FormControl(song.description)
+        name: new FormControl(song.name),
+        describeSong: new FormControl(song.describeSong),
+        avatar: new FormControl(song.avatar),
+        // singer: new FormControl(song.singer),
+        // songTypeSet: new FormControl(song.songTypeSet)
       })
     })
   }
