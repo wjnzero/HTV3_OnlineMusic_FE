@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {environment} from "../../enronments/environment";
-import {HttpService} from "./htth-service.service";
+import {HttpService} from "./http-service.service";
 
 
 const API_URL = `${environment.apiUrl}`;
