@@ -20,6 +20,7 @@ import {RouterModule} from "@angular/router";
 import { LoginComponent } from './core/login/login.component';
 import { RegisterComponent } from './core/register/register.component';
 import {SongModule} from "./song/song.module";
+// import { UserProfileComponent } from './user/user-profile/user-profile.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import {SongModule} from "./song/song.module";
     NavbarLoginResisterComponent,
     LoginComponent,
     RegisterComponent,
+    // UserProfileComponent,
 
   ],
   imports: [
