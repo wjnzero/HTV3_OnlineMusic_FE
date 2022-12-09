@@ -18,6 +18,9 @@
         <li style="margin-top: 20px ; margin-right: 20px" class="nav-item">
           <form class="form-inline" [formGroup]="searchForm"  (ngSubmit)="search()">
             <input class="form-control mr-xl-2 " type="text" placeholder="Tìm kiếm" aria-label="Search" size="70" formControlName="nameSearch" >
+            <td>
+              <button (click)="search()" class="btn btn-danger" >Tìm kiếm</button>
+            </td>
           </form>
         </li>
         <li *ngIf="!isLoggedIn" class="nav-item"><a class="nav-link js-scroll-trigger" [routerLink]="['/login']">Đăng nhập</a></li>
