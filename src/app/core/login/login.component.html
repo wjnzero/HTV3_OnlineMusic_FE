@@ -1,6 +1,7 @@
 <app-navbar-login-resister></app-navbar-login-resister>
 <body>
 <form class="box" *ngIf="!isLoggedIn" name="form" (ngSubmit)="onSubmit()" #f="ngForm" novalidate>
+
   <div class="form-group">
     <!--    <label>Tài khoản</label>-->
     <input type="text" class="form-control" placeholder="Tài khoản" name="username" [(ngModel)]="form.username"/>

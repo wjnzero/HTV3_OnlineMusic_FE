@@ -21,6 +21,8 @@ import { LoginComponent } from './core/login/login.component';
 import { RegisterComponent } from './core/register/register.component';
 import {SongModule} from "./song/song.module";
 import {EditSongComponent} from "./song/edit-song/edit-song.component";
+import {UserProfileComponent} from "./user/user-profile/user-profile.component";
+import { NavbarUserComponent } from './user/navbar-user/navbar-user.component';
 
 
 @NgModule({
@@ -37,6 +39,8 @@ import {EditSongComponent} from "./song/edit-song/edit-song.component";
     NavbarLoginResisterComponent,
     LoginComponent,
     RegisterComponent,
+    UserProfileComponent,
+    NavbarUserComponent
 
   ],
   imports: [
