@@ -22,7 +22,7 @@ export class UserProfileComponent {
   userForm!: FormGroup;
   user!: User;
   id?: string;
-  avatarURL?: string;
+  avatar?: string;
   selectImg: any = null;
   roles?: Role[];
 
@@ -42,16 +42,17 @@ export class UserProfileComponent {
         name: ['', [Validators.required]],
         address: [''],
         email: ['', [Validators.required, Validators.email]],
-        phone: [''],
-        avatar: ['', [Validators.required]]
+        phoneNumber: [''],
+        avatar: ['']
       });
     this.id = this.httpService.getID();
     this.userService.getUserById(this.id).subscribe(userGet => {
       this.user = userGet;
-      this.avatarURL = userGet.avatar;
+      this.avatar = userGet.avatar;
       this.userForm.patchValue(this.user);
+      console.log(this.userForm.value);
     });
-    console.log(this.user.email);
+
   }
 
   // tslint:disable-next-line:typedef
@@ -63,8 +64,8 @@ export class UserProfileComponent {
       username: this.user.username,
       password:  this.user.password,
       address: this.userForm.value.address,
-      phone: this.userForm.value.phone,
-      avatarURL: this.avatarURL,
+      phone: this.userForm.value.phoneNumber,
+      avatar: this.userForm.value.avatar,
       role: this.user.role
     };
     this.userService.updateUser(user1.id, user1).subscribe(res => {
@@ -82,17 +83,17 @@ export class UserProfileComponent {
     var n = Date.now();
     // @ts-ignore
     const file = event.target.files[0];
-    const filePath = `RoomsImages/${n}`;
+    const filePath = `file_img/${n}`;
     const fileRef = this.storage.ref(filePath);
-    const task = this.storage.upload(`RoomsImages/${n}`, file);
+    const task = this.storage.upload(`file_img/${n}`, file);
     task.snapshotChanges().pipe(
       finalize(() =>{
         this.downloadImgURL = fileRef.getDownloadURL();
         this.downloadImgURL.subscribe(url => {
           if (url){
-            this.avatarURL = url;
+            this.avatar = url;
           }
-          console.log(this.avatarURL);
+          console.log(this.avatar);
           console.log(this.user)
         })
       })
@@ -110,7 +111,7 @@ export class UserProfileComponent {
       this.selectImg = event.target.files[0];
       this.sendToFirebase();
     } else {
-      this.avatarURL = this.user.avatar;
+      this.avatar = this.user.avatar;
       this.selectImg = null;
     }
   }
