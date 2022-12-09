@@ -34,13 +34,13 @@ export class SongService {
     return this.httpClient.delete(API_URL + `/${id}`)
 
   }
-  editSong(id: number, temp: Song) {
-    return this.httpClient.put<Song>(`${API_URL}/${id}`, temp);
-  }
-  // update(song: any, id: any): Observable<Song> {
-  //
-  //   return this.httpClient.put(API_URL + `/${id}`, song);
+  // editSong(id: number, temp: Song) {
+  //   return this.httpClient.put<Song>(`${API_URL}/${id}`, temp);
   // }
+  update(song: any, id: any): Observable<Song> {
+
+    return this.httpClient.put(API_URL + `/${id}`, song);
+  }
 ////Sắp xếp bài hát theo lượt xem tăng dần
   sortByView(): Observable<any> {
     return this.httpClient.get(API_URL + `/sortByView`)

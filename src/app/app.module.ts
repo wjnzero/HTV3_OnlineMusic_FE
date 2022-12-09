@@ -20,6 +20,7 @@ import {RouterModule} from "@angular/router";
 import { LoginComponent } from './core/login/login.component';
 import { RegisterComponent } from './core/register/register.component';
 import {SongModule} from "./song/song.module";
+import {EditSongComponent} from "./song/edit-song/edit-song.component";
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import {SongModule} from "./song/song.module";
     FormUploadComponent,
     ListUploadComponent,
     DetailsUploadComponent,
+    EditSongComponent,
     PosterComponent,
     FooterComponent,
     LayoutComponent,
