@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SongRoutingModule } from './song-routing.module';
 import {ListSongComponent} from "./list-song/list-song.component";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {SearchComponent} from "./search/search.component";
 import {CreateSongComponent} from "./create-song/create-song.component";
 
@@ -21,7 +21,8 @@ import {CreateSongComponent} from "./create-song/create-song.component";
   imports: [
     CommonModule,
     SongRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class SongModule { }
