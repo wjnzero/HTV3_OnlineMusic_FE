@@ -24,8 +24,8 @@ export class SongService {
   //   return this.httpClient.get<Song>(url);
   // }
 
-  save(song: Song): Observable<any> {
-    let url = API_URL + '/songs/create'
+  save(song: Song,id:any): Observable<any> {
+    let url = API_URL + '/songs/create' + `/${id}`
     return this.httpClient.post<Song>(url,song);
   }
 

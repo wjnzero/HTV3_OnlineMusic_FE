@@ -13,11 +13,13 @@ export class HttpService {
   httpOptions = {
     headers: this.headers_object
   };
-  // @ts-ignore
-  id: string;
 
-  constructor() { }
 
+
+  constructor() {
+
+  }
+  id: string = '';
   // tslint:disable-next-line:contextual-lifecycle use-lifecycle-interface
   ngOnInit(): void {
   }
@@ -29,6 +31,7 @@ export class HttpService {
 
   // tslint:disable-next-line:typedef
   getID(): string {
+     console.log('ssss' + this.id)
     // @ts-ignore
     return this.idUser = localStorage.getItem('idUser');
   }
