@@ -3,6 +3,7 @@ import {User} from "../../model/user";
 import {Router} from "@angular/router";
 import {UserService} from "../../service/user/user.service";
 import {HttpService} from "../../service/http-service.service";
+import {TokenStorageService} from "../../security/service/token-storage.service";
 
 @Component({
   selector: 'app-navbar-user',
@@ -15,6 +16,7 @@ export class NavbarUserComponent {
   idUser?: string;
   constructor(private route: Router,
               private userService: UserService,
+              private tokenStorage: TokenStorageService,
               private httpService: HttpService) { }
 
   ngOnInit(): void {
@@ -26,9 +28,7 @@ export class NavbarUserComponent {
 
   // tslint:disable-next-line:typedef
   logout(){
-    sessionStorage.removeItem('token');
-    sessionStorage.removeItem('id');
-    sessionStorage.clear();
+    this.tokenStorage.signOut();
     this.route.navigate(['']);
   }
 
