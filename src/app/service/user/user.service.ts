@@ -20,9 +20,9 @@ export class UserService {
   constructor(private http: HttpClient,
               private httpService: HttpService) { }
 
-  changePassword(data: Password, idUser: string): Observable<any> {
+  changePassword(data: Password, idUser: number | undefined): Observable<any> {
     console.log(this.httpService.getHttp());
-    return this.http.put(API_URL + '/home/user/changePassword/' + idUser, data, this.httpService.getHttp());
+    return this.http.put(API_URL + '/users/changePassword/' + idUser, data, this.httpService.getHttp());
   }
 
   getUserById(id: string): Observable<User> {

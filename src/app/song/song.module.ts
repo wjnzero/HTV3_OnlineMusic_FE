@@ -5,6 +5,7 @@ import {ListSongComponent} from "./list-song/list-song.component";
 import {ReactiveFormsModule} from "@angular/forms";
 import {SearchComponent} from "./search/search.component";
 import {CreateSongComponent} from "./create-song/create-song.component";
+import {AngMusicPlayerModule} from "ang-music-player";
 
 
 @NgModule({
@@ -18,10 +19,11 @@ import {CreateSongComponent} from "./create-song/create-song.component";
     SearchComponent,
     CreateSongComponent
   ],
-  imports: [
-    CommonModule,
-    SongRoutingModule,
-    ReactiveFormsModule
-  ]
+    imports: [
+        CommonModule,
+        SongRoutingModule,
+        ReactiveFormsModule,
+        AngMusicPlayerModule
+    ]
 })
 export class SongModule { }
