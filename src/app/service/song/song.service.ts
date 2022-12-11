@@ -34,7 +34,7 @@ export class SongService {
   }
 
   getByName(name: any): Observable<any> {
-    return this.httpClient.get(API_URL + `/search?name=` + `${name}`)
+    return this.httpClient.get(API_URL + `/search` + `${name}`)
   }
 
   delete(id: number) {
@@ -47,6 +47,7 @@ export class SongService {
   // editSong(id: number, temp: Song) {
   //   return this.httpClient.put<Song>(`${API_URL}/${id}`, temp);
   // }
+
   // update(song: any, id: any): Observable<Song> {
   //
   //   return this.httpClient.put(API_URL + `/songs/edit/${id}`, song);
@@ -55,6 +56,7 @@ export class SongService {
   update(id: number, temp: Song) {
     return this.httpClient.put<Song>(`${API_URL}/songs/edit/${id}`, temp);
   }
+
 
 ////Sắp xếp bài hát theo lượt xem tăng dần
   sortByView(): Observable<any> {
