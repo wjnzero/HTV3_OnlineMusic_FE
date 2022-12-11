@@ -10,7 +10,8 @@ import {SongService} from "../../service/song/song.service";
   styleUrls: ['./edit-song.component.css']
 })
 export class EditSongComponent implements OnInit {
-// @ts-ignore
+
+  // @ts-ignore
   id: number;
 
 
@@ -41,7 +42,9 @@ export class EditSongComponent implements OnInit {
   }
 
   update() {
+
     const editSong = this.songForm.value
+    console.log(editSong)
     this.songService.update(editSong.id, editSong).subscribe(() => {
       alert("Cập nhập thành công");
     })

@@ -34,7 +34,7 @@ import {UserEditSongComponent} from "./user/song/user-edit-song/user-edit-song.c
     FormUploadComponent,
     ListUploadComponent,
     DetailsUploadComponent,
-    EditSongComponent,
+
     PosterComponent,
     FooterComponent,
     LayoutComponent,
