@@ -34,7 +34,7 @@ export class SongService {
   }
 
   getByName(name: any): Observable<any> {
-    return this.httpClient.get(API_URL + `/search?name=` + `${name}`)
+    return this.httpClient.get(API_URL + `/search` + `${name}`)
   }
 
   delete(id: number) {
