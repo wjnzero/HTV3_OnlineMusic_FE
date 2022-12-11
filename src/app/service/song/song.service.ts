@@ -48,9 +48,10 @@ export class SongService {
   //   return this.httpClient.put<Song>(`${API_URL}/${id}`, temp);
   // }
   update(song: any, id: any): Observable<Song> {
-
-    return this.httpClient.put(API_URL + `/songs/edit/${id}`, song);
+    // @ts-ignore
+    return this.httpClient.put(this.API_URL + `/songs/edit/${id}`, song);
   }
+
 
 ////Sắp xếp bài hát theo lượt xem tăng dần
   sortByView(): Observable<any> {
