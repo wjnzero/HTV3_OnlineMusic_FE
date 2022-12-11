@@ -5,12 +5,14 @@ import {ListSongComponent} from "./list-song/list-song.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {SearchComponent} from "./search/search.component";
 import {CreateSongComponent} from "./create-song/create-song.component";
+import {EditSongComponent} from "./edit-song/edit-song.component";
 
 
 @NgModule({
   declarations: [
     ListSongComponent,
     SearchComponent,
+    EditSongComponent,
     CreateSongComponent
      ],
   exports: [
