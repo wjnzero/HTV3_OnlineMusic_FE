@@ -1,6 +1,6 @@
 
-<div class="container">
-  <div class="row">
+<div class="align-content-center">
+
     <div class="col-10"></div>
     <div class="col-1">
       <form [formGroup]="songForm" (ngSubmit)="update()">
@@ -13,42 +13,42 @@
           <label>Tên</label>
         </div>
         <div class="font-group">
-          <input type="text" class="form-control" formControlName="title"
-                 id="title" placeholder="name">
+          <input type="text" class="form-control" formControlName="name"
+                 id="name" placeholder="name">
         </div>
         <div class="text-left">
           <label>Mô tả</label>
         </div>
         <div class="font-group">
-          <input type="text" class="form-control" formControlName="description"
-                 id="description" placeholder="description">
+          <input type="text" class="form-control" formControlName="describeSong"
+                 id="describeSong" placeholder="describeSong">
         </div>
         <div class="text-left">
           <label>Avatar</label>
         </div>
-        <div class="font-group">
-          <input type="text" class="form-control" formControlName="avatar"
-                 id="avatar" placeholder="avatar">
-        </div>
-        <div class="text-left">
-          <label>Ca sĩ</label>
-        </div>
-        <div class="font-group">
-          <input type="text" class="form-control" formControlName="singer"
-                 id="singer" placeholder="singer">
-        </div>
-        <div class="text-left">
-          <label>Thể loại</label>
-        </div>
-        <div class="font-group">
-          <input type="text" class="form-control" formControlName="type"
-                 id="type" placeholder="type">
-        </div>
+        <tr>
+          <td>Avatar</td>
+          <td><input type="file" formControlName="avatar"></td>
+        </tr>
+<!--        <div class="text-left">-->
+<!--          <label>Ca sĩ</label>-->
+<!--        </div>-->
+<!--        <div class="font-group">-->
+<!--          <input type="text" class="form-control" formControlName="singer"-->
+<!--                 id="singer" placeholder="singer">-->
+<!--        </div>-->
+<!--        <div class="text-left">-->
+<!--          <label>Thể loại</label>-->
+<!--        </div>-->
+<!--        <div class="font-group">-->
+<!--          <input type="text" class="form-control" formControlName="songTypeSet"-->
+<!--                 id="songTypeSet" placeholder="songTypeSet">-->
+<!--        </div>-->
         <button type="submit" class="btn btn-success" style="margin: 20px 20px" >Sửa</button>
         <button routerLink="" class="btn btn-success" >Trở lại</button>
       </form>
     </div>
     <div class="col-2"></div>
-  </div>
+
 </div>
 

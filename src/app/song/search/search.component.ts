@@ -11,7 +11,7 @@ import {SongService} from "../../service/song/song.service";
 export class SearchComponent implements OnInit {
 
   // @ts-ignore
-  songs: Song;
+  songs: Song[] = [];
 
   constructor(
     private activateRoute: ActivatedRoute,
@@ -20,6 +20,7 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
     this.songs = {
+      // @ts-ignore
       name: '', describeSong: '', avatar: '', author: '', singer: '', album: '', view: ''
     }
 
@@ -31,8 +32,25 @@ export class SearchComponent implements OnInit {
 
   getByName(id: any) {
     this.songService.getById(id).subscribe((yy: Song) => {
+      // @ts-ignore
       this.songs = yy;
     })
+  }
+  getAll() {
+    this.songService.getAll().subscribe(songs => {
+      this.songs = songs;
+    });
+  }
+  delete(id: any) {
+    if (confirm('Bạn có muốn xóa?')) {
+      this.songService.delete(id).subscribe(data => {
+        console.log(data)
+        alert("Ok");
+        this.getAll()
+      }, e => {
+        console.error(e)
+      });
+    }
   }
 }
 
