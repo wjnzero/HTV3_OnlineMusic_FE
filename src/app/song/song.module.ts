@@ -6,13 +6,15 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {SearchComponent} from "./search/search.component";
 import {CreateSongComponent} from "./create-song/create-song.component";
 import {AngMusicPlayerModule} from "ang-music-player";
+import {EditSongComponent} from "./edit-song/edit-song.component";
 
 
 @NgModule({
   declarations: [
     ListSongComponent,
     SearchComponent,
-    CreateSongComponent
+    CreateSongComponent,
+    EditSongComponent
   ],
   exports: [
     ListSongComponent,
