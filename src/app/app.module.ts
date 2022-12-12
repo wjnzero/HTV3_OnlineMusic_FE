@@ -26,6 +26,11 @@ import {NavbarUserComponent} from "./user/navbar-user/navbar-user.component";
 import {UserSongComponent} from "./user/song/user-song/user-song.component";
 import {UserCreateSongComponent} from "./user/song/user-create-song/user-create-song.component";
 import {UserEditSongComponent} from "./user/song/user-edit-song/user-edit-song.component";
+import { UserChangePasswordComponent } from './user/user-change-password/user-change-password.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatMenuModule} from "@angular/material/menu";
+import {MatButtonModule} from "@angular/material/button";
+import {AngMusicPlayerModule} from "ang-music-player";
 
 
 @NgModule({
@@ -46,7 +51,8 @@ import {UserEditSongComponent} from "./user/song/user-edit-song/user-edit-song.c
     UserCreateSongComponent,
     UserEditSongComponent,
     UserProfileComponent,
-    NavbarUserComponent
+    NavbarUserComponent,
+    UserChangePasswordComponent
 
   ],
   imports: [
@@ -59,7 +65,11 @@ import {UserEditSongComponent} from "./user/song/user-edit-song/user-edit-song.c
     HttpClientModule,
     FormsModule,
     RouterModule,
-    SongModule
+    SongModule,
+    BrowserAnimationsModule,
+    MatMenuModule,
+    MatButtonModule,
+    AngMusicPlayerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
