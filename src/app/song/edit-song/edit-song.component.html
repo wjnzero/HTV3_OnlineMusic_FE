@@ -27,13 +27,23 @@
           <label>Avatar</label>
         </div>
         <tr>
-          <td>Avatar</td>
-          <td><input type="file" formControlName="avatar"></td>
+          <td>Avatar:</td>
+          <td><input type="file"  (change)="sendToFirebaseImg()"> </td>
         </tr>
+
         <tr>
-          <td>file Mp3</td>
-          <td><input type="file" formControlName="fileMp3"></td>
+          <td>File mp3:</td>
+          <!--      <td><img [src]="downloadMp3URL"</td>-->
+          <td> <input type="file" (change)="sendToFirebaseMp3()" > </td>
         </tr>
+<!--        <tr>-->
+<!--          <td>Avatar</td>-->
+<!--          <td><input type="file" formControlName="avatar"></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--          <td>file Mp3</td>-->
+<!--          <td><input type="file" formControlName="fileMp3"></td>-->
+<!--        </tr>-->
 
 <!--        <div class="text-left">-->
 <!--          <label>Ca sĩ</label>-->
