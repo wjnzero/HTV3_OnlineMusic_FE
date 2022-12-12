@@ -35,7 +35,7 @@ export class EditSongComponent implements OnInit {
         name: new FormControl(song.name),
         describeSong: new FormControl(song.describeSong),
         avatar: new FormControl(song.avatar),
-        // singer: new FormControl(song.singer),
+         fileMp3: new FormControl(song.fileMp3),
         // songTypeSet: new FormControl(song.songTypeSet)
       })
     })
