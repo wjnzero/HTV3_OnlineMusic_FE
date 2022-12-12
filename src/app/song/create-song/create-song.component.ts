@@ -18,8 +18,9 @@ import {Song} from "../../model/song";
 export class CreateSongComponent implements OnInit {
   downloadImgURL ?: Observable<string>;
   downloadMp3URL ?: Observable<string>;
-
-  // song: Song = {};
+  fileMp3?:string;
+  avatar?:string;
+  song: Song = {};
 
 
   constructor(private songService: SongService,
@@ -35,16 +36,26 @@ export class CreateSongComponent implements OnInit {
     void {
   }
 
+
+
   songForm: FormGroup = new FormGroup({
     name: new FormControl(),
     describeSong: new FormControl(),
     fileMp3: new FormControl(),
     avatar: new FormControl()
   })
-  async saveSong() {
-    const song = this.songForm.value;
-    const idUser = await this.tokenService.getUser().id;
+
+   saveSong() {
+    const song = {
+      name: this.songForm.value.name,
+      describeSong: this.songForm.value.describeSong,
+      fileMp3: this.fileMp3,
+      avatar: this.avatar,
+    };
+    // let song = this.songForm.value.;
+    const idUser =  this.tokenService.getUser().id;
     console.log("ssss" + idUser)
+    console.log(song)
     this.songService.save(song, idUser).subscribe(() => {
       alert("Thêm mới thành công")
     });
@@ -63,7 +74,8 @@ export class CreateSongComponent implements OnInit {
         this.downloadImgURL = fileRef.getDownloadURL();
         this.downloadImgURL.subscribe(url => {
           if (url) {
-            this.songForm.patchValue({avatar:url});
+            // this.songForm.patchValue({avatar: url});
+            this.avatar= url;
           }
         })
       })
@@ -73,9 +85,10 @@ export class CreateSongComponent implements OnInit {
           console.log(url);
         }
       })
+
   }
 
-  sendToFirebaseMp3() {
+   sendToFirebaseMp3() {
     var n = Date.now();
     // @ts-ignore
     const file = event.target.files[0];
@@ -87,7 +100,8 @@ export class CreateSongComponent implements OnInit {
         this.downloadMp3URL = fileRef.getDownloadURL();
         this.downloadMp3URL.subscribe(url => {
           if (url) {
-            this.songForm.patchValue({fileMp3:url});
+            // this.songForm.patchValue({fileMp3: url});
+             this.fileMp3=url;
           }
         })
       })
@@ -97,5 +111,6 @@ export class CreateSongComponent implements OnInit {
           console.log(url);
         }
       })
+
   }
 }
