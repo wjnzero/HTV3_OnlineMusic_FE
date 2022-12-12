@@ -9,6 +9,14 @@ import {finalize} from "rxjs/operators";
 import {AngularFireStorage} from "@angular/fire/compat/storage";
 import {Observable} from "rxjs";
 import {Song} from "../../model/song";
+import {Router} from "@angular/router";
+
+declare var Swal: any;
+
+function sleep(number: number) {
+  return new Promise(resolve => setTimeout(resolve, number));
+
+}
 
 @Component({
   selector: 'app-create-song',
@@ -18,26 +26,20 @@ import {Song} from "../../model/song";
 export class CreateSongComponent implements OnInit {
   downloadImgURL ?: Observable<string>;
   downloadMp3URL ?: Observable<string>;
-  fileMp3?:string;
-  avatar?:string;
-  song: Song = {};
-
-
+  fileMp3?: string;
+  avatar?: string;
+  // song: Song = {};
   constructor(private songService: SongService,
               private userService: UserService,
               private httpService: HttpService,
               private tokenService: TokenStorageService,
-              private storage: AngularFireStorage
+              private storage: AngularFireStorage,
+              private router: Router
   ) {
   }
 
-  ngOnInit()
-    :
-    void {
+  ngOnInit():void {
   }
-
-
-
   songForm: FormGroup = new FormGroup({
     name: new FormControl(),
     describeSong: new FormControl(),
@@ -45,7 +47,8 @@ export class CreateSongComponent implements OnInit {
     avatar: new FormControl()
   })
 
-   saveSong() {
+  saveSong() {
+
     const song = {
       name: this.songForm.value.name,
       describeSong: this.songForm.value.describeSong,
@@ -53,13 +56,17 @@ export class CreateSongComponent implements OnInit {
       avatar: this.avatar,
     };
     // let song = this.songForm.value.;
-    const idUser =  this.tokenService.getUser().id;
-    console.log("ssss" + idUser)
-    console.log(song)
+    const idUser = this.tokenService.getUser().id;
     this.songService.save(song, idUser).subscribe(() => {
-      alert("Thêm mới thành công")
     });
+    // Swal.fire({
+    //   icon: 'success',
+    //   title: 'Thêm thành công',
+    //   showConfirmButton: false,
+    //   timer: 1000
+    // });
     this.songForm.reset();
+    window.location.reload()
   }
 
   sendToFirebaseImg() {
@@ -75,9 +82,15 @@ export class CreateSongComponent implements OnInit {
         this.downloadImgURL.subscribe(url => {
           if (url) {
             // this.songForm.patchValue({avatar: url});
-            this.avatar= url;
+            this.avatar = url;
           }
         })
+        Swal.fire({
+          icon: 'success',
+          title: 'Upload thành công',
+          showConfirmButton: false,
+          timer: 1000
+        });
       })
     )
       .subscribe(url => {
@@ -88,22 +101,30 @@ export class CreateSongComponent implements OnInit {
 
   }
 
-   sendToFirebaseMp3() {
+  sendToFirebaseMp3() {
     var n = Date.now();
     // @ts-ignore
     const file = event.target.files[0];
     const filePath = `file_mp3/${n}`;
     const fileRef = this.storage.ref(filePath);
     const task = this.storage.upload(`file_mp3/${n}`, file);
+    // sleep(3000);
+    // alert('upload thành công')
     task.snapshotChanges().pipe(
       finalize(() => {
         this.downloadMp3URL = fileRef.getDownloadURL();
         this.downloadMp3URL.subscribe(url => {
           if (url) {
             // this.songForm.patchValue({fileMp3: url});
-             this.fileMp3=url;
+            this.fileMp3 = url;
           }
         })
+        Swal.fire({
+          icon: 'success',
+          title: 'Upload thành công',
+          showConfirmButton: false,
+          timer: 4000
+        });
       })
     )
       .subscribe(url => {
@@ -113,4 +134,5 @@ export class CreateSongComponent implements OnInit {
       })
 
   }
+
 }
