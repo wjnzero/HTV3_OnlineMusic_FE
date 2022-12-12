@@ -6,6 +6,7 @@ import {SongService} from "../../service/song/song.service";
 import {finalize} from "rxjs/operators";
 import {Observable} from "rxjs";
 import {AngularFireStorage} from "@angular/fire/compat/storage";
+declare var Swal: any;
 
 @Component({
   selector: 'app-edit-song',
@@ -84,6 +85,12 @@ export class EditSongComponent implements OnInit {
             this.songForm.patchValue({fileMp3:url});
           }
         })
+        Swal.fire({
+          icon: 'success',
+          title: 'Upload thành công',
+          showConfirmButton: false,
+          timer: 3000
+        });
       })
     )
       .subscribe(url => {
@@ -98,7 +105,12 @@ export class EditSongComponent implements OnInit {
     const editSong = this.songForm.value
     console.log(editSong)
     this.songService.update(editSong.id, editSong).subscribe(() => {
-      alert("Cập nhập thành công");
+      Swal.fire({
+        icon: 'success',
+        title: 'Edit thành công',
+        showConfirmButton: false,
+        timer: 1000
+      });
     })
   }
 }
