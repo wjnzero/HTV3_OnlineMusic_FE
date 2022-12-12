@@ -3,6 +3,9 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, ParamMap} from "@angular/router";
 import {FormControl, FormGroup} from "@angular/forms";
 import {SongService} from "../../service/song/song.service";
+import {finalize} from "rxjs/operators";
+import {Observable} from "rxjs";
+import {AngularFireStorage} from "@angular/fire/compat/storage";
 
 @Component({
   selector: 'app-edit-song',
@@ -16,8 +19,10 @@ export class EditSongComponent implements OnInit {
 
 
   songForm!: FormGroup;
+  downloadImgURL ?: Observable<string>;
+  downloadMp3URL ?: Observable<string>;
 
-  constructor(private songService: SongService, private activateRoute: ActivatedRoute) {
+  constructor(private songService: SongService, private storage: AngularFireStorage, private activateRoute: ActivatedRoute) {
     this.activateRoute.paramMap.subscribe((paraMap: ParamMap) => {
       // @ts-ignore
       this.id = +paraMap.get('id');
@@ -39,6 +44,53 @@ export class EditSongComponent implements OnInit {
         // songTypeSet: new FormControl(song.songTypeSet)
       })
     })
+  }
+  sendToFirebaseImg() {
+    var n = Date.now();
+    // @ts-ignore
+    const file = event.target.files[0];
+    const filePath = `file_img/${n}`;
+    const fileRef = this.storage.ref(filePath);
+    const task = this.storage.upload(`file_img/${n}`, file);
+    task.snapshotChanges().pipe(
+      finalize(() => {
+        this.downloadImgURL = fileRef.getDownloadURL();
+        this.downloadImgURL.subscribe(url => {
+          if (url) {
+            this.songForm.patchValue({avatar:url});
+          }
+        })
+      })
+    )
+      .subscribe(url => {
+        if (url) {
+          console.log(url);
+        }
+      })
+  }
+
+  sendToFirebaseMp3() {
+    var n = Date.now();
+    // @ts-ignore
+    const file = event.target.files[0];
+    const filePath = `file_mp3/${n}`;
+    const fileRef = this.storage.ref(filePath);
+    const task = this.storage.upload(`file_mp3/${n}`, file);
+    task.snapshotChanges().pipe(
+      finalize(() => {
+        this.downloadMp3URL = fileRef.getDownloadURL();
+        this.downloadMp3URL.subscribe(url => {
+          if (url) {
+            this.songForm.patchValue({fileMp3:url});
+          }
+        })
+      })
+    )
+      .subscribe(url => {
+        if (url) {
+          console.log(url);
+        }
+      })
   }
 
   update() {
