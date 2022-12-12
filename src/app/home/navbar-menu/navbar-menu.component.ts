@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {SongService} from "../../service/song/song.service";
 import {Router} from "@angular/router";
+import {Song} from "../../model/song";
 
 @Component({
   selector: 'app-navbar-menu',
@@ -12,10 +13,11 @@ export class NavbarMenuComponent {
 
   isLoggedIn?: boolean;
   searchForm!: FormGroup;
+  songs : Song [] = [];
 
   constructor(private songService: SongService,
               private router: Router,
-              private formBuilder: FormBuilder) {
+              private formBuilder: FormBuilder,) {
   }
 
   ngOnInit(): void {
@@ -33,6 +35,14 @@ export class NavbarMenuComponent {
     // @ts-ignore
     this.router.navigate(['/search'], { queryParams: { name: this.searchForm.value.nameSearch } });
   }
+  // search(){
+  //   // @ts-ignore
+  //   let name = document.getElementById("name").value
+  //   this.songService.getByName(name).subscribe(value => {
+  //     this.songs = value
+  //     console.log(value)
+  //   })
+  // }
 
   // tslint:disable-next-line:typedef
   changePage() {

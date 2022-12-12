@@ -34,8 +34,11 @@ export class SongService {
   }
 
   getByName(name: any): Observable<any> {
-    return this.httpClient.get(API_URL + `/search?name=` + `${name}`)
+    return this.httpClient.get(API_URL + `/songs/search?name=` + `${name}`)
   }
+ // getByName(name: any): Observable<any> {
+ //    return this.httpClient.get(API_URL + `/songs/search?` + name)
+ //  }
 
   delete(id: number) {
     let url = API_URL + '/songs/delete/' + `${id}`

@@ -27,8 +27,7 @@ export class SearchComponent implements OnInit {
 
 
   ngOnInit() {
-    this.getByName(this.name)
-    // console.log(this.audioList);
+    // this.getByName(this.name)
   }
 
   getByName(name: string | undefined) {
