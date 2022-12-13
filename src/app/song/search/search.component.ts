@@ -1,7 +1,6 @@
-
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Song} from "../../model/song";
-import {ActivatedRoute, ParamMap} from "@angular/router";
+import {ActivatedRoute} from "@angular/router";
 import {SongService} from "../../service/song/song.service";
 import {SongType} from "../../model/songType";
 
@@ -21,19 +20,31 @@ export class SearchComponent implements OnInit {
       // @ts-ignore
       this.name = params.name;
       this.getByName(this.name);
+      this.getSongByAuthor(this.name);
+      this.getSongBySinger(this.name);
       console.log(this.songs)
     }))
   }
 
 
   ngOnInit() {
-    this.getByName(this.name)
-    // console.log(this.audioList);
   }
 
   getByName(name: string | undefined) {
     this.songService.getByName(name).subscribe(songs => {
       this.songs = songs;
     });
+  }
+
+  getSongByAuthor(name: string | undefined) {
+    this.songService.getSongByAuthor(name).subscribe(songs => {
+      this.songs = songs;
+    })
+  }
+
+  getSongBySinger(name: string | undefined) {
+    this.songService.getSongBySinger(name).subscribe(songs => {
+      this.songs = songs;
+    })
   }
 }

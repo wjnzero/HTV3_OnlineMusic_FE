@@ -2,6 +2,8 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import { ROUTES } from '../sidebar/sidebar.component';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import { Router } from '@angular/router';
+import {Song} from "../../model/song";
+import {SongService} from "../../service/song/song.service";
 
 @Component({
   selector: 'app-navbar',
@@ -14,8 +16,10 @@ export class NavbarComponent implements OnInit {
       mobile_menu_visible: any = 0;
     private toggleButton: any;
     private sidebarVisible: boolean;
+  songs: Song[] = [];
 
-    constructor(location: Location,  private element: ElementRef, private router: Router) {
+
+  constructor(location: Location,  private element: ElementRef, private router: Router, private songService : SongService) {
       this.location = location;
           this.sidebarVisible = false;
     }
@@ -126,5 +130,13 @@ export class NavbarComponent implements OnInit {
           }
       }
       return 'Dashboard';
+    }
+
+    getByName(){
+      // @ts-ignore
+      let name = document.getElementById("name").value
+      this.songService.getByName(name).subscribe(value => {
+        this.songs = value
+      })
     }
 }
