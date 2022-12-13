@@ -54,6 +54,17 @@ export class ListSongComponent implements OnInit {
       });
     }
   }
+  // addSongInPlaylist(id: any) {
+  //   if (confirm('Bạn có muốn thêm vào playlist?')) {
+  //     this.songService.addSongInPlaylist(id).subscribe(data => {
+  //       console.log(data)
+  //       alert("Ok");
+  //       this.getAll()
+  //     }, e => {
+  //       console.error(e)
+  //     });
+  //   }
+  // }
 }
 
 

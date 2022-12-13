@@ -1,0 +1,15 @@
+<h1>Tạo bài hát phẩm mới</h1>
+<form  [formGroup]="playlistForm" >
+  <table>
+    <tr>
+      <td>Tên:</td>
+      <td><input type="text" formControlName="name"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <button (click)="savePlaylist()">Tạo mới</button>
+      </td>
+    </tr>
+  </table>
+</form>

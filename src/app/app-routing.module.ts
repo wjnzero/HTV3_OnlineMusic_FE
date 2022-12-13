@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import {LayoutComponent} from "./home/layout/layout.component";
 import {LoginComponent} from "./core/login/login.component";
 import {RegisterComponent} from "./core/register/register.component";
-import {EditSongComponent} from "./song/edit-song/edit-song.component";
 import {UserProfileComponent} from "./user/user-profile/user-profile.component";
 import {AuthGuardGuard} from "./guard/auth-guard.guard";
 import {UserChangePasswordComponent} from "./user/user-change-password/user-change-password.component";
@@ -18,10 +17,11 @@ const routes: Routes = [
     path: 'song',
     loadChildren: () => import('./song/song.module').then(module => module.SongModule)
   },
-  // {
-  //   path: "edit/:id",
-  //   component: EditSongComponent
-  // },
+  {
+    path: 'playlist',
+    loadChildren: () => import('./playlist/playlist.module').then(module => module.PlaylistModule)
+  },
+
   {
     path: '', component: LayoutComponent
   },

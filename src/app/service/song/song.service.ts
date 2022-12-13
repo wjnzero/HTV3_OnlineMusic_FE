@@ -19,10 +19,6 @@ export class SongService {
     return this.httpClient.get<Song[]>(url);
   }
 
-  // getSongByUser(id: any): Observable<Song> {
-  //   let url = API_URL + '/songs/findByUser/' + `${id}`
-  //   return this.httpClient.get<Song>(url);
-  // }
 
   save(song: Song, id: any): Observable<any> {
     let url = API_URL + '/songs/create' + `/${id}`
@@ -51,15 +47,6 @@ export class SongService {
 
   }
 
-  // editSong(id: number, temp: Song) {
-  //   return this.httpClient.put<Song>(`${API_URL}/${id}`, temp);
-  // }
-
-  // update(song: any, id: any): Observable<Song> {
-  //
-  //   return this.httpClient.put(API_URL + `/songs/edit/${id}`, song);
-  // }
-
   update(id: number, temp: Song) {
     return this.httpClient.put<Song>(`${API_URL}/songs/edit/${id}`, temp);
   }
@@ -74,4 +61,11 @@ export class SongService {
   sortByViewDesc(): Observable<any> {
     return this.httpClient.get(API_URL + `/sortByViewDesc`)
   }
+
+  // addSongInPlaylist(id: number) {
+  //   let url = API_URL + '/songs/createPlaylist/' + `${id}`
+  //   console.log(url)
+  //   return this.httpClient.(url);
+  //
+  // }
 }

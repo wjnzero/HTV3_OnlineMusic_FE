@@ -12,6 +12,9 @@
     <td  class="img thumbnail pull-left mr-2" > <img width="40" height="40" src="{{song.avatar}}"> </td>
     <td>{{song.view}}</td>
     <td>
+      <a routerLink="playlist/{{song.id}}" class="btn btn-warning">add song in Playlist</a>
+    </td>
+    <td>
       <a routerLink="edit/{{song.id}}" class="btn btn-warning">Edit</a>
     </td>
     <td>

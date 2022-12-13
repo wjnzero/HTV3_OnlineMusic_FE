@@ -1,0 +1,20 @@
+<h1>Danh sách playlist </h1>
+
+<table border="1">
+  <tr>
+    <td>Name</td>
+    <td>Edit</td>
+    <td>Delete</td>
+    <td colspan="2"></td>
+  </tr>
+  <tr *ngFor="let playlist of playlist;index as i" >
+    <td>{{playlist.name}}</td>
+    <td>
+      <a routerLink="edit1/{{playlist.id}}" class="btn btn-warning">Edit</a>
+    </td>
+    <td>
+      <button (click)="delete(playlist.id)" class="btn btn-danger" >Delete</button>
+    </td>
+  </tr>
+</table>
+<ang-music-player [audioList] = audioList backgroundColor="#bb74ce" width="100%"></ang-music-player>

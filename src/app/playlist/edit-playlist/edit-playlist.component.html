@@ -1,0 +1,42 @@
+<div class="container">
+  <div style="margin-top: 60px">
+    <form (ngSubmit)="update()" [formGroup]="playlistForm">
+      <div>
+        <table class="font-group">
+          <tr>
+            <th colspan="3" style="padding-top: 40px">
+              <h1>Cập nhật thông tin Playlist</h1>
+            </th>
+          </tr>
+          <div class="font-group">
+            <input hidden class="form-control" formControlName="id"
+                   id="id" placeholder="name">
+          </div>
+          <tr>
+            <div class="text-left">
+              <label style="padding-left: 60px;" >Tên Playlist</label>
+            </div>
+            <div class="font-group">
+              <input type="text" class="form-control" formControlName="name"
+                     id="name" placeholder="name">
+            </div>
+          </tr>
+
+          <tr>
+
+            <td colspan="3">
+              <button type="submit" class="btn btn-success">Cập nhật</button> &ensp;
+              <!--              <button class="button-cancel" [routerLink]="['/']">Thoát</button>-->
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button routerLink="" class="btn btn-success">Trở lại</button>
+              <!--              <button class="button-cancel" [routerLink]="['/home']">Thoát</button>-->
+            </td>
+          </tr>
+        </table>
+      </div>
+    </form>
+  </div>
+</div>
