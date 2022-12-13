@@ -20,7 +20,6 @@ import {RouterModule} from "@angular/router";
 import { LoginComponent } from './core/login/login.component';
 import { RegisterComponent } from './core/register/register.component';
 import {SongModule} from "./song/song.module";
-import {EditSongComponent} from "./song/edit-song/edit-song.component";
 import {UserProfileComponent} from "./user/user-profile/user-profile.component";
 import {NavbarUserComponent} from "./user/navbar-user/navbar-user.component";
 import {UserSongComponent} from "./user/song/user-song/user-song.component";
@@ -31,6 +30,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatMenuModule} from "@angular/material/menu";
 import {MatButtonModule} from "@angular/material/button";
 import {AngMusicPlayerModule} from "ang-music-player";
+import {PlaylistModule} from "./playlist/playlist.module";
 
 
 @NgModule({
@@ -52,7 +52,7 @@ import {AngMusicPlayerModule} from "ang-music-player";
     UserEditSongComponent,
     UserProfileComponent,
     NavbarUserComponent,
-    UserChangePasswordComponent
+    UserChangePasswordComponent,
 
   ],
   imports: [
@@ -66,6 +66,7 @@ import {AngMusicPlayerModule} from "ang-music-player";
     FormsModule,
     RouterModule,
     SongModule,
+    PlaylistModule,
     BrowserAnimationsModule,
     MatMenuModule,
     MatButtonModule,

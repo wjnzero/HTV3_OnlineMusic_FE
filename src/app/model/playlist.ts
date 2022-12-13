@@ -1,9 +1,11 @@
-import {Song} from "./song";
+
+import firebase from "firebase/compat";
+import User = firebase.User;
 
 
 export interface Playlist {
 
   id?: number;
   name: string;
-  songs?: Song[];
+  user?: User[];
 }
