@@ -45,7 +45,7 @@ export class EditPlaylistComponent {
     this.playlistService.update(editPlaylist.id, editPlaylist).subscribe(() => {
       Swal.fire({
         icon: 'success',
-        title: 'Edit thành công',
+        title: 'Cập nhật thành công',
         showConfirmButton: false,
         timer: 1000
       });

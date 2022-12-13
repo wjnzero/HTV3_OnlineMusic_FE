@@ -114,7 +114,7 @@ export class EditSongComponent implements OnInit {
     this.songService.update(editSong.id, editSong).subscribe(() => {
       Swal.fire({
         icon: 'success',
-        title: 'Edit thành công',
+        title: 'Cập nhât thành công',
         showConfirmButton: false,
         timer: 1000
       });
