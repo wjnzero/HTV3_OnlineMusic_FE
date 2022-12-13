@@ -24,9 +24,9 @@ export class SongService {
   //   return this.httpClient.get<Song>(url);
   // }
 
-  save(song: Song,id:any): Observable<any> {
+  save(song: Song, id: any): Observable<any> {
     let url = API_URL + '/songs/create' + `/${id}`
-    return this.httpClient.post<Song>(url,song);
+    return this.httpClient.post<Song>(url, song);
   }
 
   getById(id: any): Observable<any> {
@@ -36,9 +36,13 @@ export class SongService {
   getByName(name: any): Observable<any> {
     return this.httpClient.get(API_URL + `/songs/search?name=` + `${name}`)
   }
- // getByName(name: any): Observable<any> {
- //    return this.httpClient.get(API_URL + `/songs/search?` + name)
- //  }
+
+  getSongByAuthor(name: any): Observable<any> {
+    return this.httpClient.get(API_URL + `/songs/search/author?name=` + `${name}`)
+  }
+  getSongBySinger(name: any): Observable<any> {
+    return this.httpClient.get(API_URL + `/songs/search/singer?name=` + `${name}`)
+  }
 
   delete(id: number) {
     let url = API_URL + '/songs/delete/' + `${id}`
