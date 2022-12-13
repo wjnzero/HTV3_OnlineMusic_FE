@@ -1,8 +1,10 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {SongService} from "../../service/song/song.service";
 import {Router} from "@angular/router";
-import {Song} from "../../model/song";
+import {TokenStorageService} from "../../security/service/token-storage.service";
+import {UserService} from "../../service/user/user.service";
+import {User} from "../../model/user";
 
 @Component({
   selector: 'app-navbar-menu',
@@ -13,11 +15,14 @@ export class NavbarMenuComponent {
 
   isLoggedIn?: boolean;
   searchForm!: FormGroup;
-  songs: Song [] = [];
+  id? :string | null;
+  user?: User;
 
   constructor(private songService: SongService,
               private router: Router,
-              private formBuilder: FormBuilder,) {
+              private formBuilder: FormBuilder,
+              private tokenStorage: TokenStorageService,
+              private userService: UserService) {
   }
 
   ngOnInit(): void {
@@ -25,16 +30,29 @@ export class NavbarMenuComponent {
       {
         nameSearch: ['']
       });
-    if (localStorage.getItem('auth-token')) {
+    if (localStorage.getItem('auth-token')){
       this.isLoggedIn = true;
     }
+    this.id = localStorage.getItem('idUser');
+    // @ts-ignore
+    this.userService.getUserById(this.id).subscribe(res => {
+      this.user = res;
+    });
   }
 
+  // tslint:disable-next-line:typedef
   search() {
-    this.router.navigate(['/search'], {queryParams: {name: this.searchForm.value.nameSearch}});
+    // @ts-ignore
+    this.router.navigate(['/search'], { queryParams: { name: this.searchForm.value.nameSearch } });
   }
 
+  // tslint:disable-next-line:typedef
   changePage() {
-    this.router.navigate(['/login']);
+    // @ts-ignore
+    this.router.navigate(['/login'] );
+  }
+  logout(){
+    this.tokenStorage.signOut();
+    window.location.reload();
   }
 }

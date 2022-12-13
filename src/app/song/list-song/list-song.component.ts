@@ -27,11 +27,6 @@ export class ListSongComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getAll();
-    console.log(this.audioList);
-  }
-
-  getAll() {
     this.songService.getAll().subscribe(songs => {
       this.songs = songs;
       // @ts-ignore
@@ -41,6 +36,11 @@ export class ListSongComponent implements OnInit {
         this.audioList.push(temp);
       }
     });
+    console.log(this.audioList);
+  }
+
+  getAll() {
+
   }
 
   delete(id: any) {
