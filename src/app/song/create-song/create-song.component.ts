@@ -29,7 +29,7 @@ export class CreateSongComponent implements OnInit {
   fileMp3?: string;
   avatar?: string;
   // song: Song = {};
-  constructor(private songService: SongService,
+  constructor(public songService: SongService,
               private userService: UserService,
               private httpService: HttpService,
               private tokenService: TokenStorageService,
@@ -48,7 +48,6 @@ export class CreateSongComponent implements OnInit {
   })
 
   saveSong() {
-
     const song = {
       name: this.songForm.value.name,
       describeSong: this.songForm.value.describeSong,
@@ -58,6 +57,7 @@ export class CreateSongComponent implements OnInit {
     // let song = this.songForm.value.;
     const idUser = this.tokenService.getUser().id;
     this.songService.save(song, idUser).subscribe(() => {
+      this.songService.getAll();
     });
     // Swal.fire({
     //   icon: 'success',
@@ -66,8 +66,12 @@ export class CreateSongComponent implements OnInit {
     //   timer: 1000
     // });
     this.songForm.reset();
-    window.location.reload()
   }
+  async resetList(){
+      await this.saveSong();
+
+      this.songService.getAll();
+    }
 
   sendToFirebaseImg() {
     var n = Date.now();

@@ -16,6 +16,7 @@ export class SongService {
   getAll(): Observable<Song[]> {
     let url = API_URL + '/songs/';
     console.log(url)
+    console.log("Vafo day")
     return this.httpClient.get<Song[]>(url);
   }
 

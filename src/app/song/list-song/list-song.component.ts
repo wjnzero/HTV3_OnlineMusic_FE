@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit,OnChanges, SimpleChanges} from '@angular/core';
 import {Song} from "../../model/song";
 import {SongService} from "../../service/song/song.service";
 import {SongType} from "../../model/songType";
@@ -10,7 +10,7 @@ import {SongTemp} from "../../model/songTemp";
   templateUrl: './list-song.component.html',
   styleUrls: ['./list-song.component.css']
 })
-export class ListSongComponent implements OnInit {
+export class ListSongComponent implements OnInit,OnChanges {
   audioList = [
     {
       url: "https://firebasestorage.googleapis.com/v0/b/htv3-8f33d.appspot.com/o/file_mp3%2Fy2mate.com%20-%20Kh%C3%A1%20b%E1%BA%A3nh%20vihouse%20nonstop%20999%20%C4%91%C3%B3a%20h%E1%BB%93ng%20.mp3?alt=media&token=cbd68f37-35ee-4868-8d5f-f0376249c9c0",
@@ -26,20 +26,30 @@ export class ListSongComponent implements OnInit {
   constructor(private songService: SongService) {
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+        throw new Error('Method not implemented.');
+    }
+
+
+
   ngOnInit() {
     this.getAll();
     console.log(this.audioList);
   }
-
+  // ngOnChanges(changes: SimpleChanges): void {
+  //   throw new Error('Method not implemented.');
+  //   this.songService.getAll();
+  // }
+  //
   getAll() {
     this.songService.getAll().subscribe(songs => {
       this.songs = songs;
-      // @ts-ignore
       for (let i = 0; i < songs.length; i++) {
         let temp : SongTemp={url:songs[i].fileMp3, title: songs[i].name, cover:songs[i].avatar }
         // @ts-ignore
         this.audioList.push(temp);
       }
+
     });
   }
 
