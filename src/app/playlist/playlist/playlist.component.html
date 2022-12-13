@@ -10,7 +10,7 @@
   <tr *ngFor="let playlist of playlist;index as i" >
     <td>{{playlist.name}}</td>
     <td>
-      <a routerLink="edit/{{playlist.id}}" class="btn btn-warning">Edit</a>
+      <a routerLink="edit1/{{playlist.id}}" class="btn btn-warning">Edit</a>
     </td>
     <td>
       <button (click)="delete(playlist.id)" class="btn btn-danger" >Delete</button>
