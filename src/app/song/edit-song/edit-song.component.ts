@@ -18,7 +18,8 @@ export class EditSongComponent implements OnInit {
   // @ts-ignore
   id: number;
 
-
+  // avatar?: string;
+  // fileMp3?:string;
   songForm!: FormGroup;
   downloadImgURL ?: Observable<string>;
   downloadMp3URL ?: Observable<string>;
@@ -61,6 +62,12 @@ export class EditSongComponent implements OnInit {
             this.songForm.patchValue({avatar:url});
           }
         })
+        Swal.fire({
+          icon: 'success',
+          title: 'Upload thành công',
+          showConfirmButton: false,
+          timer: 3000
+        });
       })
     )
       .subscribe(url => {
