@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {SongService} from "../../service/song/song.service";
 import {Router} from "@angular/router";
@@ -13,7 +13,7 @@ export class NavbarMenuComponent {
 
   isLoggedIn?: boolean;
   searchForm!: FormGroup;
-  songs : Song [] = [];
+  songs: Song [] = [];
 
   constructor(private songService: SongService,
               private router: Router,
@@ -25,28 +25,16 @@ export class NavbarMenuComponent {
       {
         nameSearch: ['']
       });
-    if (localStorage.getItem('auth-token')){
+    if (localStorage.getItem('auth-token')) {
       this.isLoggedIn = true;
     }
   }
 
-  // tslint:disable-next-line:typedef
   search() {
-    // @ts-ignore
-    this.router.navigate(['/search'], { queryParams: { name: this.searchForm.value.nameSearch } });
+    this.router.navigate(['/search'], {queryParams: {name: this.searchForm.value.nameSearch}});
   }
-  // search(){
-  //   // @ts-ignore
-  //   let name = document.getElementById("name").value
-  //   this.songService.getByName(name).subscribe(value => {
-  //     this.songs = value
-  //     console.log(value)
-  //   })
-  // }
 
-  // tslint:disable-next-line:typedef
   changePage() {
-    // @ts-ignore
-    this.router.navigate(['/login'] );
+    this.router.navigate(['/login']);
   }
 }
