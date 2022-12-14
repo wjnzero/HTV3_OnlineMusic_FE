@@ -15,11 +15,9 @@ import {PlaylistComponent} from "./playlist/playlist.component";
     PlaylistComponent,
     CreatePlaylistComponent,
     EditPlaylistComponent,
-    // SearchComponent
   ],
   exports: [
     PlaylistComponent,
-    // SearchComponent,
     CreatePlaylistComponent
   ],
   imports: [
