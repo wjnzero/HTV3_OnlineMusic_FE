@@ -1,25 +1,45 @@
-<h1>Danh sách bài hát</h1>
-
-<table border="1">
-  <tr>
-    <td>Name</td>
-    <td>Avatar</td>
-    <td>View</td>
-    <td colspan="2"></td>
-  </tr>
-  <tr *ngFor="let song of songs;index as i" >
-    <td>{{song.name}}</td>
-    <td  class="img thumbnail pull-left mr-2" > <img width="40" height="40" src="{{song.avatar}}"> </td>
-    <td>{{song.view}}</td>
-    <td>
-      <a routerLink="playlist/{{song.id}}" class="btn btn-warning">add song in Playlist</a>
-    </td>
-    <td>
-      <a routerLink="edit/{{song.id}}" class="btn btn-warning">Edit</a>
-    </td>
-    <td>
-      <button (click)="delete(song.id)" class="btn btn-danger" >Delete</button>
-    </td>
-  </tr>
-</table>
-<ang-music-player [audioList] = "audioList" backgroundColor="#bb74ce" width="100%"></ang-music-player>
+<div class="container">
+  <section class="container">
+    <div class="new-most-song mt-5">
+      <div class="row p-10">
+        <div class="col-10">
+          <h4 class="font-weight-bold">Bài hát</h4>
+          <table class="table table-striped d-print-table-cell">
+            <thead class="thead-green">
+            <tr>
+              <th scope="col">STT</th>
+              <th scope="col">Ảnh</th>
+              <th scope="col">Bài hát</th>
+              <th scope="col">Mô tả</th>
+              <th scope="col">Album</th>
+              <th scope="col">View</th>
+              <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let song of songs,let indexOfelement=index;">
+              <th scope="row">{{indexOfelement + 1}}</th>
+              <td><img width="40" height="40" src="{{song.avatar}}" class="img thumbnail pull-left mr-2"></td>
+              <td routerLink="search{{song.id}}">{{song.name}}</td>
+              <td routerLink="search{{song.id}}">{{song.describeSong}}</td>
+              <td routerLink="search{{song.id}}">{{song.album}}</td>
+              <td routerLink="search{{song.id}}">{{song.view}}</td>
+              <td><button class="btn btn-success" routerLink="list-song/{{song.id}}">  Play |> </button></td>
+              <td>
+                <a routerLink="playlist/{{song.id}}" class="btn btn-primary">add song</a>
+              </td>
+              <td>
+                <a routerLink="edit/{{song.id}}" class="btn btn-warning">Edit</a>
+              </td>
+              <td>
+                <button (click)="delete(song.id)" class="btn btn-danger" >Delete</button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+          <ang-music-player [audioList] = "audioList" backgroundColor="#bb74ce" width="100%"></ang-music-player>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
