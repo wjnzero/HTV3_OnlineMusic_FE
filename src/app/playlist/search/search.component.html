@@ -1,29 +1,29 @@
-<div class="container">
-  <section class="container">
-    <div class="new-most-playlist mt-5">
-      <div class="row p-5">
-        <div class="col-6">
-          <h4 class="font-weight-bold">Bài hát</h4>
-          <table class="table table-striped d-print-table-cell">
-            <thead class="thead-green">
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Playlist</th>
-            </tr>
-            </thead>
-            <body
-              *ngFor="let playlist of playlists ;let i = index">
-            <tr *ngIf="i < 10">
-              <th scope="row">{{i + 1}}</th>
-              <td><a [routerLink]="['/playlists',playlist.id]"><b>{{playlist.name}}</b></a>
-                <br>
-              </td>
-            </tr>
-            </body>
-            <button routerLink="" class="btn btn-success">Trở lại</button>
-          </table>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
+<!--<div class="container">-->
+<!--  <section class="container">-->
+<!--    <div class="new-most-playlist mt-5">-->
+<!--      <div class="row p-5">-->
+<!--        <div class="col-6">-->
+<!--          <h4 class="font-weight-bold">Danh sách Play List</h4>-->
+<!--          <table class="table table-striped d-print-table-cell">-->
+<!--            <thead class="thead-green">-->
+<!--            <tr>-->
+<!--              <th scope="col">#</th>-->
+<!--              <th scope="col">Playlist</th>-->
+<!--            </tr>-->
+<!--            </thead>-->
+<!--            <body-->
+<!--              *ngFor="let playlist of playlists ;let i = index">-->
+<!--            <tr *ngIf="i < 10">-->
+<!--              <th scope="row">{{i + 1}}</th>-->
+<!--              <td><a [routerLink]="['/playlists',playlist.id]"><b>{{playlist.name}}</b></a>-->
+<!--                <br>-->
+<!--              </td>-->
+<!--            </tr>-->
+<!--            </body>-->
+<!--            <button routerLink="" class="btn btn-success">Trở lại</button>-->
+<!--          </table>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </section>-->
+<!--</div>-->
