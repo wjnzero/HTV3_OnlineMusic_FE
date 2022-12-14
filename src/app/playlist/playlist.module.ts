@@ -8,17 +8,19 @@ import {PlaylistRoutingModule} from "./playlist-routing.module";
 import {CreatePlaylistComponent} from "./create-playlist/create-playlist.component";
 import {EditPlaylistComponent} from "./edit-playlist/edit-playlist.component";
 import {PlaylistComponent} from "./playlist/playlist.component";
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
   declarations: [
     PlaylistComponent,
     CreatePlaylistComponent,
-    EditPlaylistComponent
+    EditPlaylistComponent,
+    SearchComponent
   ],
   exports: [
     PlaylistComponent,
-
+    SearchComponent,
     CreatePlaylistComponent
   ],
   imports: [
