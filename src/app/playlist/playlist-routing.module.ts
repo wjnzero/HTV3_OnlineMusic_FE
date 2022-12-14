@@ -1,9 +1,11 @@
+
 import {RouterModule, Routes} from "@angular/router";
 import {CreatePlaylistComponent} from "./create-playlist/create-playlist.component";
 import {EditPlaylistComponent} from "./edit-playlist/edit-playlist.component";
 import {NgModule} from "@angular/core";
 import {PlaylistComponent} from "./playlist/playlist.component";
-import {SearchComponent} from "../song/search/search.component";
+import {SearchPlaylistComponent} from "./search-playlist/search-playlist.component";
+
 
 
 const routes: Routes = [
@@ -20,8 +22,9 @@ const routes: Routes = [
     component: EditPlaylistComponent
   },
   {
-    path: 'search',
-    component:SearchComponent },
+    path: "search-playlist",
+    component: SearchPlaylistComponent
+  }
 
 ];
 
