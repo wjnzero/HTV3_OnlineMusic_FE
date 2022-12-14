@@ -31,6 +31,7 @@ import {MatMenuModule} from "@angular/material/menu";
 import {MatButtonModule} from "@angular/material/button";
 import {AngMusicPlayerModule} from "ang-music-player";
 import {PlaylistModule} from "./playlist/playlist.module";
+import {NgxAudioPlayerModule} from "./lib/ngx-audio-player/ngx-audio-player.module";
 
 
 @NgModule({
@@ -70,7 +71,8 @@ import {PlaylistModule} from "./playlist/playlist.module";
     BrowserAnimationsModule,
     MatMenuModule,
     MatButtonModule,
-    AngMusicPlayerModule
+    AngMusicPlayerModule,
+    NgxAudioPlayerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
