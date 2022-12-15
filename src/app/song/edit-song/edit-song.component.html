@@ -1,4 +1,3 @@
-
 <div class="container">
   <div style="margin-top: 60px">
     <form (ngSubmit)="update()" [formGroup]="songForm">
@@ -9,13 +8,13 @@
               <h1>Cập nhật thông tin bài hát</h1>
             </th>
           </tr>
-<div class="font-group">
-  <input hidden class="form-control" formControlName="id"
-         id="id" placeholder="name">
-</div>
+          <div class="font-group">
+            <input hidden class="form-control" formControlName="id"
+                   id="id" placeholder="name">
+          </div>
           <tr>
             <div class="text-left">
-              <label style="padding-left: 60px;" >Tên bài hát </label>
+              <label style="padding-left: 60px;">Tên bài hát </label>
             </div>
             <div class="font-group">
               <input type="text" class="form-control" formControlName="name"

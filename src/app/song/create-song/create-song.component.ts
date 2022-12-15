@@ -63,7 +63,6 @@ export class CreateSongComponent implements OnInit {
       avatar: this.avatar,
       timeCreate: this.songForm.value.timeCreate,
       lastTimeEdit: this.songForm.value.lastTimeEdit,
-
       dateCreateSong: dateConvert
     };
     const idUser = this.tokenService.getUser().id;

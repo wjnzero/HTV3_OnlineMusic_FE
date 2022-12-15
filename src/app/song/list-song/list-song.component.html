@@ -11,8 +11,8 @@
               <th scope="col">Ảnh</th>
               <th scope="col">Bài hát</th>
               <th scope="col">Mô tả</th>
-<!--              <th scope="col">Album</th>-->
-<!--              <th scope="col">View</th>-->
+              <!--              <th scope="col">Album</th>-->
+              <!--              <th scope="col">View</th>-->
               <th scope="col"></th>
             </tr>
             </thead>
@@ -22,54 +22,26 @@
               <td><img width="40" height="40" src="{{song.avatar}}" class="img thumbnail pull-left mr-2"></td>
               <td routerLink="search{{song.id}}">{{song.name}}</td>
               <td routerLink="search{{song.id}}">{{song.describeSong}}</td>
-<!--              <td routerLink="search{{song.id}}">{{song.album}}</td>-->
-<!--              <td routerLink="search{{song.id}}">{{song.view}}</td>-->
-              <td><button class="btn btn-success" routerLink="list-song/{{song.id}}">  Nghe ⫸ </button></td>
+              <!--              <td routerLink="search{{song.id}}">{{song.album}}</td>-->
+              <!--              <td routerLink="search{{song.id}}">{{song.view}}</td>-->
+              <td>
+                <button class="btn btn-success" routerLink="list-song/{{song.id}}"> Nghe ⫸</button>
+              </td>
               <td>
                 <a routerLink="playlist/{{song.id}}" class="btn btn-primary">Thêm vào danh sách phát</a>
               </td>
-              <td>
-                <a routerLink="edit/{{song.id}}" class="btn btn-warning">Sửa</a>
-              </td>
-              <td>
-                <button (click)="delete(song.id)" class="btn btn-danger" >Xoá</button>
-              </td>
+<!--              <td>-->
+<!--                <a routerLink="edit/{{song.id}}" class="btn btn-warning">Sửa</a>-->
+<!--              </td>-->
+<!--              <td>-->
+<!--                <button (click)="delete(song.id)" class="btn btn-danger">Xoá</button>-->
+<!--              </td>-->
             </tr>
             </tbody>
           </table>
-          <ang-music-player [audioList] = "audioList" backgroundColor="#bb74ce" width="100%"></ang-music-player>
+          <ang-music-player [audioList]="audioList" backgroundColor="#bb74ce" width="100%"></ang-music-player>
         </div>
       </div>
     </div>
   </section>
 </div>
-
-<!--<td>-->
-<!--  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">-->
-<!--    add song to playlist-->
-<!--  </button>-->
-<!--  &lt;!&ndash; The Modal &ndash;&gt;-->
-<!--  <div class="modal" id="myModal">-->
-<!--    <div class="modal-dialog">-->
-<!--      <div class="modal-content">-->
-<!--        &lt;!&ndash; Modal Header &ndash;&gt;-->
-<!--        <div class="modal-header">-->
-<!--          <h4 class="modal-title">Playlist</h4>-->
-<!--          <button type="button" class="close" data-dismiss="modal">&times;</button>-->
-<!--        </div>-->
-<!--        &lt;!&ndash; Modal body &ndash;&gt;-->
-<!--        <div  class="modal-body" >-->
-<!--          <div *ngFor="let playlist of playlist;index as i" (click)="addSongToPlaylist(playlist.id)">-->
-<!--            {{playlist.name}}-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        &lt;!&ndash; Modal footer &ndash;&gt;-->
-<!--        <div class="modal-footer" >-->
-<!--          <button type="button" class="btn btn-danger" data-dismiss="modal" >back</button>-->
-<!--        </div>-->
-
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-
-<!--</td>-->

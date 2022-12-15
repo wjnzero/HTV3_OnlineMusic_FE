@@ -19,6 +19,10 @@ export class SongService {
     return this.httpClient.get<Song[]>(url);
   }
 
+  getSongByUser(id:any): Observable<Song[]> {
+    let url = API_URL + ('/songs/findByUser' + `/${id}`)
+    return this.httpClient.get<Song[]>(url);
+  }
 
   save(song: Song, id: any): Observable<any> {
     let url = API_URL + '/songs/create' + `/${id}`
@@ -36,9 +40,11 @@ export class SongService {
   getSongByAuthor(name: any): Observable<any> {
     return this.httpClient.get(API_URL + `/songs/search/author?author=` + `${name}`)
   }
+
   getSongBySinger(name: any): Observable<any> {
     return this.httpClient.get(API_URL + `/songs/search/singer?singer=` + `${name}`)
   }
+
   getAllSongsNew(): Observable<Song[]> {
     return this.httpClient.get<Song[]>(API_URL + '/songs/newest');
   }
@@ -47,7 +53,6 @@ export class SongService {
     let url = API_URL + '/songs/delete/' + `${id}`
     console.log(url)
     return this.httpClient.delete(url);
-
   }
 
   update(id: number, temp: Song) {
