@@ -11,7 +11,6 @@
               <th scope="col">Ảnh</th>
               <th scope="col">Bài hát</th>
               <th scope="col">Mô tả</th>
-              <th scope="col">Album</th>
 <!--              <th scope="col">View</th>-->
 
               <!--              <th scope="col">Album</th>-->
@@ -30,6 +29,46 @@
               <td routerLink="search{{song.id}}">{{song.album}}</td>
 <!--              <td routerLink="search{{song.id}}">{{song.view}}</td>-->
               <td><button class="btn btn-success" routerLink="list-song/{{song.id}}">  Nghe ⫸ </button></td>
+<!--              <td>-->
+<!--                <a routerLink="playlist/{{song.id}}" class="btn btn-primary">Thêm vào danh sách phát</a>-->
+<!--              </td>-->
+              <td>{{song.id}}</td>
+
+              <td>
+
+                <button type="button" class="btn btn-primary" data-toggle="modal" [attr.data-target]="'#myModal' + song.id">
+                  thêm bài hát vào playlist
+                </button>
+
+
+                <!--      <a routerLink="playlist/{{song.id}}" class="btn btn-warning"></a>-->
+
+              </td>
+              <td><!-- The Modal -->
+                <div class="modal" id="{{'myModal' + song.id}}">
+                  <h1>{{song.id}}</h1>
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h4 class="modal-title">Playlist</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      </div>
+                      <!-- Modal body -->
+
+                      <div  class="modal-body" >
+                        <div *ngFor="let playlist of playlist;index as i" (click)="addSongToPlaylist(playlist.id, song.id)">
+                          {{playlist.name}}
+                        </div>
+                      </div>
+                      <!-- Modal footer -->
+                      <div class="modal-footer" >
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" >back</button>
+                      </div>
+
+                    </div>
+                  </div>
+                </div></td>
 
               <!--              <td routerLink="search{{song.id}}">{{song.album}}</td>-->
               <!--              <td routerLink="search{{song.id}}">{{song.view}}</td>-->

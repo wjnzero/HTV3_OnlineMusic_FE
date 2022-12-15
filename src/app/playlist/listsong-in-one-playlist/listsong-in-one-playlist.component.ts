@@ -19,11 +19,8 @@ declare var Swal: any;
 })
 export class ListsongInOnePlaylistComponent {
   // @ts-ignore
-  id: number;
+  idPlaylist: number;
   songs: Song[] = [];
-  playlist: Playlist[] = [];
-  playlistForm!: FormGroup;
-
 
 
   constructor(private playlistService: PlaylistService,
@@ -32,17 +29,11 @@ export class ListsongInOnePlaylistComponent {
   }
 
   ngOnInit(): void {
-    this.songInPlaylist(this.id);
     this.getAll;
   }
 
-  songInPlaylist(id: any) {
-    const playlist = this.playlistForm.value
-    console.log(playlist)
+  getSongsInPlaylist(id: any) {
 
-     return this.playlistService.songInPlaylist(2).subscribe(res=> {
-      this.playlist = res;
-    })
   }
   // songInPlaylist(id: number) {
   //   return this.playlistService.getById(id).subscribe(playlist => {
@@ -53,7 +44,6 @@ export class ListsongInOnePlaylistComponent {
   // }
   getAll() {
     this.playlistService.getAll().subscribe(playlist => {
-      this.playlist = playlist;
     });
   }
   delete(id: any) {

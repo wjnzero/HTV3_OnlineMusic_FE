@@ -31,7 +31,9 @@ export class PlaylistService {
   getById(id: any): Observable<any> {
     return this.httpClient.get(API_URL + `/playlist/${id}`);
   }
-
+  showSongInPlaylist(id: any): Observable<any> {
+    return this.httpClient.get(API_URL + `/songs/findsonginplaylist/${id}`);
+  }
 
   getByUserId(id: any): Observable<any> {
     return this.httpClient.get(API_URL + `/playlist/findPlaylistByUser/${id}`);
@@ -58,10 +60,9 @@ export class PlaylistService {
   update(id: number, temp: Playlist) {
     return this.httpClient.put<Playlist>(`${API_URL}/playlist/edit/${id}`, temp);
   }
-  addSongToPlaylist(id: number){
-    let url = API_URL + '/playlist/addSongToPlaylist/' + `${id}`
-    console.log(url)
-    return this.httpClient.post;
+  addSongToPlaylist(playlistId: number , songId: number): Observable<any>{
+    let url = API_URL + '/songs/'  + `${songId}` + '/playlist/' + `${playlistId}`
+    return this.httpClient.get(url);
   }
 
 

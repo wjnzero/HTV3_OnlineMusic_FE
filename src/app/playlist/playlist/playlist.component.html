@@ -8,34 +8,55 @@
     <td>Delete</td>
     <td colspan="2"></td>
   </tr>
-  <tr *ngFor="let playlist of playlist;index as i" >
+  <tr *ngFor="let playlist of playlist;index as i">
     <td>{{playlist.name}}</td>
     <td>
-      <div class="dropdown">
-        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-      List
-        </button>
-        <div class="dropdown-menu" >{{playlist.id}}
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#song-in-play-list-modal" (click)="showSongInPlaylist(playlist.id)">
+        bài hát vào playlist
+      </button>
+      <!-- The Modal -->
+      <div class="modal" id="song-in-play-list-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Playlist</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <!-- Modal body -->
+            <div  class="modal-body" >
+              <div *ngFor="let song of songs;index as i">
+                {{song.name}}
+              </div>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer" >
+              <button type="button" class="btn btn-danger" data-dismiss="modal" >back</button>
+            </div>
 
+          </div>
         </div>
       </div>
+
+      <!--      <a routerLink="playlist/{{song.id}}" class="btn btn-warning"></a>-->
+
     </td>
-    <!--    <td>-->
-    <!--      <div class="dropdown" >-->
-    <!--        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" >-->
-    <!--          Playlist-->
-    <!--        </button>-->
-    <!--        <div class="dropdown-menu"  *ngFor="let playlist of playlist;index as i" >-->
-    <!--          <a class="dropdown-item" href="#"  > {{playlist.name}}</a>-->
-    <!--        </div>-->
-    <!--      </div>-->
-    <!--    </td>-->
+<!--        <td>-->
+<!--          <div class="dropdown" >-->
+<!--            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" >-->
+<!--              Playlist-->
+<!--            </button>-->
+<!--            <div class="dropdown-menu"  *ngFor="let playlist of playlist;index as i" >-->
+<!--              <a class="dropdown-item" href="#"  > {{playlist.name}}</a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </td>-->
 
     <td>
       <a routerLink="edit1/{{playlist.id}}" class="btn btn-warning">Edit</a>
     </td>
     <td>
-      <button (click)="delete(playlist.id)" class="btn btn-danger" >Delete</button>
+      <button (click)="delete(playlist.id)" class="btn btn-danger">Delete</button>
     </td>
   </tr>
 </table>
