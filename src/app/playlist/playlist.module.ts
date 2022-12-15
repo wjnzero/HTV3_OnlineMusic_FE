@@ -1,6 +1,4 @@
 import {NgModule} from "@angular/core";
-
-
 import {CommonModule} from "@angular/common";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AngMusicPlayerModule} from "ang-music-player";
@@ -9,6 +7,9 @@ import {CreatePlaylistComponent} from "./create-playlist/create-playlist.compone
 import {EditPlaylistComponent} from "./edit-playlist/edit-playlist.component";
 import {PlaylistComponent} from "./playlist/playlist.component";
 import { ListsongInOnePlaylistComponent } from './listsong-in-one-playlist/listsong-in-one-playlist.component';
+import {SearchPlaylistComponent} from "./search-playlist/search-playlist.component";
+
+
 
 
 @NgModule({
@@ -16,14 +17,16 @@ import { ListsongInOnePlaylistComponent } from './listsong-in-one-playlist/lists
     PlaylistComponent,
     CreatePlaylistComponent,
     EditPlaylistComponent,
-    ListsongInOnePlaylistComponent
+    ListsongInOnePlaylistComponent,
+    SearchPlaylistComponent,
   ],
   exports: [
     PlaylistComponent,
-
     CreatePlaylistComponent,
-    ListsongInOnePlaylistComponent
+    ListsongInOnePlaylistComponent,
+    SearchPlaylistComponent,
   ],
+
   imports: [
     CommonModule,
     PlaylistRoutingModule,
