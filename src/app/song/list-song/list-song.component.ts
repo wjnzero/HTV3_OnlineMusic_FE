@@ -6,6 +6,7 @@ import {SongTemp} from "../../model/songTemp";
 import {Playlist} from "../../model/playlist";
 import {PlaylistService} from "../../service/playlist/playlist.service";
 import {FormGroup} from "@angular/forms";
+import {allowMangle} from "@angular-devkit/build-angular/src/utils/environment-options";
 
 
 @Component({
@@ -27,6 +28,7 @@ export class ListSongComponent implements OnInit {
   playlist: Playlist[] = [];
   songType: SongType[] = [];
   songForm!: FormGroup;
+  userid?: any;
 
   constructor(private songService: SongService,
   private  playlistService : PlaylistService) {
@@ -42,21 +44,24 @@ export class ListSongComponent implements OnInit {
         this.audioList.push(temp);
       }
     });
+    this.userid = window.localStorage.getItem("idUser");
 
     this.playlistService.getAll().subscribe(playlist => {
       this.playlist = playlist;
-      // @ts-ignore
-      // for (let i = 0; i < playlist.length; i++) {
-      //   let temp : SongTemp={title: playlist[i].name}
-      //   // @ts-ignore
-      //   this.playlist.push(temp);
-      // }
+
     });
-
-
+    this.playlistService.getByUserId(this.userid).subscribe(playlist => {
+      this.playlist = playlist;
+    });
+}
+  getAll() {
   }
 
-  getAll() {
+  getByUserId() {
+    this.playlistService.getByUserId(this.userid).subscribe(playlist => {
+      console.log("pll uid: "+ playlist[0].id)
+      this.playlist = playlist;
+    });
   }
 
   delete(id: any) {
@@ -70,11 +75,11 @@ export class ListSongComponent implements OnInit {
       });
     }
   }
-  addSongToPlaylist(id: any) {
+  addSongToPlaylist(playlistId: any, songId: any) {
     if (confirm('Bạn có muốn thêm vào playlist?')) {
-      this.playlistService.addSongToPlaylist(id);
-      alert("Ok");
-      this.getAll()
+      this.playlistService.addSongToPlaylist(playlistId, songId).subscribe(()=>{
+        alert("ok")
+      });
     }
   }
 }

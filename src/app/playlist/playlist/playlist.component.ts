@@ -23,7 +23,7 @@ export class PlaylistComponent implements OnInit {
 
   // audioList: PlaylistTemp[] = [];
   playlist: any;
-
+  songs: any;
 
   constructor(private playlistService: PlaylistService) {
   }
@@ -43,6 +43,13 @@ export class PlaylistComponent implements OnInit {
       //   // @ts-ignore
       //   this.playlist.push(temp);
       // }
+    });
+  }
+
+  showSongInPlaylist(playListId:any){
+    this.playlistService.showSongInPlaylist(playListId).subscribe(songs => {
+      console.log("pll uid: ", songs)
+      this.songs = songs;
     });
   }
 
