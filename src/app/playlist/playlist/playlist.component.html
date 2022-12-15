@@ -3,12 +3,34 @@
 <table border="1">
   <tr>
     <td>Name</td>
+    <td>List</td>
     <td>Edit</td>
     <td>Delete</td>
     <td colspan="2"></td>
   </tr>
   <tr *ngFor="let playlist of playlist;index as i" >
     <td>{{playlist.name}}</td>
+    <td>
+      <div class="dropdown">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+      List
+        </button>
+        <div class="dropdown-menu" >{{playlist.id}}
+
+        </div>
+      </div>
+    </td>
+    <!--    <td>-->
+    <!--      <div class="dropdown" >-->
+    <!--        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" >-->
+    <!--          Playlist-->
+    <!--        </button>-->
+    <!--        <div class="dropdown-menu"  *ngFor="let playlist of playlist;index as i" >-->
+    <!--          <a class="dropdown-item" href="#"  > {{playlist.name}}</a>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </td>-->
+
     <td>
       <a routerLink="edit1/{{playlist.id}}" class="btn btn-warning">Edit</a>
     </td>
@@ -17,3 +39,4 @@
     </td>
   </tr>
 </table>
+

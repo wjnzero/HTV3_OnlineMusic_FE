@@ -6,7 +6,10 @@ import {PlaylistRoutingModule} from "./playlist-routing.module";
 import {CreatePlaylistComponent} from "./create-playlist/create-playlist.component";
 import {EditPlaylistComponent} from "./edit-playlist/edit-playlist.component";
 import {PlaylistComponent} from "./playlist/playlist.component";
-import { SearchPlaylistComponent } from './search-playlist/search-playlist.component';
+import { ListsongInOnePlaylistComponent } from './listsong-in-one-playlist/listsong-in-one-playlist.component';
+import {SearchPlaylistComponent} from "./search-playlist/search-playlist.component";
+
+
 
 
 @NgModule({
@@ -14,13 +17,16 @@ import { SearchPlaylistComponent } from './search-playlist/search-playlist.compo
     PlaylistComponent,
     CreatePlaylistComponent,
     EditPlaylistComponent,
+    ListsongInOnePlaylistComponent,
     SearchPlaylistComponent,
   ],
   exports: [
     PlaylistComponent,
     CreatePlaylistComponent,
-    SearchPlaylistComponent
+    ListsongInOnePlaylistComponent,
+    SearchPlaylistComponent,
   ],
+
   imports: [
     CommonModule,
     PlaylistRoutingModule,

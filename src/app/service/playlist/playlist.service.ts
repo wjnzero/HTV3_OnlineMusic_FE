@@ -3,6 +3,7 @@ import {HttpClient, HttpParams} from '@angular/common/http';
 import {environment} from "../../../enronments/environment";
 import {Observable} from "rxjs";
 import {Playlist} from "../../model/playlist";
+import {Song} from "../../model/song";
 
 
 
@@ -40,9 +41,17 @@ export class PlaylistService {
     return this.httpClient.delete(url);
 
   }
+  songInPlaylist(id: number){
+    return this.httpClient.get<Playlist[]>(`${API_URL}/songs/findsonginplaylist/${id}`);
+  }
 
   update(id: number, temp: Playlist) {
     return this.httpClient.put<Playlist>(`${API_URL}/playlist/edit/${id}`, temp);
+  }
+  addSongToPlaylist(id: number){
+    let url = API_URL + '/playlist/addSongToPlaylist/' + `${id}`
+    console.log(url)
+    return this.httpClient.post;
   }
 
 

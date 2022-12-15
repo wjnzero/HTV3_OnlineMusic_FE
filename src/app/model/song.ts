@@ -14,6 +14,7 @@ export interface Song {
   playListSet?:Playlist;
   album?: any;
   view?: any;
+  dateCreateSong?: string;
 }
 
 

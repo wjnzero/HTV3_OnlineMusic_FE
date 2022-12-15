@@ -10,6 +10,7 @@ import {AngularFireStorage} from "@angular/fire/compat/storage";
 import {Observable} from "rxjs";
 import {Song} from "../../model/song";
 import {Router} from "@angular/router";
+import * as moment from "moment/moment";
 
 declare var Swal: any;
 
@@ -48,12 +49,15 @@ export class CreateSongComponent implements OnInit {
   })
 
   saveSong() {
+    const now = new Date();
+    const dateConvert = moment(now).format('yyyy-MM-DD');
 
     const song = {
       name: this.songForm.value.name,
       describeSong: this.songForm.value.describeSong,
       fileMp3: this.fileMp3,
       avatar: this.avatar,
+      dateCreateSong: dateConvert
     };
     // let song = this.songForm.value.;
     const idUser = this.tokenService.getUser().id;
