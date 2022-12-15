@@ -1,4 +1,4 @@
-<div class="container">
+<!--<div class="container">-->
   <div class="new-most-song mt-5">
     <div class="row " style="border: rgba(193,79,250,0.09) solid 2px">
       <div class="col-8">
@@ -12,6 +12,7 @@
             <th scope="col">Mô tả</th>
             <th scope="col">Album</th>
             <th scope="col">Tác giả</th>
+            <th scope="col">Ca sĩ</th>
 <!--            <th scope="col">Lượt xem</th>-->
             <th scope="col"></th>
           </tr>
@@ -24,6 +25,7 @@
             <td routerLink="search{{song.id}}">{{song.describeSong}}</td>
             <td routerLink="search{{song.id}}">{{song.album}}</td>
             <td routerLink="search{{song.id}}">{{song.author!.name}}</td>
+            <td routerLink="search{{song.id}}">{{song.singer!.name}}</td>
 <!--            <td routerLink="search{{song.id}}">{{song.view}}</td>-->
             <td><button class="btn btn-success" routerLink="list-song/{{song.id}}">  Nghe ⫸ </button></td>
           </tr>
@@ -51,6 +53,6 @@
       </div>
     </div>
   </div>
-</div>
+<!--</div>-->
 
 
