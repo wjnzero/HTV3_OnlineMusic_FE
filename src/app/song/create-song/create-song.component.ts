@@ -47,7 +47,9 @@ export class CreateSongComponent implements OnInit {
     name: new FormControl(),
     describeSong: new FormControl(),
     fileMp3: new FormControl(),
-    avatar: new FormControl()
+    avatar: new FormControl(),
+    timeCreate:new FormControl(),
+    lastTimeEdit:new FormControl()
   })
 
   saveSong() {
@@ -59,6 +61,9 @@ export class CreateSongComponent implements OnInit {
       describeSong: this.songForm.value.describeSong,
       fileMp3: this.fileMp3,
       avatar: this.avatar,
+      timeCreate: this.songForm.value.timeCreate,
+      lastTimeEdit: this.songForm.value.lastTimeEdit,
+
       dateCreateSong: dateConvert
     };
     const idUser = this.tokenService.getUser().id;

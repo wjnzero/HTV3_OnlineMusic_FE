@@ -34,10 +34,10 @@ export class SongService {
   }
 
   getSongByAuthor(name: any): Observable<any> {
-    return this.httpClient.get(API_URL + `/songs/search/author?name=` + `${name}`)
+    return this.httpClient.get(API_URL + `/songs/search/author?author=` + `${name}`)
   }
   getSongBySinger(name: any): Observable<any> {
-    return this.httpClient.get(API_URL + `/songs/search/singer?name=` + `${name}`)
+    return this.httpClient.get(API_URL + `/songs/search/singer?singer=` + `${name}`)
   }
   getAllSongsNew(): Observable<Song[]> {
     return this.httpClient.get<Song[]>(API_URL + '/songs/newest');

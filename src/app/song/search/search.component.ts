@@ -3,6 +3,8 @@ import {Song} from "../../model/song";
 import {ActivatedRoute} from "@angular/router";
 import {SongService} from "../../service/song/song.service";
 import {SongType} from "../../model/songType";
+import {PlaylistService} from "../../service/playlist/playlist.service";
+import {Playlist} from "../../model/playlist";
 
 
 @Component({
@@ -13,13 +15,17 @@ import {SongType} from "../../model/songType";
 export class SearchComponent implements OnInit {
   songs: Song[] = [];
   songType: SongType[] = [];
+  playlists: Playlist[] = [];
   name?: string;
 
-  constructor(private songService: SongService, private activateRoute: ActivatedRoute) {
+  constructor(private songService: SongService,
+              private playlistService: PlaylistService,
+              private activateRoute: ActivatedRoute) {
     this.activateRoute.queryParams.subscribe((params => {
       // @ts-ignore
       this.name = params.name;
-      this.getByName(this.name);
+      this.getSongByName(this.name);
+      this.getPlaylistByName(this.name)
       this.getSongByAuthor(this.name);
       this.getSongBySinger(this.name);
       console.log(this.songs)
@@ -30,10 +36,15 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
   }
 
-  getByName(name: string | undefined) {
+  getSongByName(name: string | undefined) {
     this.songService.getByName(name).subscribe(songs => {
       this.songs = songs;
     });
+  }
+  getPlaylistByName(name:string | undefined){
+    this.playlistService.getPlaylistByName(name).subscribe(playlists =>{
+      this.playlists = playlists;
+    })
   }
 
   getSongByAuthor(name: string | undefined) {
@@ -45,6 +56,7 @@ export class SearchComponent implements OnInit {
   getSongBySinger(name: string | undefined) {
     this.songService.getSongBySinger(name).subscribe(songs => {
       this.songs = songs;
+      console.log("singer: ", this.songs)
     })
   }
 }

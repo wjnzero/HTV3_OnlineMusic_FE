@@ -52,12 +52,11 @@ export class ListSongComponent implements OnInit {
       //   this.playlist.push(temp);
       // }
     });
-    console.log("play list:", this.playlist)
+
 
   }
 
   getAll() {
-
   }
 
   delete(id: any) {
