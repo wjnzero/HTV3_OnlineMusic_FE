@@ -1,7 +1,6 @@
 import {Role} from "./role";
 import {Playlist} from "./playlist";
 
-
 export interface User {
 
   id?: number;
