@@ -4,7 +4,6 @@ import {CreatePlaylistComponent} from "./create-playlist/create-playlist.compone
 import {EditPlaylistComponent} from "./edit-playlist/edit-playlist.component";
 import {NgModule} from "@angular/core";
 import {PlaylistComponent} from "./playlist/playlist.component";
-import {SearchPlaylistComponent} from "./search-playlist/search-playlist.component";
 
 
 
@@ -20,10 +19,6 @@ const routes: Routes = [
   {
     path: "edit1/:id",
     component: EditPlaylistComponent
-  },
-  {
-    path: "search-playlist",
-    component: SearchPlaylistComponent
   }
 
 ];

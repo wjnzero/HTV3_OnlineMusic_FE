@@ -30,8 +30,8 @@ export class PlaylistService {
     return this.httpClient.get(API_URL + `/playlist/${id}`);
   }
 
-  getByName(name: any): Observable<any> {
-    return this.httpClient.get(API_URL + `/search?name=` + `${name}`)
+  getPlaylistByName(name: any): Observable<any> {
+    return this.httpClient.get(API_URL + `/playlist/search?name=` + `${name}`)
   }
 
   delete(id: number) {
