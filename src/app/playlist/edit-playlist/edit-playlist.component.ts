@@ -41,7 +41,7 @@ export class EditPlaylistComponent {
   update() {
 
     const editPlaylist = this.playlistForm.value
-    console.log(editPlaylist)
+    alert(editPlaylist.name)
     this.playlistService.update(editPlaylist.id, editPlaylist).subscribe(() => {
       Swal.fire({
         icon: 'success',

@@ -7,6 +7,8 @@ export interface Song {
   describeSong?: string;
   fileMp3?: string;
   avatar?: string;
+  timeCreate: string;
+  lastTimeEdit: string;
   author?: string;
   singer?: string;
   user?: any;

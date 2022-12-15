@@ -3,7 +3,7 @@ import {HttpClient, HttpParams} from '@angular/common/http';
 import {environment} from "../../../enronments/environment";
 import {Observable} from "rxjs";
 import {Playlist} from "../../model/playlist";
-import {Song} from "../../model/song";
+
 
 
 
@@ -31,6 +31,10 @@ export class PlaylistService {
     return this.httpClient.get(API_URL + `/playlist/${id}`);
   }
 
+  getByUserId(id: any): Observable<any> {
+    return this.httpClient.get(API_URL + `/playlist/findPlaylistByUser/${id}`);
+  }
+
   getByName(name: any): Observable<any> {
     return this.httpClient.get(API_URL + `/search?name=` + `${name}`)
   }
@@ -44,7 +48,6 @@ export class PlaylistService {
   songInPlaylist(id: number){
     return this.httpClient.get<Playlist[]>(`${API_URL}/songs/findsonginplaylist/${id}`);
   }
-
   update(id: number, temp: Playlist) {
     return this.httpClient.put<Playlist>(`${API_URL}/playlist/edit/${id}`, temp);
   }

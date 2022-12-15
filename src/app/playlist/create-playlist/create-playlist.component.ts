@@ -27,12 +27,16 @@ export class CreatePlaylistComponent {
   }
   playlistForm: FormGroup = new FormGroup({
     name: new FormControl(),
+    timeCreate:new FormControl(),
+    lastTimeEdit:new FormControl()
   })
 
   savePlaylist() {
 
     const playlist = {
       name: this.playlistForm.value.name,
+      timeCreate: this.playlistForm.value.timeCreate,
+      lastTimeEdit: this.playlistForm.value.lastTimeEdit,
 
     };
     const idUser = this.tokenService.getUser().id;
