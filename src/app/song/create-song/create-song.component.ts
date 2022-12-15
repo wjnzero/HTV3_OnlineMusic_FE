@@ -29,6 +29,7 @@ export class CreateSongComponent implements OnInit {
   downloadMp3URL ?: Observable<string>;
   fileMp3?: string;
   avatar?: string;
+
   // song: Song = {};
   constructor(private songService: SongService,
               private userService: UserService,
@@ -39,8 +40,9 @@ export class CreateSongComponent implements OnInit {
   ) {
   }
 
-  ngOnInit():void {
+  ngOnInit(): void {
   }
+
   songForm: FormGroup = new FormGroup({
     name: new FormControl(),
     describeSong: new FormControl(),
