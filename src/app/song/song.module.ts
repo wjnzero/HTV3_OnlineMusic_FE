@@ -7,8 +7,9 @@ import {SearchComponent} from "./search/search.component";
 import {CreateSongComponent} from "./create-song/create-song.component";
 import {AngMusicPlayerModule} from "ang-music-player";
 import {EditSongComponent} from "./edit-song/edit-song.component";
-import { ListNewSongComponent } from './list-new-song/list-new-song.component';
-
+import {ListNewSongComponent} from './list-new-song/list-new-song.component';
+import {PlaySongComponent} from '../home/play-song/play-song.component';
+import {NgxPaginationModule} from "ngx-pagination";
 
 @NgModule({
   declarations: [
@@ -16,8 +17,7 @@ import { ListNewSongComponent } from './list-new-song/list-new-song.component';
     SearchComponent,
     CreateSongComponent,
     EditSongComponent,
-    ListNewSongComponent
-  ],
+    ListNewSongComponent],
   exports: [
     ListSongComponent,
     SearchComponent,
@@ -29,7 +29,8 @@ import { ListNewSongComponent } from './list-new-song/list-new-song.component';
     SongRoutingModule,
     ReactiveFormsModule,
     AngMusicPlayerModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ]
 })
 export class SongModule {
