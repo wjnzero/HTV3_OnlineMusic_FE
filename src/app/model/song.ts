@@ -1,5 +1,6 @@
 import {SongType} from "./songType";
 import {Playlist} from "./playlist";
+import {Author} from "./author";
 
 export interface Song {
   id?: number;
@@ -7,7 +8,7 @@ export interface Song {
   describeSong?: string;
   fileMp3?: string;
   avatar?: string;
-  author?: string;
+  author?: Author;
   singer?: string;
   user?: any;
   songTypeSet?: SongType;
