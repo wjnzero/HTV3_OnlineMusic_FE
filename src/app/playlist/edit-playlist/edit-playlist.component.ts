@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
-import {Observable} from "rxjs";
+
 import {PlaylistService} from "../../service/playlist/playlist.service";
 import {AngularFireStorage} from "@angular/fire/compat/storage";
 import {ActivatedRoute, ParamMap} from "@angular/router";
@@ -41,7 +41,7 @@ export class EditPlaylistComponent {
   update() {
 
     const editPlaylist = this.playlistForm.value
-    console.log(editPlaylist)
+    alert(editPlaylist.name)
     this.playlistService.update(editPlaylist.id, editPlaylist).subscribe(() => {
       Swal.fire({
         icon: 'success',

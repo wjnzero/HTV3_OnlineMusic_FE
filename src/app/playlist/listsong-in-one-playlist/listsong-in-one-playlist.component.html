@@ -6,10 +6,10 @@
     <td>Delete</td>
     <td colspan="2"></td>
   </tr>
-  <tr *ngFor="let playlist of playlist;index as i" >
-    <td>{{playlist.name}}</td>
+  <tr *ngFor="let song of songs;index as i" >
+    <td>{{song.name}}</td>
     <td>
-      <button (click)="delete(playlist.id)" class="btn btn-danger" >Delete</button>
+      <button (click)="delete(song.id)" class="btn btn-danger" >Delete</button>
     </td>
   </tr>
 </table>
