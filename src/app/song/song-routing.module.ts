@@ -11,7 +11,7 @@ const routes: Routes = [
     component:ListSongComponent
   },
   {
-    path: 'create/:id',
+    path: 'create',
     component: CreateSongComponent
   },
   {
