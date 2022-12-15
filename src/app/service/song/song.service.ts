@@ -40,7 +40,7 @@ export class SongService {
     return this.httpClient.get(API_URL + `/songs/search/singer?name=` + `${name}`)
   }
   getAllSongsNew(): Observable<Song[]> {
-    return this.httpClient.get<Song[]>(API_URL + '/home/song/newest');
+    return this.httpClient.get<Song[]>(API_URL + '/songs/newest');
   }
 
   delete(id: number) {

@@ -21,7 +21,8 @@ import { ListNewSongComponent } from './list-new-song/list-new-song.component';
   exports: [
     ListSongComponent,
     SearchComponent,
-    CreateSongComponent
+    CreateSongComponent,
+    ListNewSongComponent
   ],
   imports: [
     CommonModule,

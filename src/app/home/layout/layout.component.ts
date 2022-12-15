@@ -3,6 +3,8 @@ import {Track} from "../../lib/ngx-audio-player/model/track";
 import {SongTemp} from "../../model/songTemp";
 import {SongService} from "../../service/song/song.service";
 
+declare var $: any;
+
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',
