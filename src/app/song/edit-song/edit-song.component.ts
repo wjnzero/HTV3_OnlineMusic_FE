@@ -1,4 +1,3 @@
-
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, ParamMap} from "@angular/router";
 import {FormControl, FormGroup} from "@angular/forms";
@@ -6,6 +5,8 @@ import {SongService} from "../../service/song/song.service";
 import {finalize} from "rxjs/operators";
 import {Observable} from "rxjs";
 import {AngularFireStorage} from "@angular/fire/compat/storage";
+import * as moment from "moment";
+
 declare var Swal: any;
 
 @Component({
@@ -17,12 +18,11 @@ export class EditSongComponent implements OnInit {
 
   // @ts-ignore
   id: number;
-
-  // avatar?: string;
-  // fileMp3?:string;
   songForm!: FormGroup;
   downloadImgURL ?: Observable<string>;
   downloadMp3URL ?: Observable<string>;
+  fileMp3: any;
+  avatar: any;
 
   constructor(private songService: SongService, private storage: AngularFireStorage, private activateRoute: ActivatedRoute) {
     this.activateRoute.paramMap.subscribe((paraMap: ParamMap) => {
@@ -42,11 +42,11 @@ export class EditSongComponent implements OnInit {
         name: new FormControl(song.name),
         describeSong: new FormControl(song.describeSong),
         avatar: new FormControl(song.avatar),
-         fileMp3: new FormControl(song.fileMp3),
-        // songTypeSet: new FormControl(song.songTypeSet)
+        fileMp3: new FormControl(song.fileMp3),
       })
     })
   }
+
   sendToFirebaseImg() {
     var n = Date.now();
     // @ts-ignore
@@ -59,14 +59,14 @@ export class EditSongComponent implements OnInit {
         this.downloadImgURL = fileRef.getDownloadURL();
         this.downloadImgURL.subscribe(url => {
           if (url) {
-            this.songForm.patchValue({avatar:url});
+            this.songForm.patchValue({avatar: url});
           }
         })
         Swal.fire({
           icon: 'success',
-          title: 'Upload thành công',
+          title: 'Tải lên thành công',
           showConfirmButton: false,
-          timer: 3000
+          timer: 1000
         });
       })
     )
@@ -89,12 +89,12 @@ export class EditSongComponent implements OnInit {
         this.downloadMp3URL = fileRef.getDownloadURL();
         this.downloadMp3URL.subscribe(url => {
           if (url) {
-            this.songForm.patchValue({fileMp3:url});
+            this.songForm.patchValue({fileMp3: url});
           }
         })
         Swal.fire({
           icon: 'success',
-          title: 'Upload thành công',
+          title: 'Tải lên thành công',
           showConfirmButton: false,
           timer: 3000
         });
@@ -108,10 +108,17 @@ export class EditSongComponent implements OnInit {
   }
 
   update() {
-
-    const editSong = this.songForm.value
-    console.log(editSong)
-    this.songService.update(editSong.id, editSong).subscribe(() => {
+    const now = new Date();
+    const date = moment(now).format('yyyy-MM-DD');
+    const song = {
+      id: this.songForm.value.id,
+      name: this.songForm.value.name,
+      describeSong: this.songForm.value.describeSong,
+      fileMp3: this.songForm.value.fileMp3,
+      avatar: this.songForm.value.avatar,
+      lastTimeEdit: date
+    };
+    this.songService.update(song.id, song).subscribe(() => {
       Swal.fire({
         icon: 'success',
         title: 'Cập nhât thành công',

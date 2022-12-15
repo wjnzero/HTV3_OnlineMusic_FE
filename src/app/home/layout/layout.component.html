@@ -10,6 +10,7 @@
       </div>
     </header>
     <app-poster></app-poster>
+
     <div>
       <app-list-song></app-list-song>
       <app-playlist></app-playlist>
@@ -17,6 +18,7 @@
       <app-create-playlist></app-create-playlist>
       <app-listsong-in-one-playlist></app-listsong-in-one-playlist>
     </div>
+
     <div>
       <app-list-new-song></app-list-new-song>
       <!--      <app-list-new-playlist></app-list-new-playlist>-->
@@ -31,10 +33,10 @@
   </div>
 </div>
 
-  <footer class="fixed-bottom" style="height: 100px;width: 100%" >
-    <ngx-audio-player [playlist]="msaapPlaylist" [displayTitle]="msaapDisplayTitle" [autoPlay]="false"
-                      muted="muted" [displayPlaylist]="msaapDisplayPlayList" [pageSizeOptions]="msaapPageSizeOptions" (trackEnded)="onEnded($event)"
-                      [displayVolumeControls]="msaapDisplayVolumeControls" [displayRepeatControls]="msaapDisplayRepeatControls"
-                      [disablePositionSlider]="msaapDisablePositionSlider" [displayArtist]="msaapDisplayArtist"
-                      [displayDuration]="msaapDisplayDuration" [expanded]="true"></ngx-audio-player>
-  </footer>
+<!--  <footer class="fixed-bottom" style="height: 100px;width: 100%" >-->
+<!--    <ngx-audio-player [playlist]="msaapPlaylist" [displayTitle]="msaapDisplayTitle" [autoPlay]="false"-->
+<!--                      muted="muted" [displayPlaylist]="msaapDisplayPlayList" [pageSizeOptions]="msaapPageSizeOptions" (trackEnded)="onEnded($event)"-->
+<!--                      [displayVolumeControls]="msaapDisplayVolumeControls" [displayRepeatControls]="msaapDisplayRepeatControls"-->
+<!--                      [disablePositionSlider]="msaapDisablePositionSlider" [displayArtist]="msaapDisplayArtist"-->
+<!--                      [displayDuration]="msaapDisplayDuration" [expanded]="true"></ngx-audio-player>-->
+<!--  </footer>-->

@@ -29,6 +29,7 @@ export class CreateSongComponent implements OnInit {
   downloadMp3URL ?: Observable<string>;
   fileMp3?: string;
   avatar?: string;
+
   // song: Song = {};
   constructor(private songService: SongService,
               private userService: UserService,
@@ -39,13 +40,16 @@ export class CreateSongComponent implements OnInit {
   ) {
   }
 
-  ngOnInit():void {
+  ngOnInit(): void {
   }
+
   songForm: FormGroup = new FormGroup({
     name: new FormControl(),
     describeSong: new FormControl(),
     fileMp3: new FormControl(),
-    avatar: new FormControl()
+    avatar: new FormControl(),
+    timeCreate:new FormControl(),
+    lastTimeEdit:new FormControl()
   })
 
   saveSong() {
@@ -57,20 +61,20 @@ export class CreateSongComponent implements OnInit {
       describeSong: this.songForm.value.describeSong,
       fileMp3: this.fileMp3,
       avatar: this.avatar,
+      timeCreate: this.songForm.value.timeCreate,
+      lastTimeEdit: this.songForm.value.lastTimeEdit,
       dateCreateSong: dateConvert
     };
-    // let song = this.songForm.value.;
     const idUser = this.tokenService.getUser().id;
     this.songService.save(song, idUser).subscribe(() => {
     });
-    // Swal.fire({
-    //   icon: 'success',
-    //   title: 'Thêm thành công',
-    //   showConfirmButton: false,
-    //   timer: 1000
-    // });
+    Swal.fire({
+      icon: 'success',
+      title: 'Thêm thành công',
+      showConfirmButton: false,
+      timer: 1000
+    });
     this.songForm.reset();
-    window.location.reload()
   }
 
   sendToFirebaseImg() {
@@ -127,7 +131,7 @@ export class CreateSongComponent implements OnInit {
           icon: 'success',
           title: 'Upload thành công',
           showConfirmButton: false,
-          timer: 4000
+          timer: 3000
         });
       })
     )

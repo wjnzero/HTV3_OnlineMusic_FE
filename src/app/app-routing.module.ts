@@ -6,13 +6,12 @@ import {RegisterComponent} from "./core/register/register.component";
 import {UserProfileComponent} from "./user/user-profile/user-profile.component";
 import {AuthGuardGuard} from "./guard/auth-guard.guard";
 import {UserChangePasswordComponent} from "./user/user-change-password/user-change-password.component";
+import {PlaySongComponent} from "./home/play-song/play-song.component";
+import {UserSongComponent} from "./user/song/user-song/user-song.component";
+import {EditSongComponent} from "./song/edit-song/edit-song.component";
 
 
 const routes: Routes = [
-  {
-    path: 'account',
-    loadChildren: () => import('./account/account.module').then(module => module.AccountModule)
-  },
   {
     path: 'song',
     loadChildren: () => import('./song/song.module').then(module => module.SongModule)
@@ -32,9 +31,23 @@ const routes: Routes = [
     path: 'register', component: RegisterComponent
   },
   {
+    path: 'song/:id', component: PlaySongComponent
+  },
+  {
     path: 'userProfile',
     component: UserProfileComponent,
     canActivate: [AuthGuardGuard]
+  },
+  {
+    path: 'userListSong',
+    component: UserSongComponent,
+    canActivate: [AuthGuardGuard]
+  },
+  {
+    path: "userListSong/edit/:id",
+    component: EditSongComponent,
+    canActivate: [AuthGuardGuard]
+
   },
   {
     path: 'changePassword',

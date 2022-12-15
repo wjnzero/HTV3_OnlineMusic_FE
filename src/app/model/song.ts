@@ -17,6 +17,7 @@ export interface Song {
   album?: any;
   view?: any;
   dateCreateSong?: string;
+  lastTimeEdit?: string;
 }
 
 

@@ -37,10 +37,10 @@ export class ListsongInOnePlaylistComponent {
   }
 
   songInPlaylist(id: any) {
-    // const playlist = this.playlistForm.value
-    // console.log(playlist)
+    const playlist = this.playlistForm.value
+    console.log(playlist)
 
-     return this.playlistService.songInPlaylist(3).subscribe(res=> {
+     return this.playlistService.songInPlaylist(2).subscribe(res=> {
       this.playlist = res;
     })
   }
