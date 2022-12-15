@@ -1,8 +1,9 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpParams} from '@angular/common/http';
+
 import {environment} from "../../../enronments/environment";
 import {Observable} from "rxjs";
 import {Playlist} from "../../model/playlist";
+import {HttpClient} from "@angular/common/http";
 
 
 
@@ -31,12 +32,18 @@ export class PlaylistService {
     return this.httpClient.get(API_URL + `/playlist/${id}`);
   }
 
+
   getByUserId(id: any): Observable<any> {
     return this.httpClient.get(API_URL + `/playlist/findPlaylistByUser/${id}`);
   }
 
   getByName(name: any): Observable<any> {
     return this.httpClient.get(API_URL + `/search?name=` + `${name}`)
+
+  }
+  getPlaylistByName(name: any): Observable<any> {
+    return this.httpClient.get(API_URL + `/playlist/search?name=` + `${name}`)
+
   }
 
   delete(id: number) {
