@@ -7,7 +7,7 @@ import {CreatePlaylistComponent} from "./create-playlist/create-playlist.compone
 import {EditPlaylistComponent} from "./edit-playlist/edit-playlist.component";
 import {PlaylistComponent} from "./playlist/playlist.component";
 import { ListsongInOnePlaylistComponent } from './listsong-in-one-playlist/listsong-in-one-playlist.component';
-import {SearchPlaylistComponent} from "./search-playlist/search-playlist.component";
+
 
 
 
@@ -17,14 +17,12 @@ import {SearchPlaylistComponent} from "./search-playlist/search-playlist.compone
     PlaylistComponent,
     CreatePlaylistComponent,
     EditPlaylistComponent,
-    ListsongInOnePlaylistComponent,
-    SearchPlaylistComponent,
+    ListsongInOnePlaylistComponent
   ],
   exports: [
     PlaylistComponent,
     CreatePlaylistComponent,
-    ListsongInOnePlaylistComponent,
-    SearchPlaylistComponent,
+    ListsongInOnePlaylistComponent
   ],
 
   imports: [
