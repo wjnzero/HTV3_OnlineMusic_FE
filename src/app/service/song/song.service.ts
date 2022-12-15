@@ -39,6 +39,9 @@ export class SongService {
   getSongBySinger(name: any): Observable<any> {
     return this.httpClient.get(API_URL + `/songs/search/singer?singer=` + `${name}`)
   }
+  getAllSongsNew(): Observable<Song[]> {
+    return this.httpClient.get<Song[]>(API_URL + '/songs/newest');
+  }
 
   delete(id: number) {
     let url = API_URL + '/songs/delete/' + `${id}`
