@@ -7,6 +7,7 @@ import {SearchComponent} from "./search/search.component";
 import {CreateSongComponent} from "./create-song/create-song.component";
 import {AngMusicPlayerModule} from "ang-music-player";
 import {EditSongComponent} from "./edit-song/edit-song.component";
+import { ListNewSongComponent } from './list-new-song/list-new-song.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import {EditSongComponent} from "./edit-song/edit-song.component";
     ListSongComponent,
     SearchComponent,
     CreateSongComponent,
-    EditSongComponent
+    EditSongComponent,
+    ListNewSongComponent
   ],
   exports: [
     ListSongComponent,
