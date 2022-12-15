@@ -61,18 +61,16 @@ export class CreateSongComponent implements OnInit {
       avatar: this.avatar,
       dateCreateSong: dateConvert
     };
-    // let song = this.songForm.value.;
     const idUser = this.tokenService.getUser().id;
     this.songService.save(song, idUser).subscribe(() => {
     });
-    // Swal.fire({
-    //   icon: 'success',
-    //   title: 'Thêm thành công',
-    //   showConfirmButton: false,
-    //   timer: 1000
-    // });
+    Swal.fire({
+      icon: 'success',
+      title: 'Thêm thành công',
+      showConfirmButton: false,
+      timer: 1000
+    });
     this.songForm.reset();
-    window.location.reload()
   }
 
   sendToFirebaseImg() {
@@ -129,7 +127,7 @@ export class CreateSongComponent implements OnInit {
           icon: 'success',
           title: 'Upload thành công',
           showConfirmButton: false,
-          timer: 4000
+          timer: 3000
         });
       })
     )
