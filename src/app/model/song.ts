@@ -10,7 +10,7 @@ export interface Song {
   fileMp3?: string;
   avatar?: string;
   author?: Author;
-  singer?: Singer;
+  singer?: Singer[];
   user?: any;
   songTypeSet?: SongType;
   playListSet?:Playlist;

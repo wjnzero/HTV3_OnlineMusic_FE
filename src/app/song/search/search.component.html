@@ -25,7 +25,7 @@
             <td routerLink="search{{song.id}}">{{song.describeSong}}</td>
             <td routerLink="search{{song.id}}">{{song.album}}</td>
             <td routerLink="search{{song.id}}">{{song.author!.name}}</td>
-            <td routerLink="search{{song.id}}">{{song.singer!.name}}</td>
+            <td routerLink="search{{song.id}}">{{song.singer![0].name}}</td>
 <!--            <td routerLink="search{{song.id}}">{{song.view}}</td>-->
             <td><button class="btn btn-success" routerLink="list-song/{{song.id}}">  Nghe ⫸ </button></td>
           </tr>

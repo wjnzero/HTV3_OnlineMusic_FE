@@ -40,13 +40,11 @@ export class NavbarMenuComponent {
     });
   }
 
-  // tslint:disable-next-line:typedef
   search() {
     // @ts-ignore
     this.router.navigate(['/search'], { queryParams: { name: this.searchForm.value.nameSearch } });
   }
 
-  // tslint:disable-next-line:typedef
   changePage() {
     // @ts-ignore
     this.router.navigate(['/login'] );

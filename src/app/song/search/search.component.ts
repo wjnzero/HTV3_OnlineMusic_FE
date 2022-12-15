@@ -24,7 +24,7 @@ export class SearchComponent implements OnInit {
     this.activateRoute.queryParams.subscribe((params => {
       // @ts-ignore
       this.name = params.name;
-      this.getByName(this.name);
+      this.getSongByName(this.name);
       this.getPlaylistByName(this.name)
       this.getSongByAuthor(this.name);
       this.getSongBySinger(this.name);
@@ -36,7 +36,7 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
   }
 
-  getByName(name: string | undefined) {
+  getSongByName(name: string | undefined) {
     this.songService.getByName(name).subscribe(songs => {
       this.songs = songs;
     });
@@ -56,6 +56,7 @@ export class SearchComponent implements OnInit {
   getSongBySinger(name: string | undefined) {
     this.songService.getSongBySinger(name).subscribe(songs => {
       this.songs = songs;
+      console.log("singer: ", this.songs)
     })
   }
 }
