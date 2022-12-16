@@ -58,7 +58,12 @@
 <!--    </div>-->
 <!--  </section>-->
 <!--</div>-->
-
+<body background="assets/img/pngtree-beautiful-purple-line-bubble-background-picture-image_1463162.jpg"
+      style="text-align:center"
+>
+<!--<app-navbar-menu style="background-color: #bd6fbb"></app-navbar-menu>-->
+<div><br></div>
+<div><br></div>
 <div class="container">
   <section class="container">
     <div class="new-most-song mt-5">
@@ -66,7 +71,7 @@
         <div class="col-10">
           <h4 class="font-weight-bold">Danh sách phát</h4>
           <button class="btn btn-warning" >
-            <a routerLink="/createplaylist/{{playlist.id}}">Tạo danh sách</a>
+            <a routerLink="/playlist/createplaylist">Tạo danh sách</a>
           </button>
           <table class="table table-striped d-print-table-cell">
             <thead class="thead-green">
@@ -112,7 +117,7 @@
                 </div>
               </td>
               <td>
-                <a routerLink="edit1/{{playlist.id}}" class="btn btn-warning">Sửa</a>
+                <a routerLink="/playlist/edit1/{{playlist.id}}" class="btn btn-warning">Sửa</a>
               </td>
               <td>
                 <button (click)="delete(playlist.id)" class="btn btn-danger">xóa</button>

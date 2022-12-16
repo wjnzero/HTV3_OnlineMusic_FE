@@ -16,7 +16,7 @@ const routes: Routes = [
     component:PlaylistComponent
   },
   {
-    path: 'createplaylist/:id',
+    path: 'createplaylist',
     component: CreatePlaylistComponent
   },
   {
