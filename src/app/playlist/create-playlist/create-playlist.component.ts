@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {Observable} from "rxjs";
 import {PlaylistService} from "../../service/playlist/playlist.service";
 import {UserService} from "../../service/user/user.service";
 import {HttpService} from "../../service/http-service.service";
@@ -22,7 +21,6 @@ export class CreatePlaylistComponent {
 
   ) {
   }
-
   ngOnInit():void {
   }
   playlistForm: FormGroup = new FormGroup({
@@ -36,18 +34,11 @@ export class CreatePlaylistComponent {
     const playlist = {
       name: this.playlistForm.value.name,
       timeCreate: this.playlistForm.value.timeCreate,
-      lastTimeEdit: this.playlistForm.value.lastTimeEdit,
-
+      lastTimeEdit: this.playlistForm.value.lastTimeEdit
     };
     const idUser = this.tokenService.getUser().id;
     this.playlistService.save(playlist, idUser).subscribe(() => {
     });
-    // Swal.fire({
-    //   icon: 'success',
-    //   title: 'Thêm thành công',
-    //   showConfirmButton: false,
-    //   timer: 1000
-    // });
     this.playlistForm.reset();
     window.location.reload()
   }
