@@ -1,14 +1,20 @@
-<div class="container">
-  <section class="container">
-    <div class="new-most-song mt-5">
-      <div class="row p-10">
-        <div class="col-10">
+<body background="assets/img/pngtree-beautiful-purple-line-bubble-background-picture-image_1463162.jpg"
+style="text-align:center"
+>
+<app-navbar-menu style="background-color: #bd6fbb"></app-navbar-menu>
+<div><br></div>
+<div><br></div>
+<div class="container" style="text-align:center">
+  <section class="container" >
+    <div class="new-most-song mt-5" >
+      <div class="row p-12">
+        <div class="col-12" >
           <button class="btn btn-warning">
             <a routerLink="/create">Tạo bài hát</a>
           </button>
           <div><br></div>
-          <h4 class="font-weight-bold">Bài hát</h4>
-          <table class="table table-striped d-print-table-cell">
+          <h4 class="font-weight-bold" style="font-size: 50px" >Bài hát</h4>
+          <table class="table table-striped d-print-table-cell" style="background-color: #d384de">
             <thead class="thead-green">
             <tr>
               <th scope="col">STT</th>
@@ -16,7 +22,7 @@
               <th scope="col">Bài hát</th>
               <th scope="col">Mô tả</th>
               <!--              <th scope="col">Album</th>-->
-              <th scope="col">View</th>
+              <th scope="col">Lượt xem</th>
               <th scope="col"></th>
             </tr>
             </thead>
@@ -45,14 +51,15 @@
             </tr>
             </tbody>
           </table>
-          <td>
-            <button routerLink="" class="btn btn-success">Trở lại</button>
+            <div  >
+              <button style="font-size: 20px" routerLink="" class="btn btn-success">Trở lại</button>
+            </div>
+
             <!--              <button class="button-cancel" [routerLink]="['/home']">Thoát</button>-->
-          </td>
           <!--          <ang-music-player [audioList] = "audioList" backgroundColor="#bb74ce" width="100%"></ang-music-player>-->
         </div>
       </div>
     </div>
   </section>
 </div>
-
+</body>
