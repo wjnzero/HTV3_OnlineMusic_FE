@@ -10,6 +10,7 @@ import {UserService} from "../../service/user/user.service";
 import {PlaylistService} from "../../service/playlist/playlist.service";
 import {CommentsongService} from "../../service/comment/commentsong.service";
 import {Commentsong} from "../../model/commentsong";
+import {FormBuilder, FormGroup} from "@angular/forms";
 
 declare var Amplitude: any;
 
@@ -29,17 +30,26 @@ export class PlaySongComponent implements OnInit {
   p?: number;
   page?: number;
   totalLike?: any;
+  form!: FormGroup;
+  isLoggedIn?: boolean;
 
   constructor(private songService: SongService,
               private playlistService: PlaylistService,
               private router: ActivatedRoute,
               private userService: UserService,
+              private formBuild: FormBuilder,
               // private likeSongService: LikesongService,
               private commentSongService: CommentsongService,
               private httpService: HttpService) {
   }
 
   ngOnInit(): void {
+    if (localStorage.getItem('auth-token')){
+      this.isLoggedIn = true;
+    }
+    this.form = this.formBuild.group({
+      comment: ['']
+    });
     this.userId = Number(this.httpService.getID());
     this.id = Number(this.router.snapshot.paramMap.get('id'));
 
@@ -99,6 +109,20 @@ export class PlaySongComponent implements OnInit {
             cover_art_url: this.song?.avatar
           }
         ],
+      });
+    });
+  }
+
+  onEnter() {
+    const comment = {
+      comment_content: this.form?.value.comment,
+      userComment: this.user,
+      songComment: this.song
+    };
+    this.commentSongService.updateCommentSong(comment).subscribe(res => {
+      this.commentSongService.getCommentBySong(this.song?.id).subscribe(data => {
+        this.commentSong = data;
+        this.form?.reset();
       });
     });
   }

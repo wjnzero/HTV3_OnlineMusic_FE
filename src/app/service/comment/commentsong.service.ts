@@ -16,11 +16,11 @@ export class CommentsongService {
               private httpService: HttpService) { }
 
   // Lấy hết comment trong 1 Song
-  getCommentBySong(idSong: number): Observable<any>{
+    getCommentBySong(idSong: number | undefined): Observable<any>{
     return this.http.get<any>(API_URL + '/comment/song/' + idSong);
   }
 
   updateCommentSong(commentSong: Commentsong): Observable<any> {
-    return this.http.post(API_URL + '/home/comment/song', commentSong, this.httpService.getHttp());
+    return this.http.post(API_URL + '/comment/song', commentSong, this.httpService.getHttp());
   }
 }
