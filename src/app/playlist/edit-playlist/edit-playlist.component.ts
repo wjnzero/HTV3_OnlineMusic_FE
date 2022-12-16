@@ -18,7 +18,7 @@ export class EditPlaylistComponent {
   playlistForm!: FormGroup;
 
 
-  constructor(private playlistService: PlaylistService, private storage: AngularFireStorage, private activateRoute: ActivatedRoute) {
+  constructor(private playlistService: PlaylistService, private activateRoute: ActivatedRoute) {
     this.activateRoute.paramMap.subscribe((paraMap: ParamMap) => {
       // @ts-ignore
       this.id = +paraMap.get('id');
