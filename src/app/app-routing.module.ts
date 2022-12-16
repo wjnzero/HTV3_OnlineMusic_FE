@@ -11,6 +11,7 @@ import {UserSongComponent} from "./user/song/user-song/user-song.component";
 import {EditSongComponent} from "./song/edit-song/edit-song.component";
 import {UserPlaylistComponent} from "./user/playlist/user-playlist/user-playlist.component";
 import {PlaylistComponent} from "./playlist/playlist/playlist.component";
+import {CreateSongComponent} from "./song/create-song/create-song.component";
 
 
 const routes: Routes = [
@@ -51,10 +52,17 @@ const routes: Routes = [
     canActivate: [AuthGuardGuard]
   },
   {
+    path: 'userListSong/create',
+    component: CreateSongComponent,
+    canActivate: [AuthGuardGuard]
+  },
+  {
     path: "userListSong/edit/:id",
     component: EditSongComponent,
     canActivate: [AuthGuardGuard]
-
+  },
+  {
+    path: 'userListSong/song/:id', component: PlaySongComponent
   },
   {
     path: 'changePassword',
