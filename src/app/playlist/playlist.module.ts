@@ -8,10 +8,6 @@ import {EditPlaylistComponent} from "./edit-playlist/edit-playlist.component";
 import {PlaylistComponent} from "./playlist/playlist.component";
 import { ListsongInOnePlaylistComponent } from './listsong-in-one-playlist/listsong-in-one-playlist.component';
 
-
-
-
-
 @NgModule({
   declarations: [
     PlaylistComponent,
@@ -30,7 +26,7 @@ import { ListsongInOnePlaylistComponent } from './listsong-in-one-playlist/lists
     PlaylistRoutingModule,
     ReactiveFormsModule,
     AngMusicPlayerModule,
-    FormsModule
+    FormsModule,
   ]
 })
 export class PlaylistModule {
