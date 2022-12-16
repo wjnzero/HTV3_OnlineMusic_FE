@@ -45,7 +45,13 @@ export class UserSongComponent implements OnInit {
       }
     });
   }
-
+  addSongToPlaylist(playlistId: any, songId: any) {
+    if (confirm('Bạn có muốn thêm vào playlist?')) {
+      this.playlistService.addSongToPlaylist(playlistId, songId).subscribe(()=>{
+        alert("ok")
+      });
+    }
+  }
   delete(id: any) {
     if (confirm('Bạn có muốn xóa?')) {
       this.songService.delete(id).subscribe(data => {

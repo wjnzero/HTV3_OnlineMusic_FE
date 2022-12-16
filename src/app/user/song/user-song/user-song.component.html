@@ -36,9 +36,13 @@ style="text-align:center"
               <td>
                 <button class="btn btn-success" routerLink="song/{{song.id}}"> Nghe ⫸</button>
               </td>
-              <td>
-                <a routerLink="playlist/{{song.id}}" class="btn btn-primary">Thêm vào danh sách phát</a>
-              </td>
+<!--              <td>-->
+
+<!--                <button type="button" class="btn btn-primary" data-toggle="modal" [attr.data-target]="'#myModal' + song.id">-->
+<!--                  Thêm vào danh sách phát-->
+<!--                </button>-->
+<!--                &lt;!&ndash;      <a routerLink="playlist/{{song.id}}" class="btn btn-warning"></a>&ndash;&gt;-->
+<!--              </td>-->
               <td>
                 <button>
                   <a routerLink="edit/{{song.id}}" data-tip="edit"><i class="fa fa-edit"></i></a>
