@@ -32,6 +32,7 @@ export class PlaySongComponent implements OnInit {
   totalLike?: any;
   form!: FormGroup;
   isLoggedIn?: boolean;
+  totalView?: number;
 
   constructor(private songService: SongService,
               private playlistService: PlaylistService,
@@ -44,7 +45,7 @@ export class PlaySongComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (localStorage.getItem('auth-token')){
+    if (localStorage.getItem('auth-token')) {
       this.isLoggedIn = true;
     }
     this.form = this.formBuild.group({
@@ -84,10 +85,22 @@ export class PlaySongComponent implements OnInit {
             url: this.song?.fileMp3,
             cover_art_url: this.song?.avatar
           }
-        ],
+        ]
       });
     });
+
   }
+
+  updateView() {
+    this.songService.increaseViewSong(this.song?.id).subscribe(() => {
+            console.log('Increase Success');
+          });
+
+  }
+
+
+
+
 
   // Đổi bài hát : dùng trong đoạn "Có thể bạn muốn nghe"
   // tslint:disable-next-line:typedef

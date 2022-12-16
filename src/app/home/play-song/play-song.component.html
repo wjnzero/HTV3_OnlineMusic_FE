@@ -28,10 +28,12 @@
 
             <div class="time-container">
                 <span class="current-time">
-                  <span class="amplitude-current-minutes"></span>:<span class="amplitude-current-seconds"></span>
+                  <span class="amplitude-current-minutes" id="current"></span>:<span
+                  class="amplitude-current-seconds"></span>
                 </span>
               <span class="duration">
-                    <span class="amplitude-duration-minutes"></span>:<span class="amplitude-duration-seconds"></span>
+                    <span class="amplitude-duration-minutes" id="duration"></span>:<span
+                class="amplitude-duration-seconds"></span>
                   </span>
             </div>
           </div>
@@ -39,7 +41,7 @@
         <div id="white-player-controls">
           <div class="amplitude-repeat" id="repeat"></div>
           <div class="amplitude-prev" id="previous"></div>
-          <div class="amplitude-play-pause" id="play-pause"></div>
+          <div class="amplitude-play-pause" id="play-pause" (click)="updateView()"></div>
           <div class="amplitude-next" id="next"></div>
         </div>
       </div>
@@ -49,7 +51,7 @@
     <div class="container amplitude-stop">
       <div class="new-most-song mt-5">
         <div class="row p-5">
-          <div class="col" >
+          <div class="col">
             <h3 class="font-weight-bold">Bài Mới</h3>
             <table class="table table-light">
               <thead class="thead-dark">
@@ -73,8 +75,8 @@
       </div>
     </div>
   </div>
-<!--  <section class="bg-light p-5 mb-4 container">-->
-<!--  </section>-->
+  <!--  <section class="bg-light p-5 mb-4 container">-->
+  <!--  </section>-->
 
 
   <!--    // số lượt thích-->
@@ -91,7 +93,7 @@
       </tr>
     </table>
   </section>
-<!--    bình luận?-->
+  <!--    bình luận?-->
   <section class="bg-light p-3 my-4" style="border-radius: 5px">
     <div>
       <div class="px-5">
@@ -113,7 +115,7 @@
           <div class="text-center">
             <pagination-controls (pageChange)="p = $event"></pagination-controls>
           </div>
-<!--          bình luận-->
+          <!--          bình luận-->
           <form *ngIf="isLoggedIn" [formGroup]="form" (ngSubmit)="onEnter()">
             <input class="input-group" type="text" formControlName="comment" placeholder="Viết bình luận...">
           </form>

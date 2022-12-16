@@ -1,6 +1,5 @@
-
-import firebase from "firebase/compat";
-import User = firebase.User;
+import {User} from "./user";
+import {Song} from "./song";
 
 
 export interface Playlist {
@@ -9,5 +8,6 @@ export interface Playlist {
   name: string;
   timeCreate: string;
   lastTimeEdit: string;
-  user?: User[];
+  users?: User;
+  songs?: Song[];
 }

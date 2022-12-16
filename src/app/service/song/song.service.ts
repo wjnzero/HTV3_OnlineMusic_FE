@@ -48,6 +48,9 @@ export class SongService {
   getAllSongsNew(): Observable<Song[]> {
     return this.httpClient.get<Song[]>(API_URL + '/songs/newest');
   }
+  getAllSongsDescView(): Observable<Song[]> {
+    return this.httpClient.get<Song[]>(API_URL + '/songs/mostview');
+  }
 
   delete(id: number) {
     let url = API_URL + '/songs/delete/' + `${id}`
@@ -76,4 +79,9 @@ export class SongService {
   //   return this.httpClient.(url);
   //
   // }
+
+  // Tăng 1 lượt view
+  increaseViewSong(idSong: number | undefined): Observable<any> {
+    return this.httpClient.get(API_URL + '/songs/view/' + idSong);
+  }
 }
