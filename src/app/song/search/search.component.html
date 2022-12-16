@@ -27,7 +27,7 @@
             <td routerLink="search{{song.id}}">{{song.author!.name}}</td>
             <td routerLink="search{{song.id}}">{{song.singer![0].name}}</td>
 <!--            <td routerLink="search{{song.id}}">{{song.view}}</td>-->
-            <td><button class="btn btn-success" routerLink="list-song/{{song.id}}">  Nghe ⫸ </button></td>
+            <td><button class="btn btn-success" routerLink="song/{{song.id}}">  Nghe ⫸ </button></td>
           </tr>
           </tbody>
           <button routerLink="" class="btn btn-primary">Trở lại</button>
@@ -53,6 +53,6 @@
       </div>
     </div>
   </div>
-<!--</div>-->
+
 
 
