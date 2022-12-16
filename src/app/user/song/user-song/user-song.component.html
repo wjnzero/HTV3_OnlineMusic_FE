@@ -3,11 +3,10 @@
     <div class="new-most-song mt-5">
       <div class="row p-10">
         <div class="col-10">
-          <button class="btn btn-warning" >
+          <button class="btn btn-warning">
             <a routerLink="/create">Tạo bài hát</a>
-
           </button>
-
+          <div><br></div>
           <h4 class="font-weight-bold">Bài hát</h4>
           <table class="table table-striped d-print-table-cell">
             <thead class="thead-green">
@@ -36,10 +35,12 @@
                 <a routerLink="playlist/{{song.id}}" class="btn btn-primary">Thêm vào danh sách phát</a>
               </td>
               <td>
-                <a routerLink="edit/{{song.id}}" class="btn btn-warning">Sửa</a>
+                <button>
+                  <a routerLink="edit/{{song.id}}" data-tip="edit"><i class="fa fa-edit"></i></a>
+                </button>
               </td>
               <td>
-                <button (click)="delete(song.id)" class="btn btn-danger">Xoá</button>
+                <button (click)="delete(song.id)" data-tip="delete"><i class="fa fa-trash"></i></button>
               </td>
             </tr>
             </tbody>

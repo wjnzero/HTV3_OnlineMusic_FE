@@ -45,17 +45,13 @@ export class UserSongComponent implements OnInit {
       }
     });
   }
-  getUser(){
-    return  this.userService.getUserById(this.httpService.getID()).subscribe(songs =>{
-      this.userid =songs;
-    })  ;
-  }
 
   delete(id: any) {
     if (confirm('Bạn có muốn xóa?')) {
       this.songService.delete(id).subscribe(data => {
         console.log(data)
         alert("Ok");
+        this.ngOnInit();
       }, e => {
         console.error(e)
       });

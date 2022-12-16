@@ -14,7 +14,7 @@
           </div>
           <tr>
             <div class="text-left">
-              <label style="padding-left: 60px;">Tên bài hát </label>
+              <label>Tên bài hát </label>
             </div>
             <div class="font-group">
               <input type="text" class="form-control" formControlName="name"
@@ -23,7 +23,7 @@
           </tr>
           <tr>
             <div class="text-left">
-              <label style="padding-left: 60px;">Mô tả</label>
+              <label>Mô tả</label>
             </div>
             <div class="font-group">
               <input type="text" class="form-control" formControlName="describeSong"
@@ -32,35 +32,24 @@
           </tr>
           <tr>
             <div class="text-left">
-              <label style="padding-left: 60px;">Avatar </label>
+              <label>Avatar </label>
             </div>
-            <td
-              style="padding-top: 30px; padding-left: 60px; border-radius:50%; -moz-border-radius:50%; -webkit-border-radius:50%;">
-
             <td colspan="2"><input type="file" (change)="sendToFirebaseImg()"></td>
           </tr>
           <tr>
             <div class="text-left">
-              <label style="padding-left: 60px;">File Mp3 </label>
+              <label>File Mp3 </label>
             </div>
-            <td
-              style="padding-top: 30px; padding-left: 60px; border-radius:50%; -moz-border-radius:50%; -webkit-border-radius:50%;">
-
             <td colspan="2"><input type="file" (change)="sendToFirebaseMp3()"></td>
           </tr>
-
-
           <tr>
-
             <td colspan="3">
               <button type="submit" class="btn btn-success">Cập nhật</button> &ensp;
-              <!--              <button class="button-cancel" [routerLink]="['/']">Thoát</button>-->
             </td>
           </tr>
           <tr>
             <td>
               <button routerLink="/userListSong" class="btn btn-success">Trở lại</button>
-              <!--              <button class="button-cancel" [routerLink]="['/home']">Thoát</button>-->
             </td>
           </tr>
         </table>
