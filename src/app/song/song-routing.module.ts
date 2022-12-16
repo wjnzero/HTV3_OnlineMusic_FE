@@ -4,6 +4,7 @@ import {ListSongComponent} from "./list-song/list-song.component";
 import {SearchComponent} from "./search/search.component";
 import {EditSongComponent} from "./edit-song/edit-song.component";
 import {CreateSongComponent} from "./create-song/create-song.component";
+import {PlaySongComponent} from "../home/play-song/play-song.component";
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'search',
     component:SearchComponent },
+
+ {
+    path: 'search/song/:id',
+    component:PlaySongComponent },
 
 ];
 
