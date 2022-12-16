@@ -39,10 +39,7 @@
                 <button type="button" class="btn btn-primary" data-toggle="modal" [attr.data-target]="'#myModal' + song.id">
                   thêm bài hát vào playlist
                 </button>
-
-
                 <!--      <a routerLink="playlist/{{song.id}}" class="btn btn-warning"></a>-->
-
               </td>
               <td><!-- The Modal -->
                 <div class="modal" id="{{'myModal' + song.id}}">
@@ -55,7 +52,6 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                       </div>
                       <!-- Modal body -->
-
                       <div  class="modal-body" >
                         <div *ngFor="let playlist of playlist;index as i" (click)="addSongToPlaylist(playlist.id, song.id)">
                           {{playlist.name}}
@@ -70,21 +66,6 @@
                   </div>
                 </div></td>
 
-              <!--              <td routerLink="search{{song.id}}">{{song.album}}</td>-->
-              <!--              <td routerLink="search{{song.id}}">{{song.view}}</td>-->
-<!--              <td>-->
-<!--                <button class="btn btn-success" routerLink="list-song/{{song.id}}"> Nghe ⫸</button>-->
-<!--              </td>-->
-
-<!--              <td>-->
-              <!--                <a routerLink="playlist/{{song.id}}" class="btn btn-primary">Thêm vào danh sách phát</a>-->
-              <!--              </td>-->
-<!--              <td>-->
-<!--                <a routerLink="edit/{{song.id}}" class="btn btn-warning">Sửa</a>-->
-<!--              </td>-->
-<!--              <td>-->
-<!--                <button (click)="delete(song.id)" class="btn btn-danger">Xoá</button>-->
-<!--              </td>-->
             </tr>
             </tbody>
           </table>
