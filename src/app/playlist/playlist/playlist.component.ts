@@ -1,9 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Playlist} from "../../model/playlist";
 import {PlaylistService} from "../../service/playlist/playlist.service";
-import {user} from "@angular/fire/auth";
-import firebase from "firebase/compat";
-import User = firebase.User;
+
+
 
 
 @Component({
@@ -37,12 +35,6 @@ export class PlaylistComponent implements OnInit {
 
     this.playlistService.getByUserId(this.userid).subscribe(playlist => {
       this.playlist = playlist;
-      // @ts-ignore
-      // for (let i = 0; i < playlist.length; i++) {
-      //   let temp : SongTemp={title: playlist[i].name}
-      //   // @ts-ignore
-      //   this.playlist.push(temp);
-      // }
     });
   }
 

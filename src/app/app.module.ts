@@ -34,6 +34,7 @@ import {PlaylistModule} from "./playlist/playlist.module";
 import {NgxAudioPlayerModule} from "./lib/ngx-audio-player/ngx-audio-player.module";
 import {PlaySongComponent} from "./home/play-song/play-song.component";
 import {NgxPaginationModule} from "ngx-pagination";
+import { UserPlaylistComponent } from './user/playlist/user-playlist/user-playlist.component';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import {NgxPaginationModule} from "ngx-pagination";
     UserProfileComponent,
     NavbarUserComponent,
     UserChangePasswordComponent,
-    PlaySongComponent
+    PlaySongComponent,
+    UserPlaylistComponent
 
   ],
   imports: [
