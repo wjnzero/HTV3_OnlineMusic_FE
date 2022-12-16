@@ -13,7 +13,7 @@ export interface Song {
   singer?: Singer[];
   user?: any;
   songTypeSet?: SongType;
-  playListSet?:Playlist;
+  playListSet?:Playlist[];
   album?: any;
   view?: any;
   dateCreateSong?: string;

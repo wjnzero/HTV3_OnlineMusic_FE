@@ -9,6 +9,7 @@ import {UserChangePasswordComponent} from "./user/user-change-password/user-chan
 import {PlaySongComponent} from "./home/play-song/play-song.component";
 import {UserSongComponent} from "./user/song/user-song/user-song.component";
 import {EditSongComponent} from "./song/edit-song/edit-song.component";
+import {PlayPlaylistComponent} from "./home/play-playlist/play-playlist.component";
 
 
 const routes: Routes = [
@@ -32,6 +33,9 @@ const routes: Routes = [
   },
   {
     path: 'song/:id', component: PlaySongComponent
+  },
+  {
+    path: 'playlists/play/:id', component: PlayPlaylistComponent
   },
   {
     path: 'userProfile',

@@ -60,6 +60,8 @@ export class AudioPlayerComponent implements OnInit, OnChanges {
   @Input() durationHeader = 'Duration';
 
 
+
+
   currentIndex = 0;
 
   @Output()
@@ -72,7 +74,7 @@ export class AudioPlayerComponent implements OnInit, OnChanges {
 
   loaderDisplay = false;
   isPlaying = false;
-  currentTime : any = 0;
+  currentTime :any= 0;
   volume = 0.1;
   duration = 0.01;
 
@@ -89,8 +91,8 @@ export class AudioPlayerComponent implements OnInit, OnChanges {
   @Input()
   public endOffset = 0;
 
-  currTimePosChanged(event: { value: any; }) {
-    this.player!.nativeElement.currentTime = event.value;
+  currTimePosChanged(event: Event) {
+    this.player!.nativeElement.currentTime = event;
   }
 
   bindPlayerEvent(): void {

@@ -9,6 +9,7 @@
       <svg height="32" viewBox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
         <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z" />
         <path d="M0 0h32v32H0z" fill="none" />
+<!--        //a-->
       </svg>
     </mat-icon>
   </button>
@@ -124,9 +125,9 @@
                     {{currentTime | secondsToMinutes}}
                 </span>
       </div>
-      <mat-slider [disabled]="disablePositionSlider" (change)="currTimePosChanged($event)" [min]="startOffset"
-                  class="ngx-d-none ngx-d-sm-block ngx-flex-fill ngx-p-1" max="{{duration-endOffset}}" style="width: 100%"
-                  [(value)]="currentTime!"></mat-slider>
+<!--      <mat-slider [disabled]="disablePositionSlider" (change)="currTimePosChanged($event)" [min]="startOffset"-->
+<!--                  class="ngx-d-none ngx-d-sm-block ngx-flex-fill ngx-p-1" max="{{duration-endOffset}}" style="width: 100%"-->
+<!--                  [(value)]="currentTime" ></mat-slider>-->
 
       <div class="ngx-py-3 ngx-px-1" style="font-size: 12px; text-align: right">
                 <span *ngIf="duration !== 0.01">

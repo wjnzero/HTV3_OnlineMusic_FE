@@ -10,6 +10,7 @@ import {EditSongComponent} from "./edit-song/edit-song.component";
 import {ListNewSongComponent} from './list-new-song/list-new-song.component';
 import {PlaySongComponent} from '../home/play-song/play-song.component';
 import {NgxPaginationModule} from "ngx-pagination";
+import { ListOrderViewSongComponent } from './list-order-view-song/list-order-view-song.component';
 
 @NgModule({
   declarations: [
@@ -17,13 +18,15 @@ import {NgxPaginationModule} from "ngx-pagination";
     SearchComponent,
     CreateSongComponent,
     EditSongComponent,
-    ListNewSongComponent],
-  exports: [
-    ListSongComponent,
-    SearchComponent,
-    CreateSongComponent,
-    ListNewSongComponent
-  ],
+    ListNewSongComponent,
+    ListOrderViewSongComponent],
+    exports: [
+        ListSongComponent,
+        SearchComponent,
+        CreateSongComponent,
+        ListNewSongComponent,
+        ListOrderViewSongComponent
+    ],
   imports: [
     CommonModule,
     SongRoutingModule,

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {environment} from "../../../enronments/environment";
@@ -13,10 +13,11 @@ const API_URL = `${environment.apiUrl}`;
 export class CommentsongService {
 
   constructor(private http: HttpClient,
-              private httpService: HttpService) { }
+              private httpService: HttpService) {
+  }
 
   // Lấy hết comment trong 1 Song
-    getCommentBySong(idSong: number | undefined): Observable<any>{
+  getCommentBySong(idSong: number | undefined): Observable<any> {
     return this.http.get<any>(API_URL + '/comment/song/' + idSong);
   }
 
