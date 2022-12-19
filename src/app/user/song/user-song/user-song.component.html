@@ -10,7 +10,7 @@ style="text-align:center"
       <div class="row p-12">
         <div class="col-12" >
           <button class="btn btn-warning">
-            <a routerLink="/create">Tạo bài hát</a>
+            <a routerLink="/create">Thêm bài hát</a>
           </button>
           <div><br></div>
           <h4 class="font-weight-bold" style="font-size: 50px" >Bài hát</h4>
@@ -34,14 +34,14 @@ style="text-align:center"
               <td routerLink="search{{song.id}}">{{song.describeSong}}</td>
               <td>{{song.viewSong}}</td>
               <td>
-                <button class="btn btn-success" routerLink="song/{{song.id}}"> Nghe ⫸</button>
+                <button class="btn btn-default" routerLink="song/{{song.id}}"> |⫸</button>
               </td>
               <td>
                 <a routerLink="playlist/{{song.id}}" class="btn btn-primary">Thêm vào danh sách phát</a>
               </td>
               <td>
                 <button>
-                  <a routerLink="edit/{{song.id}}" data-tip="edit"><i class="fa fa-edit"></i></a>
+                  <a  routerLink="edit/{{song.id}}" data-tip="edit"><i class="fa fa-edit"></i></a>
                 </button>
               </td>
               <td>
