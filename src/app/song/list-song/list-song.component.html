@@ -31,11 +31,11 @@
           <!--              <td routerLink="search{{song.id}}">{{song.author!.name}}</td>-->
           <td routerLink="search{{song.id}}">{{song.singer![0].name}}</td>
           <td>
-            <button class="btn btn-outline-primary" routerLink="song/{{song.id}}"> |⫸</button>
+            <button style="color:#332e2e;" class="btn btn-outline-primary" routerLink="song/{{song.id}}"> |⫸</button>
           </td>
 
           <td>
-            <button type="button" class="btn btn-outline-primary" data-toggle="modal"
+            <button style="color: #17292c" type="button" class="btn btn-outline-primary" data-toggle="modal"
                     [attr.data-target]="'#myModal' + song.id">Thêm vào danh sách phát</button>
           </td>
           <td><!-- The Modal -->

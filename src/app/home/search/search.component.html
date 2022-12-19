@@ -3,6 +3,7 @@
   <app-navbar-menu></app-navbar-menu>
 </div><br>
 <body background="https://img.upanh.tv/2022/12/19/nen.png">
+<div style="margin-top: 60px">
 
 <div class="new-most-song mt-5">
   <div class="row " style="border: rgba(193,79,250,0.09) solid 2px">
@@ -31,7 +32,7 @@
           <td style="color:#efc1ae;"routerLink="search{{song.id}}">{{song.singer![0].name}}</td>
           <td style="color:#efc1ae;"routerLink="search{{song.id}}">{{song.viewSong}}</td>
           <td>
-            <button type="button" class="btn btn-outline-primary" data-toggle="modal"
+            <button style="color: #c4d4fa"type="button" class="btn btn-outline-primary" data-toggle="modal"
                     [attr.data-target]="'#myModal' + song.id">Thêm vào danh sách phát</button>
           </td>
           <td><button style="color:#efc1ae;"class="btn btn-outline-primary" routerLink="song/{{song.id}}">  |⫸</button> </td>

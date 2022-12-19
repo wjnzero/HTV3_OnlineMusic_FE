@@ -1,20 +1,17 @@
-<body background="https://img5.thuthuatphanmem.vn/uploads/2021/11/17/hinh-nen-am-nhac-4k_013836168.jpg">
+<body background="https://img.upanh.tv/2022/12/19/nen.png">
 <div class="container">
-<h1>Tạo danh sách mới</h1>
+<h1 style="color: #c4d4fa">Tạo danh sách mới</h1>
 <form  [formGroup]="playlistForm" >
   <table>
     <tr>
-      <td>Tên:</td>
-      <td><input type="text" formControlName="name"></td>
+      <td style="color: #c4d4fa">Tên:</td>
+      <td><input type="text" formControlName="name"placeholder="Nhập tên danh sách phát..."></td>
     </tr>
     <tr>
       <td></td>
       <td>
-        <button class="btn btn-outline-primary" (click)="savePlaylist()">Tạo mới</button>
-      </td>
-      <td>
-        <button routerLink="/playlist" class="btn btn-outline-success">Trở lại</button>
-        <!--              <button class="button-cancel" [routerLink]="['/home']">Thoát</button>-->
+        <button style="color: #c4d4fa"class="btn btn-outline-primary" (click)="savePlaylist()">Tạo mới</button> &nbsp; &nbsp;
+        <button style="color: #c4d4fa"routerLink="/playlist" class="btn btn-outline-success">Quay lại</button>
       </td>
     </tr>
   </table>

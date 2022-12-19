@@ -1,4 +1,4 @@
-<body background="https://img5.thuthuatphanmem.vn/uploads/2021/11/17/hinh-nen-am-nhac-4k_013836168.jpg">
+<body background="https://img.upanh.tv/2022/12/19/nen.png">
 <div class="container">
   <div style="margin-top: 60px">
     <form (ngSubmit)="update()" [formGroup]="playlistForm">
@@ -6,7 +6,7 @@
         <table class="font-group">
           <tr>
             <th colspan="3" style="padding-top: 40px">
-              <h1>Cập nhật thông tin danh sách phát</h1>
+              <h1 style="color: #c4d4fa">Cập nhật danh sách phát</h1>
             </th>
           </tr>
           <div class="font-group">
@@ -15,7 +15,7 @@
           </div>
           <tr>
             <div class="text-left">
-              <label style="padding-left: 60px;" >Tên danh sách phát</label>
+              <label style="color: #c4d4fa" >Tên danh sách phát</label>
             </div>
             <div class="font-group">
               <input type="text" class="form-control" formControlName="name"
@@ -24,13 +24,8 @@
           </tr>
           <tr>
             <td colspan="3">
-              <button type="submit" class="btn btn-outline-primary">Cập nhật</button> &ensp;
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <button routerLink="/playlist" class="btn btn-outline-success">Trở lại</button>
-              <!--              <button class="button-cancel" [routerLink]="['/home']">Thoát</button>-->
+              <button style="color: #c4d4fa" type="submit" class="btn btn-outline-primary">Cập nhật</button> &nbsp;&nbsp;&nbsp;&nbsp;
+              <button style="color: #c4d4fa" routerLink="/playlist" class="btn btn-outline-success">Quay lại</button>
             </td>
           </tr>
         </table>
