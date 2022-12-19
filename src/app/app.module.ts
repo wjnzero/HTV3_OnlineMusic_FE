@@ -83,7 +83,7 @@ import { SearchComponent } from './home/search/search.component';
     MatButtonModule,
     AngMusicPlayerModule,
     NgxAudioPlayerModule,
-    NgxPaginationModule
+    NgxPaginationModule,
   ],
   providers: [],
   exports: [
