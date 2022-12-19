@@ -9,8 +9,8 @@ style="text-align:center"
     <div class="new-most-song mt-5" >
       <div class="row p-12">
         <div class="col-12" >
-          <button class="btn btn-warning">
-            <a routerLink="/create">Tạo bài hát</a>
+          <button class="btn btn-outline-warning">
+            <a routerLink="/create">Thêm bài hát</a>
           </button>
           <div><br></div>
           <h4 class="font-weight-bold" style="font-size: 50px" >Bài hát</h4>
@@ -33,25 +33,20 @@ style="text-align:center"
               <td routerLink="search{{song.id}}">{{song.name}}</td>
               <td routerLink="search{{song.id}}">{{song.describeSong}}</td>
               <td>{{song.viewSong}}</td>
+              <td class="btn btn-default" routerLink="song/{{song.id}}"> |⫸</td>
               <td>
-                <button class="btn btn-success" routerLink="song/{{song.id}}"> Nghe ⫸</button>
+                <a routerLink="playlist/{{song.id}}" class="btn btn-outline-warning">Thêm vào danh sách phát</a>
               </td>
               <td>
-                <a routerLink="playlist/{{song.id}}" class="btn btn-primary">Thêm vào danh sách phát</a>
+                  <a  routerLink="edit/{{song.id}}" data-tip="edit"><i class="fa fa-edit"></i></a>
               </td>
-              <td>
-                <button>
-                  <a routerLink="edit/{{song.id}}" data-tip="edit"><i class="fa fa-edit"></i></a>
-                </button>
-              </td>
-              <td>
-                <button (click)="delete(song.id)" data-tip="delete"><i class="fa fa-trash"></i></button>
+              <td (click)="delete(song.id)" data-tip="delete"><i class="fa fa-trash"></i>
               </td>
             </tr>
             </tbody>
           </table>
             <div  >
-              <button style="font-size: 20px" routerLink="" class="btn btn-success">Trở lại</button>
+              <button style="font-size: 20px" routerLink="" class="btn btn-outline-success">Quay lại</button>
             </div>
 
             <!--              <button class="button-cancel" [routerLink]="['/home']">Thoát</button>-->

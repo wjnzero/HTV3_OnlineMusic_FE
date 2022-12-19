@@ -28,7 +28,7 @@
 
 <!--              <td routerLink="search{{song.id}}">{{song.album}}</td>-->
 <!--              <td routerLink="search{{song.id}}">{{song.view}}</td>-->
-              <td><button class="btn btn-success" routerLink="song/{{song.id}}">  Nghe ⫸ </button></td>
+              <td class="btn btn-default" routerLink="song/{{song.id}}">  |⫸ </td>
 <!--              <td>-->
 <!--                <a routerLink="playlist/{{song.id}}" class="btn btn-primary">Thêm vào danh sách phát</a>-->
 <!--              </td>-->
@@ -36,7 +36,7 @@
 
               <td>
 
-                <button type="button" class="btn btn-primary" data-toggle="modal" [attr.data-target]="'#myModal' + song.id">
+                <button type="button" class="btn btn-outline-primary" data-toggle="modal" [attr.data-target]="'#myModal' + song.id">
                   Thêm vào danh sách phát
                 </button>
                 <!--      <a routerLink="playlist/{{song.id}}" class="btn btn-warning"></a>-->
@@ -48,7 +48,7 @@
                     <div class="modal-content">
                       <!-- Modal Header -->
                       <div class="modal-header">
-                        <h4 class="modal-title">Playlist</h4>
+                        <h4 class="modal-title">Danh sách phát</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                       </div>
                       <!-- Modal body -->
@@ -59,7 +59,7 @@
                       </div>
                       <!-- Modal footer -->
                       <div class="modal-footer" >
-                        <button type="button" class="btn btn-danger" data-dismiss="modal" >back</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" >Quay lại</button>
                       </div>
 
                     </div>

@@ -13,7 +13,7 @@
             <th scope="col">Album</th>
             <th scope="col">Tác giả</th>
             <th scope="col">Ca sĩ</th>
-<!--            <th scope="col">Lượt xem</th>-->
+            <th scope="col">Lượt xem</th>
             <th scope="col"></th>
           </tr>
           </thead>
@@ -26,11 +26,11 @@
             <td routerLink="search{{song.id}}">{{song.album}}</td>
             <td routerLink="search{{song.id}}">{{song.author!.name}}</td>
             <td routerLink="search{{song.id}}">{{song.singer![0].name}}</td>
-<!--            <td routerLink="search{{song.id}}">{{song.view}}</td>-->
-            <td><button class="btn btn-success" routerLink="song/{{song.id}}">  Nghe ⫸ </button></td>
+            <td routerLink="search{{song.id}}">{{song.viewSong}}</td>
+            <td class="btn btn-default" routerLink="song/{{song.id}}">  |⫸ </td>
           </tr>
           </tbody>
-          <button routerLink="" class="btn btn-primary">Trở lại</button>
+          <button routerLink="" class="btn btn-primary">Trang chủ</button>
         </table>
       </div>
 
@@ -45,7 +45,7 @@
             <tr *ngFor="let playlist of playlists,let indexOfelement=index;">
               <th scope="row">{{indexOfelement + 1}}</th>
               <td routerLink="search{{playlist.id}}">{{playlist.name}}</td>
-              <td><button class="btn btn-success" routerLink="list-song/{{playlist.id}}">  Nghe ⫸ </button></td>
+              <td class="btn btn-default" routerLink="song/{{playlist.id}}">   |⫸</td>
             </tr>
             </tbody>
           </table>
