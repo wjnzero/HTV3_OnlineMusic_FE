@@ -33,7 +33,7 @@ style="text-align:center"
               <td routerLink="search{{song.id}}">{{song.name}}</td>
               <td routerLink="search{{song.id}}">{{song.describeSong}}</td>
               <td>{{song.viewSong}}</td>
-              <td class="btn btn-default" routerLink="song/{{song.id}}"> |⫸</td>
+              <td><a routerLink="song/{{song.id}}" data-tip="play"><i class="fa fa-play"></i> </a></td>
 <!--              <td>-->
 <!--                <a routerLink="playlist/{{song.id}}" class="btn btn-outline-warning">Thêm vào danh sách phát</a>-->
 <!--              </td>-->

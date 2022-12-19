@@ -17,6 +17,10 @@ const routes: Routes = [
     component:PlaylistComponent
   },
   {
+    path: 'playlist/song/:id',
+    component:PlaySongComponent
+  },
+  {
     path: 'createplaylist',
     component: CreatePlaylistComponent
   },
@@ -28,10 +32,6 @@ const routes: Routes = [
     path: "findsonginplaylist/:id",
     component: ListsongInOnePlaylistComponent
   },
-  {
-    path: 'playlist/song/:id',
-    component:PlaySongComponent }
-
   // {
   //   path: "userplaylist/:id",
   //   component: PlaylistComponent,
