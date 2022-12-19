@@ -53,6 +53,7 @@
                       </div>
                       <!-- Modal body -->
                       <div  class="modal-body" >
+
                         <div *ngFor="let playlist of playlist;index as i" (click)="addSongToPlaylist(playlist.id, song.id)">
                           {{playlist.name}}
                         </div>

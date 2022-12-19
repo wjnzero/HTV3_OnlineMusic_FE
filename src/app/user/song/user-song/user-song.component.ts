@@ -11,6 +11,8 @@ import {FormGroup} from "@angular/forms";
 import {SongTemp} from "../../../model/songTemp";
 import {PlaylistService} from "../../../service/playlist/playlist.service";
 
+declare var Swal: any;
+
 @Component({
   selector: 'app-user-song',
   templateUrl: './user-song.component.html',
@@ -44,6 +46,21 @@ export class UserSongComponent implements OnInit {
         this.audioList.push(temp);
       }
     });
+    this.userid = window.localStorage.getItem("idUser");
+    this.playlistService.getAll().subscribe(playlist => {
+      this.playlist = playlist;
+    });
+
+    this.playlistService.getByUserId(this.userid).subscribe(playlist => {
+      this.playlist = playlist;
+    });
+  }
+
+  getByUserId() {
+    this.playlistService.getByUserId(this.userid).subscribe(playlist => {
+      console.log("pll uid: "+ playlist[0].id)
+      this.playlist = playlist;
+    });
   }
 
   delete(id: any) {
@@ -57,6 +74,19 @@ export class UserSongComponent implements OnInit {
       });
     }
   }
-}
+  addSongToPlaylist(playlistId: any, songId: any) {
+    // if (confirm('Bạn có muốn thêm vào playlist?')) {
+    this.playlistService.addSongToPlaylist(playlistId, songId).subscribe(()=>{
+      // alert("ok")
+    });
+    Swal.fire({
+      icon: 'success',
+      title: 'Thêm thành công',
+      showConfirmButton: false,
+      timer: 1000
+    });
+    }
+  }
+
 
 

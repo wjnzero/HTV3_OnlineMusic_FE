@@ -34,8 +34,41 @@ style="text-align:center"
               <td routerLink="search{{song.id}}">{{song.describeSong}}</td>
               <td>{{song.viewSong}}</td>
               <td class="btn btn-default" routerLink="song/{{song.id}}"> |⫸</td>
+<!--              <td>-->
+<!--                <a routerLink="playlist/{{song.id}}" class="btn btn-outline-warning">Thêm vào danh sách phát</a>-->
+<!--              </td>-->
+
               <td>
-                <a routerLink="playlist/{{song.id}}" class="btn btn-outline-warning">Thêm vào danh sách phát</a>
+
+                <button type="button" class="btn btn-outline-primary" data-toggle="modal" [attr.data-target]="'#myModal' + song.id">
+                  Thêm vào danh sách phát
+                </button>
+                <!--      <a routerLink="playlist/{{song.id}}" class="btn btn-warning"></a>-->
+              </td>
+              <td><!-- The Modal -->
+                <div class="modal" id="{{'myModal' + song.id}}">
+<!--                  <h1>{{song.id}}</h1>-->
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h4 class="modal-title">Danh sách phát</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      </div>
+                      <!-- Modal body -->
+                      <div  class="modal-body" >
+                        <div *ngFor="let playlist of playlist;index as i" (click)="addSongToPlaylist(playlist.id, song.id)">
+                         <a class="btn btn-outline-warning"> {{playlist.name}}</a>
+                        </div>
+                      </div>
+                      <!-- Modal footer -->
+                      <div class="modal-footer" >
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" >Quay lại</button>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
               </td>
               <td>
                   <a  routerLink="edit/{{song.id}}" data-tip="edit"><i class="fa fa-edit"></i></a>
