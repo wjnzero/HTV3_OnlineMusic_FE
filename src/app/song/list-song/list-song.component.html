@@ -1,79 +1,74 @@
 <!--<div class="container">-->
 <!--  <section class="container">-->
-    <div class="new-most-song mt-5">
-      <div class="row p-10">
-        <div class="col-12">
-          <h4 class="font-weight-bold">Bài hát</h4>
-          <table class="table table-striped d-print-table-cell">
-            <thead class="thead-green">
-            <tr>
-              <th scope="col">STT</th>
-              <th scope="col">Ảnh</th>
-              <th scope="col">Bài hát</th>
-              <th scope="col">Mô tả</th>
-              <th scope="col">Lượt xem</th>
-<!--              <th scope="col">Tác giả</th>-->
-              <th scope="col">Ca sĩ</th>
+<div class="new-most-song mt-5">
+  <div class="row p-10">
+    <div class="col-12">
+      <h4 class="font-weight-bold">Bài hát</h4>
+      <table class="table table-striped d-print-table-cell">
+        <thead class="thead-green">
+        <tr>
+          <th scope="col">STT</th>
+          <th scope="col">Ảnh</th>
+          <th scope="col">Bài hát</th>
+          <th scope="col">Mô tả</th>
+          <th scope="col">Lượt xem</th>
+          <!--              <th scope="col">Tác giả</th>-->
+          <th scope="col">Ca sĩ</th>
 
               <!--              <th scope="col">Album</th>-->
               <!--              <th scope="col">View</th>-->
 
-              <th scope="col"></th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr *ngFor="let song of songs,let indexOfelement=index;">
-              <th scope="row">{{indexOfelement + 1}}</th>
-              <td><img width="40" height="40" src="{{song.avatar}}" class="img thumbnail pull-left mr-2"></td>
-              <td routerLink="search{{song.id}}">{{song.name}}</td>
-              <td routerLink="search{{song.id}}">{{song.describeSong}}</td>
-              <td routerLink="search{{song.id}}">{{song.viewSong}}</td>
-<!--              <td routerLink="search{{song.id}}">{{song.author!.name}}</td>-->
-              <td routerLink="search{{song.id}}">{{song.singer![0].name}}</td>
-              <td><button class="btn btn-outline-primary" routerLink="song/{{song.id}}">  |⫸ </button></td>
-<!--              <td>-->
-<!--                <a routerLink="playlist/{{song.id}}" class="btn btn-primary">Thêm vào danh sách phát</a>-->
-<!--              </td>-->
-<!--              <td>{{song.id}}</td>-->
+          <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let song of songs,let indexOfelement=index;">
+          <th scope="row">{{indexOfelement + 1}}</th>
+          <td><img width="40" height="40" src="{{song.avatar}}" class="img thumbnail pull-left mr-2"></td>
+          <td routerLink="search{{song.id}}">{{song.name}}</td>
+          <td routerLink="search{{song.id}}">{{song.describeSong}}</td>
+          <td routerLink="search{{song.id}}">{{song.viewSong}}</td>
+          <!--              <td routerLink="search{{song.id}}">{{song.author!.name}}</td>-->
+          <td routerLink="search{{song.id}}">{{song.singer![0].name}}</td>
+          <td>
+            <button class="btn btn-outline-primary" routerLink="song/{{song.id}}"> |⫸</button>
+          </td>
 
-              <td>
-
-                <button type="button" class="btn btn-outline-primary" data-toggle="modal" [attr.data-target]="'#myModal' + song.id">
-                  Thêm vào danh sách phát
-                </button>
-                <!--      <a routerLink="playlist/{{song.id}}" class="btn btn-warning"></a>-->
-              </td>
-              <td><!-- The Modal -->
-                <div class="modal" id="{{'myModal' + song.id}}">
-                  <h1>{{song.id}}</h1>
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <!-- Modal Header -->
-                      <div class="modal-header">
-                        <h4 class="modal-title">Danh sách phát</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                      </div>
-                      <!-- Modal body -->
-                      <div  class="modal-body" >
-
-                        <div *ngFor="let playlist of playlist;index as i" (click)="addSongToPlaylist(playlist.id, song.id)">
-                          {{playlist.name}}
-                        </div>
-                      </div>
-                      <!-- Modal footer -->
-                      <div class="modal-footer" >
-                        <button type="button" class="btn btn-outline-success" data-dismiss="modal" >Quay lại</button>
-                      </div>
-
+          <td>
+            <button type="button" class="btn btn-outline-primary" data-toggle="modal"
+                    [attr.data-target]="'#myModal' + song.id">Thêm vào danh sách phát</button>
+          </td>
+          <td><!-- The Modal -->
+            <div class="modal" id="{{'myModal' + song.id}}">
+              <h1>{{song.id}}</h1>
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 class="modal-title">Danh sách phát</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                    <div *ngFor="let playlist of playlist;index as i" (click)="addSongToPlaylist(playlist.id, song.id)">
+                      {{playlist.name}}
                     </div>
                   </div>
-                </div></td>
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-success" data-dismiss="modal">Quay lại</button>
+                  </div>
 
-            </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+                </div>
+              </div>
+            </div>
+          </td>
+
+        </tr>
+        </tbody>
+      </table>
     </div>
+  </div>
+</div>
 <!--  </section>-->
 <!--</div>-->

@@ -37,6 +37,7 @@ import {NgxPaginationModule} from "ngx-pagination";
 import {ListAllComponent} from "./home/list-all/list-all.component";
 import {PlayPlaylistComponent} from "./home/play-playlist/play-playlist.component";
 import { UserPlaylistComponent } from './user/playlist/user-playlist/user-playlist.component';
+import { SearchComponent } from './home/search/search.component';
 
 
 @NgModule({
@@ -62,8 +63,8 @@ import { UserPlaylistComponent } from './user/playlist/user-playlist/user-playli
     PlaySongComponent,
     ListAllComponent,
     PlayPlaylistComponent,
-    UserPlaylistComponent
-
+    UserPlaylistComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -82,7 +83,7 @@ import { UserPlaylistComponent } from './user/playlist/user-playlist/user-playli
     MatButtonModule,
     AngMusicPlayerModule,
     NgxAudioPlayerModule,
-    NgxPaginationModule
+    NgxPaginationModule,
   ],
   providers: [],
   exports: [
