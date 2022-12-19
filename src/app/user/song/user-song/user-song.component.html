@@ -35,7 +35,7 @@ style="text-align:center"
               <td style="color: #c4d4fa"routerLink="search{{song.id}}">{{song.singer![0].name}}</td>
               <td style="color: #c4d4fa">{{song.viewSong}}</td>
               <td>
-                <button style="color: #c14ffa" type="button" class="btn btn-outline-primary" data-toggle="modal"
+                <button style="color: #f2f0f3" type="button" class="btn btn-outline-primary" data-toggle="modal"
                         [attr.data-target]="'#myModal' + song.id">Thêm vào danh sách phát</button>
               </td>
               <td><!-- The Modal -->
@@ -51,7 +51,7 @@ style="text-align:center"
                       <!-- Modal body -->
                       <div class="modal-body">
                         <div *ngFor="let playlist of playlist;index as i" (click)="addSongToPlaylist(playlist.id, song.id)">
-                          <button style="color: white" class="btn btn-link">{{playlist.name}}</button>
+                          <button style="color: palevioletred" class="btn btn-link">{{playlist.name}}</button>
                         </div>
                       </div>
                       <!-- Modal footer -->
