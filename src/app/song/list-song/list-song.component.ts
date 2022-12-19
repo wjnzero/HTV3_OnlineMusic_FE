@@ -9,6 +9,7 @@ import {FormGroup} from "@angular/forms";
 import {allowMangle} from "@angular-devkit/build-angular/src/utils/environment-options";
 
 
+declare var Swal: any;
 @Component({
   selector: 'app-list-song',
   templateUrl: './list-song.component.html',
@@ -64,12 +65,18 @@ export class ListSongComponent implements OnInit {
     }
   }
   addSongToPlaylist(playlistId: any, songId: any) {
-    if (confirm('Bạn có muốn thêm vào playlist?')) {
+    // if (confirm('Bạn có muốn thêm vào playlist?')) {
       this.playlistService.addSongToPlaylist(playlistId, songId).subscribe(()=>{
-        alert("ok")
+        // alert("ok")
+      });
+      Swal.fire({
+        icon: 'success',
+        title: 'Thêm thành công',
+        showConfirmButton: false,
+        timer: 1000
       });
     }
   }
-}
+// }
 
 
