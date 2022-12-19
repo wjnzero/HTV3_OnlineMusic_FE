@@ -10,7 +10,7 @@ import {SongType} from "../../../model/songType";
 import {FormGroup} from "@angular/forms";
 import {SongTemp} from "../../../model/songTemp";
 import {PlaylistService} from "../../../service/playlist/playlist.service";
-
+declare var Swal: any;
 @Component({
   selector: 'app-user-song',
   templateUrl: './user-song.component.html',
@@ -44,6 +44,15 @@ export class UserSongComponent implements OnInit {
         this.audioList.push(temp);
       }
     });
+    // this.userid = window.localStorage.getItem("idUser");
+
+    this.playlistService.getAll().subscribe(playlist => {
+      this.playlist = playlist;
+
+    });
+    this.playlistService.getByUserId(this.userid).subscribe(playlist => {
+      this.playlist = playlist;
+    });
   }
 
   delete(id: any) {
@@ -57,6 +66,18 @@ export class UserSongComponent implements OnInit {
       });
     }
   }
+
+  addSongToPlaylist(playlistId: any, songId: any) {
+    this.playlistService.addSongToPlaylist(playlistId, songId).subscribe(() => {
+    });
+    Swal.fire({
+      icon: 'success',
+      title: 'thành công',
+      showConfirmButton: false,
+      timer: 1000
+    });
+  }
 }
+
 
 
