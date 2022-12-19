@@ -34,20 +34,15 @@ style="text-align:center"
               <td routerLink="search{{song.id}}">{{song.describeSong}}</td>
               <td>{{song.viewSong}}</td>
               <td class="btn btn-default" routerLink="song/{{song.id}}"> |⫸</td>
-<!--              <td>-->
-<!--                <a routerLink="playlist/{{song.id}}" class="btn btn-outline-warning">Thêm vào danh sách phát</a>-->
-<!--              </td>-->
+
 
               <td>
-
                 <button type="button" class="btn btn-outline-primary" data-toggle="modal" [attr.data-target]="'#myModal' + song.id">
                   Thêm vào danh sách phát
                 </button>
-                <!--      <a routerLink="playlist/{{song.id}}" class="btn btn-warning"></a>-->
               </td>
               <td><!-- The Modal -->
                 <div class="modal" id="{{'myModal' + song.id}}">
-<!--                  <h1>{{song.id}}</h1>-->
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <!-- Modal Header -->
@@ -70,6 +65,7 @@ style="text-align:center"
                   </div>
                 </div>
               </td>
+<!--              <td><a routerLink="song/{{song.id}}" data-tip="play"><i class="fa fa-play"></i> </a></td>-->
               <td>
                   <a  routerLink="edit/{{song.id}}" data-tip="edit"><i class="fa fa-edit"></i></a>
               </td>

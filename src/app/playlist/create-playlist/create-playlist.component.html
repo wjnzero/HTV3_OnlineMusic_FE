@@ -1,3 +1,4 @@
+<body background="https://img5.thuthuatphanmem.vn/uploads/2021/11/17/hinh-nen-am-nhac-4k_013836168.jpg">
 <div class="container">
 <h1>Tạo danh sách mới</h1>
 <form  [formGroup]="playlistForm" >
@@ -9,13 +10,16 @@
     <tr>
       <td></td>
       <td>
-        <button (click)="savePlaylist()">Tạo mới</button>
+        <button class="btn btn-outline-primary" (click)="savePlaylist()">Tạo mới</button>
       </td>
       <td>
-        <button routerLink="/playlist" class="btn btn-success">Trở lại</button>
+        <button routerLink="/playlist" class="btn btn-outline-success">Trở lại</button>
         <!--              <button class="button-cancel" [routerLink]="['/home']">Thoát</button>-->
       </td>
     </tr>
   </table>
 </form>
 </div>
+</body>
+
+
