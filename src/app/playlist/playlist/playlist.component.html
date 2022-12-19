@@ -1,64 +1,4 @@
-<!--<div class="container">-->
-<!--  <section class="container">-->
-<!--    <div class="new-most-song mt-5">-->
-<!--      <div class="row p-10">-->
-<!--        <div class="col-10">-->
-
-
-<!--<h1>Danh sách playlist </h1>-->
-
-<!--<table border="1">-->
-<!--  <tr>-->
-<!--    <th scope="col">Name</th>-->
-<!--    <th scope="col">List</th>-->
-<!--    <th scope="col">Edit</th>-->
-<!--    <th scope="col">Delete</th>-->
-<!--    <th colspan="2" ></th>-->
-<!--  </tr>-->
-<!--  <tr *ngFor="let playlist of playlist;index as i">-->
-<!--    <td>{{playlist.name}}</td>-->
-<!--    <td>-->
-<!--      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#song-in-play-list-modal" (click)="showSongInPlaylist(playlist.id)">-->
-<!--        bài hát vào playlist-->
-<!--      </button>-->
-<!--      &lt;!&ndash; The Modal &ndash;&gt;-->
-<!--      <div class="modal" id="song-in-play-list-modal">-->
-<!--        <div class="modal-dialog">-->
-<!--          <div class="modal-content">-->
-<!--            &lt;!&ndash; Modal Header &ndash;&gt;-->
-<!--            <div class="modal-header">-->
-<!--              <h4 class="modal-title">Playlist</h4>-->
-<!--              <button type="button" class="close" data-dismiss="modal">&times;</button>-->
-<!--            </div>-->
-<!--            &lt;!&ndash; Modal body &ndash;&gt;-->
-<!--            <div  class="modal-body" >-->
-<!--              <div *ngFor="let song of songs;index as i">-->
-<!--                {{song.name}}-->
-<!--              </div>-->
-<!--            </div>-->
-<!--            &lt;!&ndash; Modal footer &ndash;&gt;-->
-<!--            <div class="modal-footer" >-->
-<!--              <button type="button" class="btn btn-danger" data-dismiss="modal" >back</button>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </td>-->
-<!--    <td>-->
-<!--      <a routerLink="edit1/{{playlist.id}}" class="btn btn-warning">Edit</a>-->
-<!--    </td>-->
-<!--    <td>-->
-<!--      <button (click)="delete(playlist.id)" class="btn btn-danger">Delete</button>-->
-<!--    </td>-->
-<!--  </tr>-->
-<!--</table>-->
-<!--<app-create-playlist></app-create-playlist>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </section>-->
-<!--</div>-->
-<body background="assets/img/pngtree-beautiful-purple-line-bubble-background-picture-image_1463162.jpg"
+<body background="https://img5.thuthuatphanmem.vn/uploads/2021/11/17/hinh-nen-am-nhac-4k_013836168.jpg"
       style="text-align:center"
 >
 <!--<app-navbar-menu style="background-color: #bd6fbb"></app-navbar-menu>-->
@@ -70,7 +10,7 @@
       <div class="row p-10">
         <div class="col-10">
           <h4 class="font-weight-bold">Danh sách phát</h4>
-          <button class="btn btn-warning" >
+          <button class="btn btn-outline-info" >
             <a routerLink="/playlist/createplaylist">Tạo danh sách</a>
           </button>
           <table class="table table-striped d-print-table-cell">
@@ -89,9 +29,9 @@
               <th scope="row">{{indexOfelement + 1}}</th>
               <td routerLink="playlist{{playlist.id}}">{{playlist.name}}</td>
               <td>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#song-in-play-list-modal"
+                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#song-in-play-list-modal"
                         (click)="showSongInPlaylist(playlist.id)">
-                 Danh sách bài hát
+                 Danh sách phát
                 </button>
                 <!-- The Modal -->
                 <div class="modal" id="song-in-play-list-modal">
@@ -110,26 +50,24 @@
                       </div>
                       <!-- Modal footer -->
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">quay lại</button>
+                        <button type="button" class="btn btn-outline-primary" data-dismiss="modal">quay lại</button>
                       </div>
                     </div>
                   </div>
                 </div>
               </td>
               <td>
-                <a routerLink="/playlist/edit1/{{playlist.id}}" class="btn btn-warning">Sửa</a>
+                <a routerLink="/playlist/edit1/{{playlist.id}}" class="btn btn-outline-success">Sửa</a>
               </td>
               <td>
-                <button (click)="delete(playlist.id)" class="btn btn-danger">xóa</button>
+                <button (click)="delete(playlist.id)" class="btn btn-outline-danger">Xóa</button>
               </td>
-<!--              <td>-->
-<!--                <button class="btn btn-success" routerLink="song/{{playlist.id}}"> Nghe ⫸</button>-->
-<!--              </td>-->
+              <td><button class="btn btn-outline-primary" routerLink="song/{{playlist.id}}">   |⫸</button></td>
             </tr>
             </tbody>
           </table>
           <div class="modal-footer" >
-            <button routerLink="" type="button" class="btn btn-danger" data-dismiss="modal" >back</button>
+            <button routerLink="" type="button" class="btn btn-outline-primary" data-dismiss="modal" >Quay lại</button>
           </div>
 <!--        git chec-->
         </div>

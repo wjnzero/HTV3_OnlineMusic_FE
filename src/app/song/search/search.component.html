@@ -1,4 +1,5 @@
 <!--<div class="container">-->
+<tbody background="https://img5.thuthuatphanmem.vn/uploads/2021/11/17/hinh-nen-am-nhac-4k_013836168.jpg">
   <div class="new-most-song mt-5">
     <div class="row " style="border: rgba(193,79,250,0.09) solid 2px">
       <div class="col-8">
@@ -27,10 +28,10 @@
             <td routerLink="search{{song.id}}">{{song.author!.name}}</td>
             <td routerLink="search{{song.id}}">{{song.singer![0].name}}</td>
             <td routerLink="search{{song.id}}">{{song.viewSong}}</td>
-            <td class="btn btn-default" routerLink="song/{{song.id}}">  |⫸ </td>
+            <td><button class="btn btn-outline-primary" routerLink="song/{{song.id}}">  |⫸</button> </td>
           </tr>
           </tbody>
-          <button routerLink="" class="btn btn-primary">Trang chủ</button>
+          <button routerLink="" class="btn btn-outline-primary">Trang chủ</button>
         </table>
       </div>
 
@@ -45,7 +46,8 @@
             <tr *ngFor="let playlist of playlists,let indexOfelement=index;">
               <th scope="row">{{indexOfelement + 1}}</th>
               <td routerLink="search{{playlist.id}}">{{playlist.name}}</td>
-              <td class="btn btn-default" routerLink="song/{{playlist.id}}">   |⫸</td>
+              <td routerLink="search{{playlist.id}}">{{playlist.name}}</td>
+              <td><button class="btn btn-outline-primary" routerLink="song/{{playlist.id}}">   |⫸</button></td>
             </tr>
             </tbody>
           </table>
@@ -53,6 +55,7 @@
       </div>
     </div>
   </div>
+</tbody>
 
 
 

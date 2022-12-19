@@ -34,9 +34,10 @@ style="text-align:center"
               <td routerLink="search{{song.id}}">{{song.describeSong}}</td>
               <td>{{song.viewSong}}</td>
               <td class="btn btn-default" routerLink="song/{{song.id}}"> |⫸</td>
-              <td>
-                <a routerLink="playlist/{{song.id}}" class="btn btn-outline-warning">Thêm vào danh sách phát</a>
-              </td>
+<!--              <td>-->
+<!--                <a routerLink="playlist/{{song.id}}" class="btn btn-outline-warning">Thêm vào danh sách phát</a>-->
+<!--              </td>-->
+
               <td>
                   <a  routerLink="edit/{{song.id}}" data-tip="edit"><i class="fa fa-edit"></i></a>
               </td>
@@ -46,7 +47,7 @@ style="text-align:center"
             </tbody>
           </table>
             <div  >
-              <button style="font-size: 20px" routerLink="" class="btn btn-outline-success">Quay lại</button>
+              <button style="font-size: 20px" routerLink="" class="btn btn-success">Quay lại</button>
             </div>
 
             <!--              <button class="button-cancel" [routerLink]="['/home']">Thoát</button>-->

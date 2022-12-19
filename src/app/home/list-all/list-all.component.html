@@ -21,7 +21,7 @@
       </div>
 
       <div class="col-6">
-        <h4 class="font-weight-bold">Playlist</h4>
+        <h4 class="font-weight-bold">Danh sách phát</h4>
         <ul class="list-group" *ngFor="let playlist of playlists ; index as i">
           <li class="list-group-item pb-1" *ngIf="i < 5" >
             <a class="name-of-song" [routerLink]="['playlists/play',playlist.id]">
