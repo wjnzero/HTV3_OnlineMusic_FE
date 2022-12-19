@@ -13,6 +13,7 @@ import {UserPlaylistComponent} from "./user/playlist/user-playlist/user-playlist
 import {PlaylistComponent} from "./playlist/playlist/playlist.component";
 import {CreateSongComponent} from "./song/create-song/create-song.component";
 import {PlayPlaylistComponent} from "./home/play-playlist/play-playlist.component";
+import {SearchComponent} from "./home/search/search.component";
 
 
 const routes: Routes = [
@@ -40,6 +41,10 @@ const routes: Routes = [
   {
     path: 'playlists/play/:id', component: PlayPlaylistComponent
   },
+  {
+    path: 'search',
+    component:SearchComponent },
+
   {
     path: 'userProfile',
     component: UserProfileComponent,

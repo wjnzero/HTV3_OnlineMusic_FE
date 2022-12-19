@@ -1,0 +1,64 @@
+<!--<div class="container">-->
+<div>
+  <app-navbar-menu></app-navbar-menu>
+</div><br>
+<!--<body background="https://img5.thuthuatphanmem.vn/uploads/2021/11/17/hinh-nen-am-nhac-4k_013836168.jpg">-->
+<body background="https://img.upanh.tv/2022/12/19/nen.png">
+
+<div class="new-most-song mt-5">
+  <div class="row " style="border: rgba(193,79,250,0.09) solid 2px">
+    <div class="col-8">
+      <h4 style="color:#efc1ae;" class="font-weight-bold">Bài hát</h4>
+      <table class="table table-striped d-print-table-cell">
+        <thead class="thead-green">
+        <tr>
+          <th style="color:#efc1ae;" scope="col">STT</th>
+          <th style="color:#efc1ae;" scope="col">Ảnh</th>
+          <th style="color:#efc1ae;" scope="col">Bài hát</th>
+          <th style="color:#efc1ae;" scope="col">Mô tả</th>
+          <th style="color:#efc1ae;" scope="col">Tác giả</th>
+          <th style="color:#efc1ae;" scope="col">Ca sĩ</th>
+          <th style="color:#efc1ae;" scope="col">Lượt xem</th>
+          <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let song of songs,let indexOfelement=index;">
+          <th style="color:#efc1ae;" scope="row">{{indexOfelement + 1}}</th>
+          <td><img width="40" height="40" src="{{song.avatar}}" class="img thumbnail pull-left mr-2"></td>
+          <td style="color:#efc1ae;"routerLink="search{{song.id}}">{{song.name}}</td>
+          <td style="color:#efc1ae;"routerLink="search{{song.id}}">{{song.describeSong}}</td>
+          <td style="color:#efc1ae;"routerLink="search{{song.id}}">{{song.author!.name}}</td>
+          <td style="color:#efc1ae;"routerLink="search{{song.id}}">{{song.singer![0].name}}</td>
+          <td style="color:#efc1ae;"routerLink="search{{song.id}}">{{song.viewSong}}</td>
+          <td>
+            <button type="button" class="btn btn-outline-primary" data-toggle="modal"
+                    [attr.data-target]="'#myModal' + song.id">Thêm vào danh sách phát</button>
+          </td>
+          <td><button style="color:#efc1ae;"class="btn btn-outline-primary" routerLink="song/{{song.id}}">  |⫸</button> </td>
+        </tr>
+        </tbody>
+        <button style="color:#efc1ae;" routerLink="" class="btn btn-outline-primary">Trang chủ</button>
+      </table>
+    </div>
+
+    <div class="col-4">
+      <div>
+        <h4 style="color:#efc1ae;" class="font-weight-bold">Danh sách phát</h4>
+        <table class="table table-striped d-print-table-cell">
+          <thead class="thead-green">
+          </thead>
+          <tbody>
+          <tr *ngFor="let playlist of playlists,let indexOfelement=index;">
+            <th style="color:#efc1ae;"scope="row">{{indexOfelement + 1}}</th>
+            <td style="color:#efc1ae;"routerLink="search{{playlist.id}}">{{playlist.name}}</td>
+            <td><button style="color:#efc1ae;"class="btn btn-outline-primary" routerLink="song/{{playlist.id}}">   |⫸</button></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--</body>-->
+<app-layout></app-layout>
