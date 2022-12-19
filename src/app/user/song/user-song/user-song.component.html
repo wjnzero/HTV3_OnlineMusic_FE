@@ -30,27 +30,17 @@ style="text-align:center"
             <tr *ngFor="let song of songs,let indexOfElement=index;">
               <th style="color: #c4d4fa"scope="row">{{indexOfElement + 1}}</th>
               <td><img width="40" height="40" src="{{song.avatar}}" class="img thumbnail pull-left mr-2"></td>
-              <td routerLink="search{{song.id}}">{{song.name}}</td>
-              <td routerLink="search{{song.id}}">{{song.describeSong}}</td>
-              <td>{{song.viewSong}}</td>
-              <td class="btn btn-default" routerLink="song/{{song.id}}"> |⫸</td>
-
               <td style="color: #c4d4fa"routerLink="search{{song.id}}">{{song.name}}</td>
               <td style="color: #c4d4fa"routerLink="search{{song.id}}">{{song.describeSong}}</td>
               <td style="color: #c4d4fa"routerLink="search{{song.id}}">{{song.singer![0].name}}</td>
               <td style="color: #c4d4fa">{{song.viewSong}}</td>
-              <td><a style="color: #c4d4fa" routerLink="song/{{song.id}}" data-tip="play"><i class="fa fa-play"></i> </a></td>
-<!--              <td>-->
-<!--                <a routerLink="playlist/{{song.id}}" class="btn btn-outline-warning">Thêm vào danh sách phát</a>-->
-<!--              </td>-->
-
               <td>
-                <button type="button" class="btn btn-outline-primary" data-toggle="modal" [attr.data-target]="'#myModal' + song.id">
-                  Thêm vào danh sách phát
-                </button>
+                <button style="color: #c14ffa" type="button" class="btn btn-outline-primary" data-toggle="modal"
+                        [attr.data-target]="'#myModal' + song.id">Thêm vào danh sách phát</button>
               </td>
               <td><!-- The Modal -->
                 <div class="modal" id="{{'myModal' + song.id}}">
+                  <h1>{{song.id}}</h1>
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <!-- Modal Header -->
@@ -58,22 +48,22 @@ style="text-align:center"
                         <h4 class="modal-title">Danh sách phát</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                       </div>
-                      <!-- Modal body -->git
-                      <div  class="modal-body" >
+                      <!-- Modal body -->
+                      <div class="modal-body">
                         <div *ngFor="let playlist of playlist;index as i" (click)="addSongToPlaylist(playlist.id, song.id)">
-                         <a class="btn btn-outline-warning"> {{playlist.name}}</a>
+                          <button style="color: white" class="btn btn-link">{{playlist.name}}</button>
                         </div>
                       </div>
                       <!-- Modal footer -->
-                      <div class="modal-footer" >
-                        <button type="button" class="btn btn-danger" data-dismiss="modal" >Quay lại</button>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-success" data-dismiss="modal">Quay lại</button>
                       </div>
 
                     </div>
                   </div>
                 </div>
               </td>
-<!--              <td><a routerLink="song/{{song.id}}" data-tip="play"><i class="fa fa-play"></i> </a></td>-->
+              <td><a style="color: #c4d4fa" routerLink="song/{{song.id}}" data-tip="play"><i class="fa fa-play"></i> </a></td>
               <td>
                   <a style="color: #c4d4fa" routerLink="edit/{{song.id}}" data-tip="edit"><i class="fa fa-edit"></i></a>
               </td>
@@ -83,12 +73,8 @@ style="text-align:center"
             </tbody>
           </table>
             <div  >
-              <button style="font-size: 20px" routerLink="" class="btn btn-outline-success">Quay lại</button>
               <button style="color: #c4d4fa" routerLink="" class="btn btn-outline-info">Trang chủ</button>
             </div>
-
-            <!--              <button class="button-cancel" [routerLink]="['/home']">Thoát</button>-->
-          <!--          <ang-music-player [audioList] = "audioList" backgroundColor="#bb74ce" width="100%"></ang-music-player>-->
         </div>
       </div>
     </div>
