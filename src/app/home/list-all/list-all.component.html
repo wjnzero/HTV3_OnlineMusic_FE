@@ -3,7 +3,7 @@
     <div class="row p-3">
       <div class="col-6">
         <h4 class="font-weight-bold">Bài hát</h4>
-        <ul class="list-group br-1" *ngFor="let song of songList ; index as i">
+        <ul class="list-group br-1" *ngFor="let song of songs ; index as i">
           <li class="list-group-item pb-1" *ngIf="i < 5">
             <a class="name-of-song" [routerLink]="['song',song.id]">
               <img width="40" height="40" src="{{song.avatar}}" class="img thumbnail pull-left mr-2">

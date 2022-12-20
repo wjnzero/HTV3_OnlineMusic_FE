@@ -11,8 +11,7 @@ import {Song} from "../../model/song";
 })
 export class ListAllComponent implements OnInit {
 
-
-  songList: Song[] = [];
+  songs: Song[] = [];
   playlists: Playlist[] = [];
 
   constructor(private songService: SongService,
@@ -20,11 +19,11 @@ export class ListAllComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.songService.getAll().subscribe(res => {
-      this.songList = res;
+    this.songService.getAll().subscribe(song => {
+      this.songs = song;
     });
-    this.playlistService.getAll().subscribe(res => {
-      this.playlists = res;
+    this.playlistService.getAll().subscribe(list => {
+      this.playlists = list;
     });
   }
 }
