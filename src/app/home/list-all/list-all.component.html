@@ -25,7 +25,7 @@
 
       <div class="col-6">
         <h4 class="font-weight-bold">Danh sách phát</h4>
-        <ul class="list-group" *ngFor="let playlist of playlists | paginate: { itemsPerPage: 5, currentPage: p2 } ; index as i">
+        <ul class="list-group" *ngFor="let playlist of playlists | paginate: {itemsPerPage: 5, currentPage: p2 } ; index as i">
           <li class="list-group-item pb-1" *ngIf="i < 5" >
             <a class="name-of-song" [routerLink]="['playlists/play',playlist.id]">
 <!--              <img src="{{playlist.timeCreate}}" width="40" height="40" alt="" class="img thumbnail pull-left mr-2">-->
