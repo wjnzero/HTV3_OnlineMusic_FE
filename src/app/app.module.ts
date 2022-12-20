@@ -58,7 +58,6 @@ import {UserCreateSongComponent} from "./user/song/user-create-song/user-create-
     PosterComponent,
     FooterComponent,
     LayoutComponent,
-    NavbarMenuComponent,
     NavbarLoginResisterComponent,
     LoginComponent,
     RegisterComponent,
