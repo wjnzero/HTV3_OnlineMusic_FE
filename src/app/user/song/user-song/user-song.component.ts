@@ -46,7 +46,7 @@ export class UserSongComponent implements OnInit {
         this.audioList.push(temp);
       }
     });
-    this.userid = window.localStorage.getItem("idUser");
+    // this.userid = window.localStorage.getItem("idUser");
     this.playlistService.getAll().subscribe(playlist => {
       this.playlist = playlist;
     });
