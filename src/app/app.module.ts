@@ -37,6 +37,7 @@ import {NgxPaginationModule} from "ngx-pagination";
 import {ListAllComponent} from "./home/list-all/list-all.component";
 import {PlayPlaylistComponent} from "./home/play-playlist/play-playlist.component";
 import { UserPlaylistComponent } from './user/playlist/user-playlist/user-playlist.component';
+import {MatPaginatorIntl} from "@angular/material/paginator";
 
 
 @NgModule({
@@ -84,7 +85,7 @@ import { UserPlaylistComponent } from './user/playlist/user-playlist/user-playli
     NgxAudioPlayerModule,
     NgxPaginationModule
   ],
-  providers: [],
+  providers: [MatPaginatorIntl ],
   exports: [
     NavbarMenuComponent
   ],
