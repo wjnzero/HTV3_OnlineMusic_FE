@@ -40,6 +40,7 @@ import { UserPlaylistComponent } from './user/playlist/user-playlist/user-playli
 import {MatPaginatorIntl} from "@angular/material/paginator";
 import { SearchComponent } from './home/search/search.component';
 import {ComponentsModule} from "./components/components.module";
+import {NavbarMenuModule} from "./home/navbar-menu/navbar-menu.module";
 
 
 @NgModule({
@@ -52,7 +53,7 @@ import {ComponentsModule} from "./components/components.module";
     PosterComponent,
     FooterComponent,
     LayoutComponent,
-    NavbarMenuComponent,
+
     NavbarLoginResisterComponent,
     LoginComponent,
     RegisterComponent,
@@ -61,6 +62,7 @@ import {ComponentsModule} from "./components/components.module";
     UserEditSongComponent,
     UserProfileComponent,
     NavbarUserComponent,
+    NavbarMenuComponent,
     UserChangePasswordComponent,
     PlaySongComponent,
     ListAllComponent,
@@ -79,6 +81,7 @@ import {ComponentsModule} from "./components/components.module";
     FormsModule,
     RouterModule,
     SongModule,
+    NavbarMenuModule,
 
     BrowserAnimationsModule,
     MatMenuModule,
@@ -89,7 +92,6 @@ import {ComponentsModule} from "./components/components.module";
   ],
   providers: [MatPaginatorIntl ],
   exports: [
-    NavbarMenuComponent
   ],
   bootstrap: [AppComponent]
 })

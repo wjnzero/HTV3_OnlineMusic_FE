@@ -10,6 +10,7 @@ import { ListsongInOnePlaylistComponent } from './listsong-in-one-playlist/lists
 import { ListLikePlaylistComponent } from './list-like-playlist/list-like-playlist.component';
 import { ListOrderViewPlaylistComponent } from './list-order-view-playlist/list-order-view-playlist.component';
 import {NgxPaginationModule} from "ngx-pagination";
+import {NavbarMenuModule} from "../home/navbar-menu/navbar-menu.module";
 
 
 @NgModule({
@@ -35,7 +36,7 @@ import {NgxPaginationModule} from "ngx-pagination";
     FormsModule,
     NgxPaginationModule,
 
-
+NavbarMenuModule
   ]
 })
 export class PlaylistModule {
