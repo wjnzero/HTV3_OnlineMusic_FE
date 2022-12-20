@@ -37,6 +37,7 @@ import {ListAllComponent} from "./home/list-all/list-all.component";
 import {PlayPlaylistComponent} from "./home/play-playlist/play-playlist.component";
 import { UserPlaylistComponent } from './user/playlist/user-playlist/user-playlist.component';
 import { SearchComponent } from './home/search/search.component';
+import {ComponentsModule} from "./components/components.module";
 
 
 @NgModule({
@@ -63,7 +64,7 @@ import { SearchComponent } from './home/search/search.component';
     ListAllComponent,
     PlayPlaylistComponent,
     UserPlaylistComponent,
-    SearchComponent
+    SearchComponent,
   ],
   imports: [
     BrowserModule,

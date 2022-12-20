@@ -1,7 +1,7 @@
 <body background="https://img.upanh.tv/2022/12/19/nen.png"
 style="text-align:center"
 >
-<app-navbar-menu></app-navbar-menu>
+<!--<app-navbar-menu></app-navbar-menu>-->
 <div><br></div>
 <div><br></div>
 <div class="container">
@@ -40,18 +40,17 @@ style="text-align:center"
               </td>
               <td><!-- The Modal -->
                 <div class="modal" id="{{'myModal' + song.id}}">
-                  <h1>{{song.id}}</h1>
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <!-- Modal Header -->
                       <div class="modal-header">
-                        <h4 class="modal-title">Danh sách phát</h4>
+                        <h4 style="color: #0c89f1" class="modal-title">Danh sách phát</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                       </div>
                       <!-- Modal body -->
                       <div class="modal-body">
                         <div *ngFor="let playlist of playlist;index as i" (click)="addSongToPlaylist(playlist.id, song.id)">
-                          <button style="color: palevioletred" class="btn btn-link">{{playlist.name}}</button>
+                          <button style="color: #0ba2e3" class="btn btn-link">{{playlist.name}}</button>
                         </div>
                       </div>
                       <!-- Modal footer -->

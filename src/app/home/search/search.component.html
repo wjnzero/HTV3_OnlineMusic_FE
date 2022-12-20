@@ -1,7 +1,5 @@
 <!--<div class="container">-->
-<div>
-  <app-navbar-menu></app-navbar-menu>
-</div><br>
+<div><br></div>
 <body background="https://img.upanh.tv/2022/12/19/nen.png">
 <div style="margin-top: 60px">
 
@@ -35,6 +33,31 @@
             <button style="color: #c4d4fa"type="button" class="btn btn-outline-primary" data-toggle="modal"
                     [attr.data-target]="'#myModal' + song.id">Thêm vào danh sách phát</button>
           </td>
+          <td><!-- The Modal -->
+            <div class="modal" id="{{'myModal' + song.id}}">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 style="color: #0c89f1" class="modal-title">Danh sách phát</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                    <div *ngFor="let playlist of playlists;index as i" (click)="addSongToPlaylist(playlist.id, song.id)">
+                      <button style="color: #0ba2e3" class="btn btn-link">{{playlist.name}}</button>
+                    </div>
+                  </div>
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-success" data-dismiss="modal">Quay lại</button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </td>
+
           <td><button style="color:#efc1ae;"class="btn btn-outline-primary" routerLink="song/{{song.id}}">  |⫸</button> </td>
         </tr>
         </tbody>
@@ -52,7 +75,7 @@
           <tr *ngFor="let playlist of playlists,let indexOfelement=index;">
             <th style="color:#efc1ae;"scope="row">{{indexOfelement + 1}}</th>
             <td style="color:#efc1ae;"routerLink="search{{playlist.id}}">{{playlist.name}}</td>
-            <td><button style="color:#efc1ae;"class="btn btn-outline-primary" routerLink="song/{{playlist.id}}">   |⫸</button></td>
+            <td><button style="color:#efc1ae;"class="btn btn-outline-primary" routerLink="/playlists/play/{{playlist.id}}">   |⫸</button></td>
           </tr>
           </tbody>
         </table>
@@ -60,4 +83,4 @@
     </div>
   </div>
 </div>
-<app-layout></app-layout>
+</div>
