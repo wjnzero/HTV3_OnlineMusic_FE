@@ -32,13 +32,6 @@ const routes: Routes = [
     path: "findsonginplaylist/:id",
     component: ListsongInOnePlaylistComponent
   },
-  // {
-  //   path: "userplaylist/:id",
-  //   component: PlaylistComponent,
-  //   canActivate: [AuthGuardGuard]
-  // },
-
-
 ];
 
 @NgModule({

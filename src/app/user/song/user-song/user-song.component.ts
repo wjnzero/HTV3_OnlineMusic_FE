@@ -19,6 +19,7 @@ declare var Swal: any;
   styleUrls: ['./user-song.component.css']
 })
 export class UserSongComponent implements OnInit {
+  p?: number;
   // @ts-ignore
   user: User;
   userid: any;

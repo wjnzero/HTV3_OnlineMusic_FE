@@ -8,7 +8,7 @@ import {EditPlaylistComponent} from "./edit-playlist/edit-playlist.component";
 import {PlaylistComponent} from "./playlist/playlist.component";
 import { ListsongInOnePlaylistComponent } from './listsong-in-one-playlist/listsong-in-one-playlist.component';
 import {NgxPaginationModule} from "ngx-pagination";
-import {AppModule} from "../app.module";
+
 
 @NgModule({
   declarations: [
@@ -31,7 +31,8 @@ import {AppModule} from "../app.module";
     AngMusicPlayerModule,
     FormsModule,
     NgxPaginationModule,
-    AppModule,
+
+
   ]
 })
 export class PlaylistModule {

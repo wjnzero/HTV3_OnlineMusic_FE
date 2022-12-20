@@ -27,7 +27,7 @@ style="text-align:center"
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let song of songs,let indexOfElement=index;">
+            <tr *ngFor="let song of songs | paginate: { itemsPerPage: 5, currentPage: p },let indexOfElement=index;">
               <th style="color: #c4d4fa"scope="row">{{indexOfElement + 1}}</th>
               <td><img width="40" height="40" src="{{song.avatar}}" class="img thumbnail pull-left mr-2"></td>
               <td style="color: #c4d4fa"routerLink="search{{song.id}}">{{song.name}}</td>
@@ -71,6 +71,9 @@ style="text-align:center"
             </tr>
             </tbody>
           </table>
+          <div class="text-center">
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+          </div>
             <div  >
               <button style="color: #c4d4fa" routerLink="" class="btn btn-outline-info">Trang chủ</button>
             </div>

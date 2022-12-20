@@ -10,6 +10,7 @@ import {PlaylistService} from "../../service/playlist/playlist.service";
   styleUrls: ['./playlist.component.css']
 })
 export class PlaylistComponent implements OnInit {
+  p?: number;
   userid?: any;
   audioList = [
     {
