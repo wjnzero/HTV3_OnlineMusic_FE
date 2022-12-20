@@ -13,6 +13,7 @@ import {ActivatedRoute} from "@angular/router";
 
 
 declare var Swal: any;
+
 @Component({
   selector: 'app-list-song',
   templateUrl: './list-song.component.html',
@@ -32,7 +33,7 @@ export class ListSongComponent implements OnInit {
               private userService: UserService,
               private tokenService: TokenStorageService,
               private activateRoute: ActivatedRoute,
-  private  playlistService : PlaylistService) {
+              private playlistService: PlaylistService) {
   }
 
   ngOnInit() {
@@ -54,41 +55,41 @@ export class ListSongComponent implements OnInit {
     this.playlistService.getByUserId(this.userid).subscribe(playlist => {
       this.playListUser = playlist;
     });
-}
+  }
+
   getAll() {
   }
 
   getByUserId() {
     this.playlistService.getByUserId(this.userid).subscribe(playlist => {
-      console.log("pll uid: "+ playlist[0].id)
+      console.log("pll uid: " + playlist[0].id)
       this.playListUser = playlist;
     });
   }
 
   delete(id: any) {
-    if (confirm('Bạn có muốn xóa?')) {
-      this.songService.delete(id).subscribe(data => {
-        console.log(data)
-        alert("Ok");
-        this.getAll()
-      }, e => {
-        console.error(e)
-      });
-    }
+    this.songService.delete(id).subscribe(data => {
+      console.log(data)
+      this.getAll()
+    }, e => {
+      console.error(e)
+    });
   }
+
   addSongToPlaylist(playlistId: any, songId: any) {
     // if (confirm('Bạn có muốn thêm vào playlist?')) {
-      this.playlistService.addSongToPlaylist(playlistId, songId).subscribe(()=>{
-        // alert("ok")
-      });
-      Swal.fire({
-        icon: 'success',
-        title: 'Thêm thành công',
-        showConfirmButton: false,
-        timer: 1000
-      });
-    }
+    this.playlistService.addSongToPlaylist(playlistId, songId).subscribe(() => {
+      // alert("ok")
+    });
+    Swal.fire({
+      icon: 'success',
+      title: 'Thêm thành công',
+      showConfirmButton: false,
+      timer: 1000
+    });
   }
+}
+
 // }
 
 

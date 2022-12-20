@@ -60,25 +60,23 @@ export class UserSongComponent implements OnInit {
 
   getByUserId() {
     this.playlistService.getByUserId(this.userid).subscribe(playlist => {
-      console.log("pll uid: "+ playlist[0].id)
+      console.log("pll uid: " + playlist[0].id)
       this.playlist = playlist;
     });
   }
 
   delete(id: any) {
-    if (confirm('Bạn có muốn xóa?')) {
-      this.songService.delete(id).subscribe(data => {
-        console.log(data)
-        alert("Ok");
-        this.ngOnInit();
-      }, e => {
-        console.error(e)
-      });
-    }
+    this.songService.delete(id).subscribe(data => {
+      console.log(data)
+      this.ngOnInit();
+    }, e => {
+      console.error(e)
+    });
   }
+
   addSongToPlaylist(playlistId: any, songId: any) {
     // if (confirm('Bạn có muốn thêm vào playlist?')) {
-    this.playlistService.addSongToPlaylist(playlistId, songId).subscribe(()=>{
+    this.playlistService.addSongToPlaylist(playlistId, songId).subscribe(() => {
       // alert("ok")
     });
     Swal.fire({
@@ -87,8 +85,8 @@ export class UserSongComponent implements OnInit {
       showConfirmButton: false,
       timer: 1000
     });
-    }
   }
+}
 
 
 
