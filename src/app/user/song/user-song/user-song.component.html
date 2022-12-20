@@ -21,7 +21,7 @@ style="text-align:center"
               <th style="color: #c4d4fa"scope="col">Ảnh</th>
               <th style="color: #c4d4fa"scope="col">Bài hát</th>
               <th style="color: #c4d4fa"scope="col">Mô tả</th>
-              <th style="color: #c4d4fa"scope="col">Ca sĩ</th>
+<!--              <th style="color: #c4d4fa"scope="col">Ca sĩ</th>-->
               <th style="color: #c4d4fa"scope="col">Lượt xem</th>
               <th style="color: #c4d4fa"scope="col"></th>
             </tr>
@@ -32,8 +32,8 @@ style="text-align:center"
               <td><img width="40" height="40" src="{{song.avatar}}" class="img thumbnail pull-left mr-2"></td>
               <td style="color: #c4d4fa"routerLink="search{{song.id}}">{{song.name}}</td>
               <td style="color: #c4d4fa"routerLink="search{{song.id}}">{{song.describeSong}}</td>
-              <td style="color: #c4d4fa"routerLink="search{{song.id}}">{{song.singer![0].name}}</td>
-              <td style="color: #c4d4fa">{{song.viewSong}}</td>
+<!--              <td style="color: #c4d4fa"routerLink="search{{song.id}}">{{song.singer![0].name}}</td>-->
+              <td style="color: #c4d4fa"routerLink="search{{song.id}}">{{song.viewSong}}</td>
               <td>
                 <button style="color: #f2f0f3" type="button" class="btn btn-outline-primary" data-toggle="modal"
                         [attr.data-target]="'#myModal' + song.id">Thêm vào danh sách phát</button>
@@ -51,7 +51,9 @@ style="text-align:center"
                       <!-- Modal body -->
                       <div class="modal-body">
                         <div *ngFor="let playlist of playlist;index as i" (click)="addSongToPlaylist(playlist.id, song.id)">
+
                           <button style="color: palevioletred" class="btn btn-link">{{playlist.name}}</button>
+
                         </div>
                       </div>
                       <!-- Modal footer -->

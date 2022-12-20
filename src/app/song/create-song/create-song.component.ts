@@ -11,6 +11,8 @@ import {Observable} from "rxjs";
 import {Song} from "../../model/song";
 import {Router} from "@angular/router";
 import * as moment from "moment/moment";
+import {Singer} from "../../model/singer";
+import {SingerService} from "../../service/singer/singer.service";
 
 declare var Swal: any;
 
@@ -29,9 +31,10 @@ export class CreateSongComponent implements OnInit {
   downloadMp3URL ?: Observable<string>;
   fileMp3?: string;
   avatar?: string;
+  singer: Singer[] = [];
 
-  // song: Song = {};
   constructor(private songService: SongService,
+              private singerService: SingerService,
               private userService: UserService,
               private httpService: HttpService,
               private tokenService: TokenStorageService,
@@ -41,24 +44,34 @@ export class CreateSongComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.singerService.getSinger().subscribe(value =>
+      this.singer = value
+    );
   }
 
   songForm: FormGroup = new FormGroup({
     name: new FormControl(),
     describeSong: new FormControl(),
+    album: new FormControl(),
+    // singer: new FormControl(),
+    // viewSong: new FormControl(),
     fileMp3: new FormControl(),
     avatar: new FormControl(),
-    timeCreate:new FormControl(),
-    lastTimeEdit:new FormControl()
+    timeCreate: new FormControl(),
+    lastTimeEdit: new FormControl()
   })
+
 
   saveSong() {
     const now = new Date();
     const dateConvert = moment(now).format('yyyy-MM-DD');
-
+    const view = 0;
     const song = {
       name: this.songForm.value.name,
       describeSong: this.songForm.value.describeSong,
+      album: this.songForm.value.album,
+      // singer: this.songForm.value.singer,
+      viewSong: view,
       fileMp3: this.fileMp3,
       avatar: this.avatar,
       timeCreate: this.songForm.value.timeCreate,

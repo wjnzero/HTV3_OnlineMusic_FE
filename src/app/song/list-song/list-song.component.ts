@@ -10,15 +10,13 @@ import {allowMangle} from "@angular-devkit/build-angular/src/utils/environment-o
 
 
 declare var Swal: any;
+
 @Component({
   selector: 'app-list-song',
   templateUrl: './list-song.component.html',
   styleUrls: ['./list-song.component.css']
 })
 export class ListSongComponent implements OnInit {
-
-
-  // audioList: SongTemp[] = [];
   songs: Song[] = [];
   playlist: Playlist[] = [];
   songType: SongType[] = [];
@@ -26,7 +24,7 @@ export class ListSongComponent implements OnInit {
   userid?: any;
 
   constructor(private songService: SongService,
-  private  playlistService : PlaylistService) {
+              private playlistService: PlaylistService) {
   }
 
   ngOnInit() {
@@ -42,41 +40,40 @@ export class ListSongComponent implements OnInit {
     this.playlistService.getByUserId(this.userid).subscribe(playlist => {
       this.playlist = playlist;
     });
-}
+  }
+
   getAll() {
   }
 
   getByUserId() {
     this.playlistService.getByUserId(this.userid).subscribe(playlist => {
-      console.log("pll uid: "+ playlist[0].id)
+      console.log("pll uid: " + playlist[0].id)
       this.playlist = playlist;
     });
   }
 
   delete(id: any) {
-    if (confirm('Bạn có muốn xóa?')) {
       this.songService.delete(id).subscribe(data => {
-        console.log(data)
-        alert("Ok");
         this.getAll()
       }, e => {
         console.error(e)
       });
-    }
   }
+
   addSongToPlaylist(playlistId: any, songId: any) {
     // if (confirm('Bạn có muốn thêm vào playlist?')) {
-      this.playlistService.addSongToPlaylist(playlistId, songId).subscribe(()=>{
-        // alert("ok")
-      });
-      Swal.fire({
-        icon: 'success',
-        title: 'Thêm thành công',
-        showConfirmButton: false,
-        timer: 1000
-      });
-    }
+    this.playlistService.addSongToPlaylist(playlistId, songId).subscribe(() => {
+      // alert("ok")
+    });
+    Swal.fire({
+      icon: 'success',
+      title: 'Thêm thành công',
+      showConfirmButton: false,
+      timer: 1000
+    });
   }
+}
+
 // }
 
 

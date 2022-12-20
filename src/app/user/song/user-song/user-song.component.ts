@@ -64,15 +64,12 @@ export class UserSongComponent implements OnInit {
   }
 
   delete(id: any) {
-    if (confirm('Bạn có muốn xóa?')) {
       this.songService.delete(id).subscribe(data => {
         console.log(data)
-        alert("Ok");
         this.ngOnInit();
       }, e => {
         console.error(e)
       });
-    }
   }
   addSongToPlaylist(playlistId: any, songId: any) {
     // if (confirm('Bạn có muốn thêm vào playlist?')) {

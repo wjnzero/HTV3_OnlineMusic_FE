@@ -18,20 +18,21 @@ import { ListOrderViewSongComponent } from './list-order-view-song/list-order-vi
     EditSongComponent,
     ListNewSongComponent,
     ListOrderViewSongComponent],
+
     exports: [
         ListSongComponent,
         CreateSongComponent,
         ListNewSongComponent,
         ListOrderViewSongComponent
     ],
-  imports: [
-    CommonModule,
-    SongRoutingModule,
-    ReactiveFormsModule,
-    AngMusicPlayerModule,
-    FormsModule,
-    NgxPaginationModule,
-  ]
+    imports: [
+        CommonModule,
+        SongRoutingModule,
+        ReactiveFormsModule,
+        AngMusicPlayerModule,
+        FormsModule,
+        NgxPaginationModule,
+    ]
 })
 export class SongModule {
 }

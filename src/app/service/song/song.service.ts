@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {Observable, Subscription} from "rxjs";
 import {Song} from "../../model/song";
 import {environment} from 'src/enronments/environment';
 
@@ -24,7 +24,7 @@ export class SongService {
     return this.httpClient.get<Song[]>(url);
   }
 
-  save(song: Song, id: any): Observable<any> {
+  save(song:Song, id: any): Observable<any> {
     let url = API_URL + '/songs/create' + `/${id}`
     return this.httpClient.post<Song>(url, song);
   }
