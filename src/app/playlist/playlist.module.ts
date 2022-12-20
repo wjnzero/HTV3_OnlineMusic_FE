@@ -20,7 +20,7 @@ import {NgxPaginationModule} from "ngx-pagination";
   exports: [
     PlaylistComponent,
     CreatePlaylistComponent,
-    ListsongInOnePlaylistComponent,
+    ListsongInOnePlaylistComponent
 
   ],
 
