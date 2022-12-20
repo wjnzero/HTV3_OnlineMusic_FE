@@ -13,6 +13,10 @@
       <td><input type="text" formControlName="name"placeholder="Nhập tên danh sách phát..."></td>
     </tr><br>
     <tr>
+      <td style="color: #abdde5">Ảnh:</td>
+      <td><input type="file"  (change)="sendToFirebaseImg()"> </td>
+    </tr><br>
+    <tr>
       <td></td>
       <td>
         <button style="color: #c4d4fa"class="btn btn-outline-primary" (click)="savePlaylist()">Tạo mới</button> &nbsp; &nbsp;
