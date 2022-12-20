@@ -7,6 +7,9 @@ import {Playlist} from "../../model/playlist";
 import {PlaylistService} from "../../service/playlist/playlist.service";
 import {FormGroup} from "@angular/forms";
 import {allowMangle} from "@angular-devkit/build-angular/src/utils/environment-options";
+import {UserService} from "../../service/user/user.service";
+import {TokenStorageService} from "../../security/service/token-storage.service";
+import {ActivatedRoute} from "@angular/router";
 
 
 declare var Swal: any;
@@ -20,27 +23,36 @@ export class ListSongComponent implements OnInit {
 
   // audioList: SongTemp[] = [];
   songs: Song[] = [];
-  playlist: Playlist[] = [];
+  playListUser: Playlist[] = [];
   songType: SongType[] = [];
   songForm!: FormGroup;
   userid?: any;
 
   constructor(private songService: SongService,
+              private userService: UserService,
+              private tokenService: TokenStorageService,
+              private activateRoute: ActivatedRoute,
   private  playlistService : PlaylistService) {
   }
 
   ngOnInit() {
-    this.songService.getAll().subscribe(song => {
-      this.songs = song;
+    const idUser = this.tokenService.getUser().id;
+    this.songService.getSongByUser(idUser).subscribe(songs => {
+      this.songs = songs;
+      // @ts-ignore
+      for (let i = 0; i < songs.length; i++) {
+        let temp: SongTemp = {url: songs[i].fileMp3, title: songs[i].name, cover: songs[i].avatar}
+        // @ts-ignore
+        this.audioList.push(temp);
+      }
     });
     this.userid = window.localStorage.getItem("idUser");
-
     this.playlistService.getAll().subscribe(playlist => {
-      this.playlist = playlist;
-
+      this.playListUser = playlist;
     });
+
     this.playlistService.getByUserId(this.userid).subscribe(playlist => {
-      this.playlist = playlist;
+      this.playListUser = playlist;
     });
 }
   getAll() {
@@ -49,7 +61,7 @@ export class ListSongComponent implements OnInit {
   getByUserId() {
     this.playlistService.getByUserId(this.userid).subscribe(playlist => {
       console.log("pll uid: "+ playlist[0].id)
-      this.playlist = playlist;
+      this.playListUser = playlist;
     });
   }
 
