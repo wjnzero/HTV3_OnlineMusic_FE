@@ -7,6 +7,8 @@ import {CreatePlaylistComponent} from "./create-playlist/create-playlist.compone
 import {EditPlaylistComponent} from "./edit-playlist/edit-playlist.component";
 import {PlaylistComponent} from "./playlist/playlist.component";
 import { ListsongInOnePlaylistComponent } from './listsong-in-one-playlist/listsong-in-one-playlist.component';
+import {NgxPaginationModule} from "ngx-pagination";
+import {AppModule} from "../app.module";
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { ListsongInOnePlaylistComponent } from './listsong-in-one-playlist/lists
   exports: [
     PlaylistComponent,
     CreatePlaylistComponent,
-    ListsongInOnePlaylistComponent
+    ListsongInOnePlaylistComponent,
+
   ],
 
   imports: [
@@ -27,6 +30,8 @@ import { ListsongInOnePlaylistComponent } from './listsong-in-one-playlist/lists
     ReactiveFormsModule,
     AngMusicPlayerModule,
     FormsModule,
+    NgxPaginationModule,
+    AppModule,
   ]
 })
 export class PlaylistModule {

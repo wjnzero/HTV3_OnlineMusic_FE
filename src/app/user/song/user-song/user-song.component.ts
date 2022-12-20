@@ -39,6 +39,7 @@ export class UserSongComponent implements OnInit {
     const idUser = this.tokenService.getUser().id;
     this.songService.getSongByUser(idUser).subscribe(songs => {
       this.songs = songs;
+      console.log("songs: ", songs)
       // @ts-ignore
       for (let i = 0; i < songs.length; i++) {
         let temp: SongTemp = {url: songs[i].fileMp3, title: songs[i].name, cover: songs[i].avatar}

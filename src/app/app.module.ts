@@ -30,7 +30,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatMenuModule} from "@angular/material/menu";
 import {MatButtonModule} from "@angular/material/button";
 import {AngMusicPlayerModule} from "ang-music-player";
-import {PlaylistModule} from "./playlist/playlist.module";
 import {NgxAudioPlayerModule} from "./lib/ngx-audio-player/ngx-audio-player.module";
 import {PlaySongComponent} from "./home/play-song/play-song.component";
 import {NgxPaginationModule} from "ngx-pagination";
@@ -77,7 +76,7 @@ import { SearchComponent } from './home/search/search.component';
     FormsModule,
     RouterModule,
     SongModule,
-    PlaylistModule,
+
     BrowserAnimationsModule,
     MatMenuModule,
     MatButtonModule,
