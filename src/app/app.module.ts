@@ -33,6 +33,8 @@ import {PlaySongComponent} from "./home/play-song/play-song.component";
 import {NgxPaginationModule} from "ngx-pagination";
 import {ListAllComponent} from "./home/list-all/list-all.component";
 import {PlayPlaylistComponent} from "./home/play-playlist/play-playlist.component";
+import {ComponentsModule} from "./components/components.module";
+import {NavbarMenuModule} from "./home/navbar-menu/navbar-menu.module";
 import {UserPlaylistComponent} from './user/playlist/user-playlist/user-playlist.component';
 import {SearchComponent} from './home/search/search.component';
 import {ListSongComponent} from "./song/list-song/list-song.component";
@@ -81,6 +83,7 @@ import {UserCreateSongComponent} from "./user/song/user-create-song/user-create-
     HttpClientModule,
     FormsModule,
     RouterModule,
+    NavbarMenuModule,
     BrowserAnimationsModule,
     MatMenuModule,
     MatButtonModule,

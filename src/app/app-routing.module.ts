@@ -33,6 +33,11 @@ const routes: Routes = [
     path: 'song/search/song/:id',
     component:PlaySongComponent },
   {
+    path: 'navMenu',
+    loadChildren: () => import('./home/navbar-menu/navbar-menu.module').then(module => module.NavbarMenuModule)
+  },
+
+  {
     path: '', component: LayoutComponent
   },
   {
