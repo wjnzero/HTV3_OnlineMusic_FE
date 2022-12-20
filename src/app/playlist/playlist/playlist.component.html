@@ -3,7 +3,6 @@
 >
 <!--<app-navbar-menu></app-navbar-menu>-->
 <div><br></div>
-<div><br></div>
 <div class="container">
   <section class="container">
     <div class="new-most-song mt-5">
@@ -49,24 +48,24 @@
                       </div>
                       <!-- Modal footer -->
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Quay lại</button>
+                        <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Thoát</button>
                       </div>
                     </div>
                   </div>
                 </div>
               </td>
               <td>
-                <a style="color: #c4d4fa" routerLink="/playlist/edit1/{{playlist.id}}" class="btn btn-outline-success">Sửa</a>
+                <a style="color: #efc1ae" routerLink="/playlist/edit1/{{playlist.id}}" class="btn btn-outline-success">Sửa</a>
               </td>
               <td>
-                <button style="color: #c4d4fa" (click)="delete(playlist.id)" class="btn btn-outline-danger">Xóa</button>
+                <button style="color: #efc1ae" (click)="delete(playlist.id)" class="btn btn-outline-danger">Xóa</button>
               </td>
               <td><button style="color:#efc1ae;"class="btn btn-outline-primary" routerLink="/playlists/play/{{playlist.id}}">   |⫸</button></td>
             </tr>
             </tbody>
           </table>
           <div class="modal-footer" >
-            <button style="color: #c4d4fa" routerLink="" type="button" class="btn btn-outline-info" data-dismiss="modal" >Trang chủ</button>
+            <button style="color: #f1cec0" routerLink="" type="button" class="btn btn-outline-info" data-dismiss="modal" >Trang chủ</button>
           </div>
 <!--        git chec-->
         </div>

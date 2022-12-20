@@ -10,7 +10,8 @@ import {Song} from "../../model/song";
   styleUrls: ['./list-all.component.css']
 })
 export class ListAllComponent implements OnInit {
-
+  p?: number;
+  p2?: number;
   songs: Song[] = [];
   playlists: Playlist[] = [];
 
@@ -21,6 +22,7 @@ export class ListAllComponent implements OnInit {
   ngOnInit(): void {
     this.songService.getAll().subscribe(song => {
       this.songs = song;
+      console.log(this.songs)
     });
     this.playlistService.getAll().subscribe(list => {
       this.playlists = list;
