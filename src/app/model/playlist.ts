@@ -6,6 +6,7 @@ export interface Playlist {
 
   id?: number;
   name: string;
+  avatar: string;
   timeCreate: string;
   lastTimeEdit: string;
   users?: User;

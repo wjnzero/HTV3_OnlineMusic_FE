@@ -8,6 +8,7 @@ import {EditPlaylistComponent} from "./edit-playlist/edit-playlist.component";
 import {PlaylistComponent} from "./playlist/playlist.component";
 import { ListsongInOnePlaylistComponent } from './listsong-in-one-playlist/listsong-in-one-playlist.component';
 import {NgxPaginationModule} from "ngx-pagination";
+import {NavbarMenuModule} from "../home/navbar-menu/navbar-menu.module";
 
 
 @NgModule({
@@ -32,7 +33,7 @@ import {NgxPaginationModule} from "ngx-pagination";
     FormsModule,
     NgxPaginationModule,
 
-
+NavbarMenuModule
   ]
 })
 export class PlaylistModule {

@@ -37,16 +37,16 @@
 </nav>
 <mat-menu #menu="matMenu">
   <button mat-menu-item>
-    <a [routerLink]="['/userProfile']">Cá nhân</a>
+    <a routerLink='/userProfile'>Cá nhân</a>
   </button>
   <button mat-menu-item>
-    <a [routerLink]="['/userListSong']">Quản lý bài hát</a>
+    <a routerLink='/userListSong'>Quản lý bài hát</a>
   </button>
   <button mat-menu-item>
-    <a [routerLink]="['/userplaylist']">Quản lý Playlist</a>
+    <a routerLink='/userplaylist'>Quản lý Playlist</a>
   </button>
   <button mat-menu-item>
-    <a [routerLink]="['/changePassword']">Đổi mật khẩu</a>
+    <a routerLink="/changePassword">Đổi mật khẩu</a>
   </button>
   <button mat-menu-item>
     <li (click)="logout()">Đăng xuất</li>
