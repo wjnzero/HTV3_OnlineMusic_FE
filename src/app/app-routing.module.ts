@@ -13,9 +13,14 @@ import {UserPlaylistComponent} from "./user/playlist/user-playlist/user-playlist
 import {PlaylistComponent} from "./playlist/playlist/playlist.component";
 import {CreateSongComponent} from "./song/create-song/create-song.component";
 import {PlayPlaylistComponent} from "./home/play-playlist/play-playlist.component";
+import {SearchComponent} from "./home/search/search.component";
+import {NavbarMenuComponent} from "./home/navbar-menu/navbar-menu.component";
 
 
 const routes: Routes = [
+  {
+    path: 'navMenu',component: NavbarMenuComponent
+  },
   {
     path: 'song',
     loadChildren: () => import('./song/song.module').then(module => module.SongModule)
@@ -40,6 +45,13 @@ const routes: Routes = [
   {
     path: 'playlists/play/:id', component: PlayPlaylistComponent
   },
+  {
+    path: 'search',
+    component:SearchComponent },
+  {
+    path: 'search/playlists/:id',
+    component:PlayPlaylistComponent },
+
   {
     path: 'userProfile',
     component: UserProfileComponent,
@@ -73,6 +85,7 @@ const routes: Routes = [
     component: UserChangePasswordComponent,
     canActivate: [AuthGuardGuard]
   }
+
 ];
 
 @NgModule({

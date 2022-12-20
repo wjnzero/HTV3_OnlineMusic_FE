@@ -30,13 +30,14 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatMenuModule} from "@angular/material/menu";
 import {MatButtonModule} from "@angular/material/button";
 import {AngMusicPlayerModule} from "ang-music-player";
-import {PlaylistModule} from "./playlist/playlist.module";
 import {NgxAudioPlayerModule} from "./lib/ngx-audio-player/ngx-audio-player.module";
 import {PlaySongComponent} from "./home/play-song/play-song.component";
 import {NgxPaginationModule} from "ngx-pagination";
 import {ListAllComponent} from "./home/list-all/list-all.component";
 import {PlayPlaylistComponent} from "./home/play-playlist/play-playlist.component";
 import { UserPlaylistComponent } from './user/playlist/user-playlist/user-playlist.component';
+import { SearchComponent } from './home/search/search.component';
+import {ComponentsModule} from "./components/components.module";
 
 
 @NgModule({
@@ -62,8 +63,8 @@ import { UserPlaylistComponent } from './user/playlist/user-playlist/user-playli
     PlaySongComponent,
     ListAllComponent,
     PlayPlaylistComponent,
-    UserPlaylistComponent
-
+    UserPlaylistComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,13 +77,13 @@ import { UserPlaylistComponent } from './user/playlist/user-playlist/user-playli
     FormsModule,
     RouterModule,
     SongModule,
-    PlaylistModule,
+
     BrowserAnimationsModule,
     MatMenuModule,
     MatButtonModule,
     AngMusicPlayerModule,
     NgxAudioPlayerModule,
-    NgxPaginationModule
+    NgxPaginationModule,
   ],
   providers: [],
   exports: [

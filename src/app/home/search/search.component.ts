@@ -1,40 +1,45 @@
 import {Component, OnInit} from '@angular/core';
 import {Song} from "../../model/song";
+import {ActivatedRoute} from "@angular/router";
 import {SongService} from "../../service/song/song.service";
 import {SongType} from "../../model/songType";
-import {SongTemp} from "../../model/songTemp";
-import {Playlist} from "../../model/playlist";
 import {PlaylistService} from "../../service/playlist/playlist.service";
-import {FormGroup} from "@angular/forms";
-import {allowMangle} from "@angular-devkit/build-angular/src/utils/environment-options";
+import {Playlist} from "../../model/playlist";
 import {UserService} from "../../service/user/user.service";
 import {TokenStorageService} from "../../security/service/token-storage.service";
-import {ActivatedRoute} from "@angular/router";
-
+import {SongTemp} from "../../model/songTemp";
 
 declare var Swal: any;
-
 @Component({
-  selector: 'app-list-song',
-  templateUrl: './list-song.component.html',
-  styleUrls: ['./list-song.component.css']
+  selector: 'app-search',
+  templateUrl: "./search.component.html",
+  styleUrls: ['./search.component.css']
 })
-export class ListSongComponent implements OnInit {
-
-
-  // audioList: SongTemp[] = [];
+export class SearchComponent implements OnInit {
   songs: Song[] = [];
-  playListUser: Playlist[] = [];
   songType: SongType[] = [];
-  songForm!: FormGroup;
-  userid?: any;
+  playlists: Playlist[] = [];
+  playListUser: Playlist[] = [];
+  name?: string;
+  userid: any;
+
 
   constructor(private songService: SongService,
+              private playlistService: PlaylistService,
               private userService: UserService,
               private tokenService: TokenStorageService,
-              private activateRoute: ActivatedRoute,
-              private playlistService: PlaylistService) {
+              private activateRoute: ActivatedRoute) {
+    this.activateRoute.queryParams.subscribe((params => {
+      // @ts-ignore
+      this.name = params.name;
+      this.getSongByName(this.name);
+      this.getPlaylistByName(this.name)
+      this.getSongByAuthor(this.name);
+      this.getSongBySinger(this.name);
+      console.log(this.songs)
+    }))
   }
+
 
   ngOnInit() {
     const idUser = this.tokenService.getUser().id;
@@ -57,28 +62,32 @@ export class ListSongComponent implements OnInit {
     });
   }
 
-  getAll() {
-  }
-
-  getByUserId() {
-    this.playlistService.getByUserId(this.userid).subscribe(playlist => {
-      console.log("pll uid: " + playlist[0].id)
-      this.playListUser = playlist;
+  getSongByName(name: string | undefined) {
+    this.songService.getByName(name).subscribe(songs => {
+      this.songs = songs;
     });
   }
-
-  delete(id: any) {
-    this.songService.delete(id).subscribe(data => {
-      console.log(data)
-      this.getAll()
-    }, e => {
-      console.error(e)
-    });
+  getPlaylistByName(name:string | undefined){
+    this.playlistService.getPlaylistByName(name).subscribe(playlists =>{
+      this.playlists = playlists;
+    })
   }
 
+  getSongByAuthor(name: string | undefined) {
+    this.songService.getSongByAuthor(name).subscribe(songs => {
+      this.songs = songs;
+    })
+  }
+
+  getSongBySinger(name: string | undefined) {
+    this.songService.getSongBySinger(name).subscribe(songs => {
+      this.songs = songs;
+      console.log("singer: ", this.songs)
+    })
+  }
   addSongToPlaylist(playlistId: any, songId: any) {
     // if (confirm('Bạn có muốn thêm vào playlist?')) {
-    this.playlistService.addSongToPlaylist(playlistId, songId).subscribe(() => {
+    this.playlistService.addSongToPlaylist(playlistId, songId).subscribe(()=>{
       // alert("ok")
     });
     Swal.fire({
@@ -89,7 +98,3 @@ export class ListSongComponent implements OnInit {
     });
   }
 }
-
-// }
-
-

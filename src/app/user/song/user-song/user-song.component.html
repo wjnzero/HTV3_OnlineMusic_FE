@@ -1,56 +1,80 @@
-<body background="assets/img/pngtree-beautiful-purple-line-bubble-background-picture-image_1463162.jpg"
+<body background="https://img.upanh.tv/2022/12/19/nen.png"
 style="text-align:center"
 >
-<app-navbar-menu style="background-color: #bd6fbb"></app-navbar-menu>
+<app-navbar-menu></app-navbar-menu>
 <div><br></div>
 <div><br></div>
-<div class="container" style="text-align:center">
+<div class="container">
   <section class="container" >
     <div class="new-most-song mt-5" >
-      <div class="row p-12">
+      <div class="row p-10">
         <div class="col-12" >
-          <button class="btn btn-outline-warning">
-            <a routerLink="/create">Thêm bài hát</a>
+          <button class="btn btn-outline-info">
+            <a style="color: #c4d4fa"routerLink="/create">Thêm bài hát mới</a>
           </button>
           <div><br></div>
-          <h4 class="font-weight-bold" style="font-size: 50px" >Bài hát</h4>
-          <table class="table table-striped d-print-table-cell" style="background-color: #d384de">
+          <h2 class="font-weight-bold" style="color: #c4d4fa" >Bài hát của bạn</h2>
+          <table class="table table-striped d-print-table-cell">
             <thead class="thead-green">
             <tr>
-              <th scope="col">STT</th>
-              <th scope="col">Ảnh</th>
-              <th scope="col">Bài hát</th>
-              <th scope="col">Mô tả</th>
-              <!--              <th scope="col">Album</th>-->
-              <th scope="col">Lượt xem</th>
-              <th scope="col"></th>
+              <th style="color: #c4d4fa"scope="col">STT</th>
+              <th style="color: #c4d4fa"scope="col">Ảnh</th>
+              <th style="color: #c4d4fa"scope="col">Bài hát</th>
+              <th style="color: #c4d4fa"scope="col">Mô tả</th>
+              <th style="color: #c4d4fa"scope="col">Lượt xem</th>
+              <th style="color: #c4d4fa"scope="col"></th>
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let song of songs,let indexOfElement=index;">
-              <th scope="row">{{indexOfElement + 1}}</th>
+            <tr *ngFor="let song of songs | paginate: { itemsPerPage: 5, currentPage: p },let indexOfElement=index;">
+              <th style="color: #c4d4fa"scope="row">{{indexOfElement + 1}}</th>
               <td><img width="40" height="40" src="{{song.avatar}}" class="img thumbnail pull-left mr-2"></td>
-              <td routerLink="search{{song.id}}">{{song.name}}</td>
-              <td routerLink="search{{song.id}}">{{song.describeSong}}</td>
-              <td>{{song.viewSong}}</td>
-              <td class="btn btn-default" routerLink="song/{{song.id}}"> |⫸</td>
+              <td style="color: #c4d4fa"routerLink="search{{song.id}}">{{song.name}}</td>
+              <td style="color: #c4d4fa"routerLink="search{{song.id}}">{{song.describeSong}}</td>
+              <td style="color: #c4d4fa">{{song.viewSong}}</td>
               <td>
-                <a routerLink="playlist/{{song.id}}" class="btn btn-outline-warning">Thêm vào danh sách phát</a>
+                <button style="color: #f2f0f3" type="button" class="btn btn-outline-primary" data-toggle="modal"
+                        [attr.data-target]="'#myModal' + song.id">Thêm vào danh sách phát</button>
               </td>
+              <td><!-- The Modal -->
+                <div class="modal" id="{{'myModal' + song.id}}">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h4 style="color: #0c89f1" class="modal-title">Danh sách phát</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      </div>
+                      <!-- Modal body -->
+                      <div class="modal-body">
+                        <div *ngFor="let playlist of playlist;index as i" (click)="addSongToPlaylist(playlist.id, song.id)">
+                          <button style="color: #0ba2e3" class="btn btn-link">{{playlist.name}}</button>
+                        </div>
+                      </div>
+                      <!-- Modal footer -->
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-success" data-dismiss="modal">Thoát</button>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td><a style="color: #c4d4fa" routerLink="song/{{song.id}}" data-tip="play"><i class="fa fa-play"></i> </a></td>
               <td>
-                  <a  routerLink="edit/{{song.id}}" data-tip="edit"><i class="fa fa-edit"></i></a>
+                  <a style="color: #c4d4fa" routerLink="edit/{{song.id}}" data-tip="edit"><i class="fa fa-edit"></i></a>
               </td>
-              <td (click)="delete(song.id)" data-tip="delete"><i class="fa fa-trash"></i>
+              <td style="color: #c4d4fa"(click)="delete(song.id)" data-tip="delete"><i class="fa fa-trash"></i>
               </td>
             </tr>
             </tbody>
           </table>
+          <div class="text-center">
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+          </div>
             <div  >
-              <button style="font-size: 20px" routerLink="" class="btn btn-outline-success">Quay lại</button>
+              <button style="color: #c4d4fa" routerLink="" class="btn btn-outline-info">Trang chủ</button>
             </div>
-
-            <!--              <button class="button-cancel" [routerLink]="['/home']">Thoát</button>-->
-          <!--          <ang-music-player [audioList] = "audioList" backgroundColor="#bb74ce" width="100%"></ang-music-player>-->
         </div>
       </div>
     </div>

@@ -48,6 +48,7 @@ export class CreateSongComponent implements OnInit {
     describeSong: new FormControl(),
     fileMp3: new FormControl(),
     avatar: new FormControl(),
+    viewSong:new FormControl(),
     timeCreate:new FormControl(),
     lastTimeEdit:new FormControl()
   })
@@ -55,12 +56,13 @@ export class CreateSongComponent implements OnInit {
   saveSong() {
     const now = new Date();
     const dateConvert = moment(now).format('yyyy-MM-DD');
-
+    const view = 0;
     const song = {
       name: this.songForm.value.name,
       describeSong: this.songForm.value.describeSong,
       fileMp3: this.fileMp3,
       avatar: this.avatar,
+      viewSong: view,
       timeCreate: this.songForm.value.timeCreate,
       lastTimeEdit: this.songForm.value.lastTimeEdit,
       dateCreateSong: dateConvert

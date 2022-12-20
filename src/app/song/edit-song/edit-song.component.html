@@ -1,3 +1,6 @@
+<body background="https://img.upanh.tv/2022/12/19/nen.png">
+<div><br></div>
+<div><br></div>
 <div class="container">
   <div style="margin-top: 60px">
     <form (ngSubmit)="update()" [formGroup]="songForm">
@@ -5,7 +8,7 @@
         <table class="font-group">
           <tr>
             <th colspan="3" style="padding-top: 40px">
-              <h1>Cập nhật thông tin bài hát</h1>
+              <h1 style="color: #abdde5">Cập nhật thông tin bài hát</h1>
             </th>
           </tr>
           <div class="font-group">
@@ -14,42 +17,39 @@
           </div>
           <tr>
             <div class="text-left">
-              <label>Tên bài hát </label>
+              <label style="color: #abdde5">Tên bài hát </label>
             </div>
             <div class="font-group">
               <input type="text" class="form-control" formControlName="name"
-                     id="name" placeholder="name">
+                     id="name">
             </div>
           </tr>
           <tr>
             <div class="text-left">
-              <label>Mô tả</label>
+              <label style="color: #abdde5">Mô tả</label>
             </div>
             <div class="font-group">
               <input type="text" class="form-control" formControlName="describeSong"
-                     id="describeSong" placeholder="describeSong">
+                     id="describeSong">
             </div>
-          </tr>
+          </tr><br>
           <tr>
             <div class="text-left">
-              <label>Avatar </label>
+              <label style="color: #abdde5">Ảnh </label>
             </div>
             <td colspan="2"><input type="file" (change)="sendToFirebaseImg()"></td>
-          </tr>
+          </tr><br>
           <tr>
             <div class="text-left">
-              <label>File Mp3 </label>
+              <label style="color: #abdde5">Tệp mp3 </label>
             </div>
             <td colspan="2"><input type="file" (change)="sendToFirebaseMp3()"></td>
           </tr>
+          <td></td>
           <tr>
             <td colspan="3">
-              <button type="submit" class="btn btn-success">Cập nhật</button> &ensp;
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <button routerLink="/userListSong" class="btn btn-success">Trở lại</button>
+              <button style="color: #abdde5"type="submit" class="btn btn-outline-primary">Cập nhật</button> &nbsp; &nbsp;
+              <button style="color: #abdde5"routerLink="/userListSong" class="btn btn-outline-success">Quay lại</button>
             </td>
           </tr>
         </table>
@@ -57,4 +57,5 @@
     </form>
   </div>
 </div>
+</body>
 

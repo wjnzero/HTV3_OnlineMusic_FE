@@ -10,9 +10,9 @@ import {Song} from "../../model/song";
   styleUrls: ['./list-all.component.css']
 })
 export class ListAllComponent implements OnInit {
-
-
-  songList: Song[] = [];
+  p?: number;
+  p2?: number;
+  songs: Song[] = [];
   playlists: Playlist[] = [];
 
   constructor(private songService: SongService,
@@ -20,11 +20,12 @@ export class ListAllComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.songService.getAll().subscribe(res => {
-      this.songList = res;
+    this.songService.getAll().subscribe(song => {
+      this.songs = song;
+      console.log(this.songs)
     });
-    this.playlistService.getAll().subscribe(res => {
-      this.playlists = res;
+    this.playlistService.getAll().subscribe(list => {
+      this.playlists = list;
     });
   }
 }
