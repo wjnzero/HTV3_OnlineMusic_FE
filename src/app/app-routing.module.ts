@@ -29,6 +29,10 @@ const routes: Routes = [
     path: 'playlist',
     loadChildren: () => import('./playlist/playlist.module').then(module => module.PlaylistModule)
   },
+  {
+    path: 'navMenu',
+    loadChildren: () => import('./home/navbar-menu/navbar-menu.module').then(module => module.NavbarMenuModule)
+  },
 
   {
     path: '', component: LayoutComponent

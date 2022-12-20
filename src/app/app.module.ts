@@ -38,6 +38,7 @@ import {PlayPlaylistComponent} from "./home/play-playlist/play-playlist.componen
 import { UserPlaylistComponent } from './user/playlist/user-playlist/user-playlist.component';
 import { SearchComponent } from './home/search/search.component';
 import {ComponentsModule} from "./components/components.module";
+import {NavbarMenuModule} from "./home/navbar-menu/navbar-menu.module";
 
 
 @NgModule({
@@ -50,7 +51,7 @@ import {ComponentsModule} from "./components/components.module";
     PosterComponent,
     FooterComponent,
     LayoutComponent,
-    NavbarMenuComponent,
+
     NavbarLoginResisterComponent,
     LoginComponent,
     RegisterComponent,
@@ -77,6 +78,7 @@ import {ComponentsModule} from "./components/components.module";
     FormsModule,
     RouterModule,
     SongModule,
+    NavbarMenuModule,
 
     BrowserAnimationsModule,
     MatMenuModule,
@@ -87,7 +89,6 @@ import {ComponentsModule} from "./components/components.module";
   ],
   providers: [],
   exports: [
-    NavbarMenuComponent
   ],
   bootstrap: [AppComponent]
 })
