@@ -1,61 +1,49 @@
 <body background="https://img.upanh.tv/2022/12/19/nen.png">
+<app-navbar-menu></app-navbar-menu>
 <div><br></div>
 <div><br></div>
 <div class="container">
-  <div style="margin-top: 60px">
-    <form (ngSubmit)="update()" [formGroup]="songForm">
-      <div>
-        <table class="font-group">
-          <tr>
-            <th colspan="3" style="padding-top: 40px">
-              <h1 style="color: #abdde5">Cập nhật thông tin bài hát</h1>
-            </th>
-          </tr>
-          <div class="font-group">
-            <input hidden class="form-control" formControlName="id"
-                   id="id" placeholder="name">
-          </div>
-          <tr>
-            <div class="text-left">
-              <label style="color: #abdde5">Tên bài hát </label>
-            </div>
-            <div class="font-group">
-              <input type="text" class="form-control" formControlName="name"
-                     id="name">
-            </div>
-          </tr>
-          <tr>
-            <div class="text-left">
-              <label style="color: #abdde5">Mô tả</label>
-            </div>
-            <div class="font-group">
-              <input type="text" class="form-control" formControlName="describeSong"
-                     id="describeSong">
-            </div>
-          </tr><br>
-          <tr>
-            <div class="text-left">
-              <label style="color: #abdde5">Ảnh </label>
-            </div>
-            <td colspan="2"><input type="file" (change)="sendToFirebaseImg()"></td>
-          </tr><br>
-          <tr>
-            <div class="text-left">
-              <label style="color: #abdde5">Tệp mp3 </label>
-            </div>
-            <td colspan="2"><input type="file" (change)="sendToFirebaseMp3()"></td>
-          </tr>
-          <td></td>
-          <tr>
-            <td colspan="3">
-              <button style="color: #abdde5"type="submit" class="btn btn-outline-primary">Cập nhật</button> &nbsp; &nbsp;
-              <button style="color: #abdde5"routerLink="/userListSong" class="btn btn-outline-success">Quay lại</button>
-            </td>
-          </tr>
-        </table>
+  <section class="container">
+    <div class="new-most-song mt-5">
+      <div class="row p-10">
+        <div class="col-5">
+          <div><br></div>
+          <form (ngSubmit)="update()" [formGroup]="songForm" >
+            <table class="table d-print-table-cell" >
+              <thead class="thead-green">
+              <tr>
+                <td style="color: #abdde5">Tên:</td>
+                <td><input type="text" class="form-control" formControlName="name"  id="name" placeholder="Nhập tên bài hát..."></td>
+              </tr>
+              <br>
+              <tr class="font-group" >
+                <td style="color: #abdde5">Mô tả:</td>
+                <td><input type="text" class="form-control" formControlName="describeSong"  id="describeSong" placeholder="Nhập mô tả bài hát..."></td>
+              </tr>
+              <br>
+              <tr class="font-group" >
+                <td style="color: #abdde5">Ảnh:</td>
+                <td><input style="color: #abdde5" type="file" (change)="sendToFirebaseImg()"></td>
+              </tr>
+              <br>
+              <tr class="font-group" >
+                <td style="color: #abdde5">Tệp mp3</td>
+                <td><input style="color: #abdde5" type="file" (change)="sendToFirebaseMp3()"></td>
+              </tr>
+              <br>
+              <tr style="alignment: center">
+                <td></td>
+                <td>
+                  <button style="color: #abdde5" routerLink="/userListSong" class="btn btn-outline-success">Quay lại
+                  </button>
+                </td>
+              </tr>
+              </thead>
+            </table>
+          </form>
+        </div>
       </div>
-    </form>
-  </div>
+    </div>
+  </section>
 </div>
 </body>
-

@@ -9,12 +9,12 @@ import {UserChangePasswordComponent} from "./user/user-change-password/user-chan
 import {PlaySongComponent} from "./home/play-song/play-song.component";
 import {UserSongComponent} from "./user/song/user-song/user-song.component";
 import {EditSongComponent} from "./song/edit-song/edit-song.component";
-import {UserPlaylistComponent} from "./user/playlist/user-playlist/user-playlist.component";
 import {PlaylistComponent} from "./playlist/playlist/playlist.component";
-import {CreateSongComponent} from "./song/create-song/create-song.component";
 import {PlayPlaylistComponent} from "./home/play-playlist/play-playlist.component";
 import {SearchComponent} from "./home/search/search.component";
 import {NavbarMenuComponent} from "./home/navbar-menu/navbar-menu.component";
+import {ListSongComponent} from "./song/list-song/list-song.component";
+import {UserCreateSongComponent} from "./user/song/user-create-song/user-create-song.component";
 
 
 const routes: Routes = [
@@ -22,14 +22,16 @@ const routes: Routes = [
     path: 'navMenu',component: NavbarMenuComponent
   },
   {
-    path: 'song',
-    loadChildren: () => import('./song/song.module').then(module => module.SongModule)
-  },
-  {
     path: 'playlist',
     loadChildren: () => import('./playlist/playlist.module').then(module => module.PlaylistModule)
   },
-
+  {
+    path: 'song',
+    component:ListSongComponent
+  },
+  {
+    path: 'song/search/song/:id',
+    component:PlaySongComponent },
   {
     path: '', component: LayoutComponent
   },
@@ -69,7 +71,7 @@ const routes: Routes = [
   },
   {
     path: 'userListSong/create',
-    component: CreateSongComponent,
+    component: UserCreateSongComponent,
     canActivate: [AuthGuardGuard]
   },
   {
