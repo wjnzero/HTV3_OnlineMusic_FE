@@ -44,6 +44,9 @@ const routes: Routes = [
   {
     path: 'search',
     component:SearchComponent },
+  {
+    path: 'search/playlists/:id',
+    component:PlayPlaylistComponent },
 
   {
     path: 'userProfile',

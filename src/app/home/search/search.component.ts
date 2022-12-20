@@ -6,7 +6,7 @@ import {SongType} from "../../model/songType";
 import {PlaylistService} from "../../service/playlist/playlist.service";
 import {Playlist} from "../../model/playlist";
 
-
+declare var Swal: any;
 @Component({
   selector: 'app-search',
   templateUrl: "./search.component.html",
@@ -17,6 +17,7 @@ export class SearchComponent implements OnInit {
   songType: SongType[] = [];
   playlists: Playlist[] = [];
   name?: string;
+
 
   constructor(private songService: SongService,
               private playlistService: PlaylistService,
@@ -58,5 +59,17 @@ export class SearchComponent implements OnInit {
       this.songs = songs;
       console.log("singer: ", this.songs)
     })
+  }
+  addSongToPlaylist(playlistId: any, songId: any) {
+    // if (confirm('Bạn có muốn thêm vào playlist?')) {
+    this.playlistService.addSongToPlaylist(playlistId, songId).subscribe(()=>{
+      // alert("ok")
+    });
+    Swal.fire({
+      icon: 'success',
+      title: 'Thêm thành công',
+      showConfirmButton: false,
+      timer: 1000
+    });
   }
 }
