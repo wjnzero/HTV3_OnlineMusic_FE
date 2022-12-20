@@ -19,11 +19,9 @@ import {HttpClientModule} from "@angular/common/http";
 import {RouterModule} from "@angular/router";
 import {LoginComponent} from './core/login/login.component';
 import {RegisterComponent} from './core/register/register.component';
-import {SongModule} from "./song/song.module";
 import {UserProfileComponent} from "./user/user-profile/user-profile.component";
 import {NavbarUserComponent} from "./user/navbar-user/navbar-user.component";
 import {UserSongComponent} from "./user/song/user-song/user-song.component";
-import {UserCreateSongComponent} from "./user/song/user-create-song/user-create-song.component";
 import {UserEditSongComponent} from "./user/song/user-edit-song/user-edit-song.component";
 import {UserChangePasswordComponent} from './user/user-change-password/user-change-password.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -36,11 +34,17 @@ import {PlaySongComponent} from "./home/play-song/play-song.component";
 import {NgxPaginationModule} from "ngx-pagination";
 import {ListAllComponent} from "./home/list-all/list-all.component";
 import {PlayPlaylistComponent} from "./home/play-playlist/play-playlist.component";
-import { UserPlaylistComponent } from './user/playlist/user-playlist/user-playlist.component';
-import {MatPaginatorIntl} from "@angular/material/paginator";
-import { SearchComponent } from './home/search/search.component';
 import {ComponentsModule} from "./components/components.module";
+import {MatPaginatorIntl} from "@angular/material/paginator";
 import {NavbarMenuModule} from "./home/navbar-menu/navbar-menu.module";
+import {UserPlaylistComponent} from './user/playlist/user-playlist/user-playlist.component';
+import {SearchComponent} from './home/search/search.component';
+import {ListSongComponent} from "./song/list-song/list-song.component";
+import {EditSongComponent} from "./song/edit-song/edit-song.component";
+import {ListNewSongComponent} from "./song/list-new-song/list-new-song.component";
+import {ListOrderViewSongComponent} from "./song/list-order-view-song/list-order-view-song.component";
+import {CommonModule} from "@angular/common";
+import {UserCreateSongComponent} from "./user/song/user-create-song/user-create-song.component";
 
 
 @NgModule({
@@ -49,27 +53,27 @@ import {NavbarMenuModule} from "./home/navbar-menu/navbar-menu.module";
     FormUploadComponent,
     ListUploadComponent,
     DetailsUploadComponent,
-
+    ListSongComponent,
+    EditSongComponent,
+    ListNewSongComponent,
+    ListOrderViewSongComponent,
     PosterComponent,
     FooterComponent,
     LayoutComponent,
-
     NavbarLoginResisterComponent,
     LoginComponent,
     RegisterComponent,
     UserSongComponent,
-    UserCreateSongComponent,
     UserEditSongComponent,
     UserProfileComponent,
     NavbarUserComponent,
-    NavbarMenuComponent,
     UserChangePasswordComponent,
     PlaySongComponent,
     ListAllComponent,
     PlayPlaylistComponent,
     UserPlaylistComponent,
-    SearchComponent,
-  ],
+    UserCreateSongComponent,
+    SearchComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -80,18 +84,25 @@ import {NavbarMenuModule} from "./home/navbar-menu/navbar-menu.module";
     HttpClientModule,
     FormsModule,
     RouterModule,
-    SongModule,
     NavbarMenuModule,
-
     BrowserAnimationsModule,
     MatMenuModule,
     MatButtonModule,
     AngMusicPlayerModule,
     NgxAudioPlayerModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    CommonModule,
+    ReactiveFormsModule,
+    AngMusicPlayerModule,
+    FormsModule,
+    NgxPaginationModule,
   ],
   providers: [MatPaginatorIntl ],
   exports: [
+    NavbarMenuComponent,
+    ListSongComponent,
+    ListNewSongComponent,
+    ListOrderViewSongComponent
   ],
   bootstrap: [AppComponent]
 })
