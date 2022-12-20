@@ -1,7 +1,7 @@
 <!--<div class="container">-->
+<body background="https://img.upanh.tv/2022/12/19/nen.png">
 <app-navbar-menu></app-navbar-menu>
 <div><br></div>
-<body background="https://img.upanh.tv/2022/12/19/nen.png">
 <div style="margin-top: 60px">
 
 <div class="new-most-song mt-5">
@@ -31,7 +31,7 @@
           <td style="color:#efc1ae;"routerLink="search{{song.id}}">{{song.singer![0].name}}</td>
           <td style="color:#efc1ae;"routerLink="search{{song.id}}">{{song.viewSong}}</td>
           <td>
-            <button style="color: #c4d4fa"type="button" class="btn btn-outline-primary" data-toggle="modal"
+            <button style="color:#efc1ae;" type="button" class="btn btn-outline-primary" data-toggle="modal"
                     [attr.data-target]="'#myModal' + song.id">Thêm vào danh sách phát</button>
           </td>
           <td><!-- The Modal -->
@@ -51,7 +51,7 @@
                   </div>
                   <!-- Modal footer -->
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-success" data-dismiss="modal">Quay lại</button>
+                    <button type="button" class="btn btn-outline-success" data-dismiss="modal">Thoát</button>
                   </div>
 
                 </div>
@@ -85,3 +85,4 @@
   </div>
 </div>
 </div>
+<app-layout></app-layout>

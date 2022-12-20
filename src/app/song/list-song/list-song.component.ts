@@ -30,8 +30,8 @@ export class ListSongComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.songService.getAll().subscribe(songs => {
-      this.songs = songs;
+    this.songService.getAll().subscribe(song => {
+      this.songs = song;
     });
     this.userid = window.localStorage.getItem("idUser");
 
