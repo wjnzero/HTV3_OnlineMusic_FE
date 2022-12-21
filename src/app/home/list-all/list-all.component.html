@@ -3,7 +3,7 @@
     <div class="row p-3">
       <div class="col-6">
         <h4 class="font-weight-bold">Bài hát</h4>
-        <ul class="list-group br-1" *ngFor="let song of songs | paginate: { itemsPerPage: 5, currentPage: p } ; index as i">
+        <ul class="list-group br-1" *ngFor="let song of songs   ; index as i">
           <li class="list-group-item pb-1" *ngIf="i < 5">
             <a class="name-of-song" [routerLink]="['song',song.id]">
               <img width="40" height="40" src="{{song.avatar}}" class="img thumbnail pull-left mr-2">
@@ -15,16 +15,16 @@
               </span>
           </li>
         </ul>
-        <div class="text-center">
-          <pagination-controls (pageChange)="p = $event"></pagination-controls>
-        </div>
-<!--        <a class="text-info">-->
-<!--          <div class="text-center mt-3"><a [routerLink]="['song']">Xem tất cả</a></div>-->
-<!--        </a>-->
+<!--        <div class="text-center">-->
+<!--          <pagination-controls (pageChange)="p = $event"></pagination-controls>-->
+<!--        </div>-->
+        <a class="text-info">
+          <div class="text-center mt-3"><a [routerLink]="['song']">Xem tất cả</a></div>
+        </a>
       </div>
       <div class="col-6">
         <h4 class="font-weight-bold">Danh sách phát</h4>
-        <ul class="list-group" *ngFor="let playlist of playlists | paginate: {itemsPerPage: 5, currentPage: p2 } ; index as i">
+        <ul class="list-group" *ngFor="let playlist of playlists ; index as i">
           <li class="list-group-item pb-1" *ngIf="i < 5" >
             <a class="name-of-song" [routerLink]="['playlists/play',playlist.id]">
               <img src="{{playlist.avatar}}" width="40" height="40" alt="" class="img thumbnail pull-left mr-2">
@@ -36,12 +36,12 @@
               </span>
           </li>
         </ul>
-        <div class="text-center">
-          <pagination-controls (pageChange)="p2 = $event"></pagination-controls>
-        </div>
-<!--        <a class="text-info">-->
-<!--          <div class="text-center mt-3"><a [routerLink]="['/playlist']">Xem tất cả</a></div>-->
-<!--        </a>-->
+<!--        <div class="text-center">-->
+<!--          <pagination-controls (pageChange)="p2 = $event"></pagination-controls>-->
+<!--        </div>-->
+        <a class="text-info">
+          <div class="text-center mt-3"><a [routerLink]="['/playlist']">Xem tất cả</a></div>
+        </a>
       </div>
     </div>
   </div>

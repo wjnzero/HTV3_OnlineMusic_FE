@@ -15,6 +15,8 @@ export class ListAllComponent implements OnInit {
   songs: Song[] = [];
   playlists: Playlist[] = [];
 
+
+
   constructor(private songService: SongService,
               private playlistService: PlaylistService) {
   }
