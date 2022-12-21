@@ -68,8 +68,8 @@ export class UserEditSongComponent {
         Swal.fire({
           icon: 'success',
           title: 'Tải lên thành công',
-          showConfirmButton: false,
-          timer: 1000
+          showConfirmButton: true,
+          timer: 5000
         });
       })
     )
@@ -98,8 +98,8 @@ export class UserEditSongComponent {
         Swal.fire({
           icon: 'success',
           title: 'Tải lên thành công',
-          showConfirmButton: false,
-          timer: 3000
+          showConfirmButton: true,
+          timer: 5000
         });
       })
     )
@@ -125,8 +125,8 @@ export class UserEditSongComponent {
       Swal.fire({
         icon: 'success',
         title: 'Cập nhât thành công',
-        showConfirmButton: false,
-        timer: 1000
+        showConfirmButton: true,
+        timer: 5000
       });
     })
   }

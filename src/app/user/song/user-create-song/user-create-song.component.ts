@@ -61,8 +61,8 @@ export class UserCreateSongComponent implements OnInit {
     Swal.fire({
       icon: 'success',
       title: 'Thêm thành công',
-      showConfirmButton: false,
-      timer: 1000
+      showConfirmButton: true,
+      timer: 5000
     });
     this.songForm.reset();
   }
@@ -85,9 +85,9 @@ export class UserCreateSongComponent implements OnInit {
         })
         Swal.fire({
           icon: 'success',
-          title: 'Upload thành công',
-          showConfirmButton: false,
-          timer: 1000
+          title: 'Tải lên thành công',
+          showConfirmButton: true,
+          timer: 5000
         });
       })
     )
@@ -119,9 +119,9 @@ export class UserCreateSongComponent implements OnInit {
         })
         Swal.fire({
           icon: 'success',
-          title: 'Upload thành công',
-          showConfirmButton: false,
-          timer: 3000
+          title: 'Tải lên thành công',
+          showConfirmButton: true,
+          timer: 5000
         });
       })
     )
