@@ -20,8 +20,6 @@ import { AllplaylistComponent } from './allplaylist/allplaylist.component';
     CreatePlaylistComponent,
     EditPlaylistComponent,
     ListsongInOnePlaylistComponent,
-    ListLikePlaylistComponent,
-    ListOrderViewPlaylistComponent,
   AllplaylistComponent
 
   ],
