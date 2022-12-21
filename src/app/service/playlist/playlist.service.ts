@@ -65,7 +65,10 @@ export class PlaylistService {
     let url = API_URL + '/songs/'  + `${songId}` + '/playlist/' + `${playlistId}`
     return this.httpClient.get(url);
   }
-
+  addSongToAllPlaylist(playlistId: number ): Observable<any>{
+    let url = API_URL + '/playlist/' + `${playlistId}`
+    return this.httpClient.get(url);
+  }
 
 ////Sắp xếp bài hát theo lượt xem tăng dần
   sortByView(): Observable<any> {

@@ -21,50 +21,29 @@ declare var Swal: any;
 export class ListSongComponent implements OnInit {
 
 
-  // audioList: SongTemp[] = [];
-  songs: Song[] = [];
+  playlists: Playlist[] = [];
   playListUser: Playlist[] = [];
-  songType: SongType[] = [];
-  songForm!: FormGroup;
+  playlistForm!: FormGroup;
   userid?: any;
   p?: number;
+  songs: Song[] = [];
+  playlist: any;
   constructor(private songService: SongService,
-              private userService: UserService,
-              private tokenService: TokenStorageService,
-              private activateRoute: ActivatedRoute,
-              private playlistService: PlaylistService) {
+              private playlistService: PlaylistService,
+  ) {
   }
-
-  ngOnInit() {
-    const idUser = this.tokenService.getUser().id;
-    this.songService.getSongByUser(idUser).subscribe(songs => {
-      this.songs = songs;
-      // @ts-ignore
-      for (let i = 0; i < songs.length; i++) {
-        let temp: SongTemp = {url: songs[i].fileMp3, title: songs[i].name, cover: songs[i].avatar}
-        // @ts-ignore
-        this.audioList.push(temp);
-      }
-    });
+  ngOnInit(): void {
     this.userid = window.localStorage.getItem("idUser");
-    this.playlistService.getAll().subscribe(playlist => {
-      this.playListUser = playlist;
-    });
+    this.getAll();
 
-    this.playlistService.getByUserId(this.userid).subscribe(playlist => {
-      this.playListUser = playlist;
-    });
   }
 
   getAll() {
-  }
-
-  getByUserId() {
-    this.playlistService.getByUserId(this.userid).subscribe(playlist => {
-      console.log("pll uid: " + playlist[0].id)
-      this.playListUser = playlist;
+    this.songService.getAll().subscribe(songs => {
+      this.songs = songs;
     });
   }
+
 
   delete(id: any) {
     this.songService.delete(id).subscribe(data => {
@@ -74,10 +53,16 @@ export class ListSongComponent implements OnInit {
       console.error(e)
     });
   }
+  // getByUserId() {
+  //   this.songService.getByUserId(this.userid).subscribe(playlist => {
+  //     console.log("pll uid: " + playlist[0].id)
+  //     this.songs = s;
+  //   });
+  // }
 
-  addSongToPlaylist(playlistId: any, songId: any) {
+  addSongToAllPlaylist(playlistId: any) {
     // if (confirm('Bạn có muốn thêm vào playlist?')) {
-    this.playlistService.addSongToPlaylist(playlistId, songId).subscribe(() => {
+    this.playlistService.addSongToAllPlaylist(playlistId).subscribe(() => {
       // alert("ok")
     });
     Swal.fire({
