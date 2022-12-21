@@ -23,14 +23,19 @@ export class UserEditSongComponent {
   avatar: any;
 
   constructor(private songService: SongService, private storage: AngularFireStorage, private activateRoute: ActivatedRoute) {
+    // this.activateRoute.paramMap.subscribe((paraMap: ParamMap) => {
+    //   // @ts-ignore
+    //   this.id = +paraMap.get('id');
+    //   this.getSong(this.id);
+    // })
+  }
+
+  ngOnInit(): void {
     this.activateRoute.paramMap.subscribe((paraMap: ParamMap) => {
       // @ts-ignore
       this.id = +paraMap.get('id');
       this.getSong(this.id);
     })
-  }
-
-  ngOnInit(): void {
   }
 
   getSong(id: number) {

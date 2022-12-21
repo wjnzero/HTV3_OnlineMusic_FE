@@ -8,13 +8,13 @@ import {AuthGuardGuard} from "./guard/auth-guard.guard";
 import {UserChangePasswordComponent} from "./user/user-change-password/user-change-password.component";
 import {PlaySongComponent} from "./home/play-song/play-song.component";
 import {UserSongComponent} from "./user/song/user-song/user-song.component";
-import {EditSongComponent} from "./song/edit-song/edit-song.component";
 import {PlaylistComponent} from "./playlist/playlist/playlist.component";
 import {PlayPlaylistComponent} from "./home/play-playlist/play-playlist.component";
 import {SearchComponent} from "./home/search/search.component";
 import {NavbarMenuComponent} from "./home/navbar-menu/navbar-menu.component";
 import {ListSongComponent} from "./song/list-song/list-song.component";
 import {UserCreateSongComponent} from "./user/song/user-create-song/user-create-song.component";
+import {UserEditSongComponent} from "./user/song/user-edit-song/user-edit-song.component";
 
 
 const routes: Routes = [
@@ -81,7 +81,7 @@ const routes: Routes = [
   },
   {
     path: "userListSong/edit/:id",
-    component: EditSongComponent,
+    component: UserEditSongComponent,
     canActivate: [AuthGuardGuard]
   },
   {

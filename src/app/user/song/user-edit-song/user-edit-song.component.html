@@ -1,1 +1,57 @@
-<p>user-edit-song works!</p>
+<body id="layout">
+<app-navbar-menu></app-navbar-menu>
+<div><br></div>
+<div><br></div>
+<div class="container">
+  <section class="container">
+    <div class="new-most-song mt-5">
+      <div class="row p-10">
+        <div class="col-5">
+          <div><br></div>
+          <form [formGroup]="songForm" >
+            <table class="table d-print-table-cell" >
+              <thead class="thead-green">
+              <tr class="font-group">
+                <input hidden class="form-control" formControlName="id"
+                       id="id" placeholder="name">
+              </tr>
+              <tr class="font-group">
+                <td style="color: #050505">Tên:</td>
+                <td><input type="text" class="form-control" formControlName="name"  id="name" placeholder="Nhập tên bài hát..."></td>
+              </tr>
+              <br>
+              <tr class="font-group" >
+                <td style="color: #050505">Mô tả:</td>
+                <td><input type="text" class="form-control" formControlName="describeSong"
+                           id="describeSong" placeholder="Nhập mô tả bài hát..."></td>
+              </tr>
+              <br>
+              <tr class="font-group">
+                <td style="color: #050505">Avatar:</td>
+                <td><input style="color: #050505" type="file" formControlName="avatar"
+                           id="avatar" placeholder="avatar"></td>
+              </tr>
+              <br>
+              <tr class="font-group" >
+                <td style="color: #050505">Tệp mp3</td>
+                <td><input style="color: #050505" type="file" (change)="sendToFirebaseMp3()"></td>
+              </tr>
+              <br>
+              <tr style="alignment: center">
+                <td></td>
+                <td>
+                  <button style="color: #050505" (click)="update()" class="btn btn-outline-success">Cập nhật
+                  </button>
+                  <button style="color: #050505" routerLink="/userListSong" class="btn btn-outline-success">Quay lại
+                  </button>
+                </td>
+              </tr>
+              </thead>
+            </table>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</body>
