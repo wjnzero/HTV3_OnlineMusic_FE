@@ -58,6 +58,9 @@ const routes: Routes = [
   {
     path: 'search/playlists/:id',
     component:PlayPlaylistComponent },
+  {
+    path: 'search/song/:id',
+    component:PlaySongComponent },
 
   {
     path: 'userProfile',
