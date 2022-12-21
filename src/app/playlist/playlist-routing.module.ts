@@ -7,10 +7,6 @@ import {ListsongInOnePlaylistComponent} from "./listsong-in-one-playlist/listson
 import {AuthGuardGuard} from "../guard/auth-guard.guard";
 import {PlaySongComponent} from "../home/play-song/play-song.component";
 
-
-
-
-
 const routes: Routes = [
   {
     path: '',
@@ -32,13 +28,6 @@ const routes: Routes = [
     path: "findsonginplaylist/:id",
     component: ListsongInOnePlaylistComponent
   },
-  // {
-  //   path: "userplaylist/:id",
-  //   component: PlaylistComponent,
-  //   canActivate: [AuthGuardGuard]
-  // },
-
-
 ];
 
 @NgModule({

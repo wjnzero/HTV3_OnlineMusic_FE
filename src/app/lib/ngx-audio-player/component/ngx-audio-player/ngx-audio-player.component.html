@@ -1,7 +1,7 @@
 <mat-card class="ngx-d-flex ngx-justify-content-center ngx-audio-player z-depth-1 mat-elevation-z2"
           style="margin: 0px;">
 
-  <audio #audioPlayer [src]="tracks[currentIndex].link"></audio>
+  <audio #audioPlayer [src]="tracks[currentIndex]!.link"></audio>
 
   <button *ngIf="tracks.length > 1" (click)='previousSong();' [disabled]="loaderDisplay" class="ngx-p-1" mat-button>
     <mat-icon aria-hidden="true">
@@ -251,6 +251,6 @@
       <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
       <tr *matRowDef="let row; columns: displayedColumns;" class="mat-select-content" mat-row></tr>
     </table>
-    <mat-paginator [pageSizeOptions]="pageSizeOptions" showFirstLastButtons></mat-paginator>
+    <mat-paginator [pageSizeOptions]="pageSizeOptions" showFirstLastButtons ></mat-paginator>
   </mat-expansion-panel>
 </mat-accordion>

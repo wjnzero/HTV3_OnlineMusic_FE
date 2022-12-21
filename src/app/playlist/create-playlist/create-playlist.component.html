@@ -1,6 +1,11 @@
 
-<!--<app-navbar-menu></app-navbar-menu>-->
+<app-navbar-menu></app-navbar-menu>
 <body background="https://img.upanh.tv/2022/12/19/nen.png">
+<div><br></div>
+<div><br></div>
+<div><br></div>
+<div><br></div>
+
 <div><br></div>
 <div><br></div>
 <div class="container">
@@ -11,6 +16,10 @@
     <tr>
       <td style="color: #c4d4fa">Tên:</td>
       <td><input type="text" formControlName="name"placeholder="Nhập tên danh sách phát..."></td>
+    </tr><br>
+    <tr>
+      <td style="color: #abdde5">Ảnh:</td>
+      <td><input type="file"  (change)="sendToFirebaseImg()"> </td>
     </tr><br>
     <tr>
       <td></td>
