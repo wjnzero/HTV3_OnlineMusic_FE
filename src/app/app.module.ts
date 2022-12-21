@@ -32,7 +32,7 @@ import {PlaylistModule} from "./playlist/playlist.module";
 import {NgxAudioPlayerModule} from "./lib/ngx-audio-player/ngx-audio-player.module";
 import {PlaySongComponent} from "./home/play-song/play-song.component";
 import {NgxPaginationModule} from "ngx-pagination";
-import {ListAllComponent} from "./home/list-all/list-all.component";
+import {ListAllComponent} from "./home/list/list-all/list-all.component";
 import {PlayPlaylistComponent} from "./home/play-playlist/play-playlist.component";
 import {ComponentsModule} from "./components/components.module";
 import {MatPaginatorIntl} from "@angular/material/paginator";
@@ -41,6 +41,9 @@ import {ListNewSongComponent} from "./song/list-new-song/list-new-song.component
 import {ListOrderViewSongComponent} from "./song/list-order-view-song/list-order-view-song.component";
 import {CommonModule} from "@angular/common";
 import {UserCreateSongComponent} from "./user/song/user-create-song/user-create-song.component";
+import {ListNewPlaylistComponent} from "./home/list/list-new-playlist/list-new-playlist.component";
+import {ListOrderViewPlaylistComponent} from "./home/list/list-order-view-playlist/list-order-view-playlist.component";
+import {ListLikePlaylistComponent} from "./home/list/list-like-playlist/list-like-playlist.component";
 import { UserPlaylistComponent } from './user/playlist/user-playlist/user-playlist.component';
 import { SearchComponent } from './home/search/search.component';
 import {NavbarMenuModule} from "./home/navbar-menu/navbar-menu.module";
@@ -71,6 +74,9 @@ import {NavbarMenuModule} from "./home/navbar-menu/navbar-menu.module";
     PlayPlaylistComponent,
     UserPlaylistComponent,
     UserCreateSongComponent,
+    ListNewPlaylistComponent,
+    ListOrderViewPlaylistComponent,
+    ListLikePlaylistComponent,
     SearchComponent],
 
   imports: [
@@ -87,10 +93,15 @@ import {NavbarMenuModule} from "./home/navbar-menu/navbar-menu.module";
     BrowserAnimationsModule,
     MatMenuModule,
     MatButtonModule,
-    NgxAudioPlayerModule,
-    CommonModule,
     AngMusicPlayerModule,
+    NgxAudioPlayerModule,
     NgxPaginationModule,
+    CommonModule,
+    ReactiveFormsModule,
+    AngMusicPlayerModule,
+    FormsModule,
+    NgxPaginationModule,
+    PlaylistModule,
   ],
   providers: [MatPaginatorIntl ],
   exports: [

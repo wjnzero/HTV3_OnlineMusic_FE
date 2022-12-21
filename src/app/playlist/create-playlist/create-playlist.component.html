@@ -1,6 +1,6 @@
 
 <app-navbar-menu></app-navbar-menu>
-<body background="https://img.upanh.tv/2022/12/19/nen.png">
+<body id="layout">
 <div><br></div>
 <div><br></div>
 <div><br></div>
@@ -10,22 +10,22 @@
 <div><br></div>
 <div class="container">
   <div class="container">
-<h1 style="color: #c4d4fa">Tạo danh sách mới</h1>
+<h1 style="color: #19191a">Tạo danh sách mới</h1>
 <form  [formGroup]="playlistForm" >
   <table>
     <tr>
-      <td style="color: #c4d4fa">Tên:</td>
+      <td style="color: #19191a">Tên:</td>
       <td><input type="text" formControlName="name"placeholder="Nhập tên danh sách phát..."></td>
     </tr><br>
     <tr>
-      <td style="color: #abdde5">Ảnh:</td>
+      <td style="color: #19191a">Ảnh:</td>
       <td><input type="file"  (change)="sendToFirebaseImg()"> </td>
     </tr><br>
     <tr>
       <td></td>
       <td>
-        <button style="color: #c4d4fa"class="btn btn-outline-primary" (click)="savePlaylist()">Tạo mới</button> &nbsp; &nbsp;
-        <button style="color: #c4d4fa"routerLink="/playlist" class="btn btn-outline-success">Quay lại</button>
+        <button style="color: #19191a"class="btn btn-outline-primary" (click)="savePlaylist()">Tạo mới</button> &nbsp; &nbsp;
+        <button style="color: #19191a"routerLink="/playlist" class="btn btn-outline-info">Quay lại</button>
       </td>
     </tr>
   </table>
