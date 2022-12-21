@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {environment} from "../../../enronments/environment";
@@ -14,10 +14,11 @@ const API_URL = `${environment.apiUrl}`;
 export class CommentplaylistService {
 
   constructor(private http: HttpClient,
-              private httpService: HttpService) { }
+              private httpService: HttpService) {
+  }
 
   // Lấy toàn bộ comment của playlist theo Id
-  getCommentByPlaylist(idPlaylist: number | undefined): Observable<Commentplaylist[]>{
+  getCommentByPlaylist(idPlaylist: number | undefined): Observable<Commentplaylist[]> {
     return this.http.get<Commentplaylist[]>(API_URL + '/comment/playlist/' + idPlaylist);
   }
 

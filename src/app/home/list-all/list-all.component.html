@@ -28,8 +28,8 @@
         <ul class="list-group" *ngFor="let playlist of playlists | paginate: {itemsPerPage: 5, currentPage: p2 } ; index as i">
           <li class="list-group-item pb-1" *ngIf="i < 5" >
             <a class="name-of-song" [routerLink]="['playlists/play',playlist.id]">
-<!--              <img src="{{playlist.timeCreate}}" width="40" height="40" alt="" class="img thumbnail pull-left mr-2">-->
-<!--              <p style=" width: 40px; height: 40px;"  class="img thumbnail pull-left mr-2"></p>-->
+              <img src="{{playlist.avatar}}" width="40" height="40" alt="" class="img thumbnail pull-left mr-2">
+              <p style=" width: 40px; height: 40px;"  class="img thumbnail pull-left mr-2"></p>
               <h6 class="mb-1 text-dark"><b>{{playlist.name}}</b></h6>
             </a>
             <span style="float: left">

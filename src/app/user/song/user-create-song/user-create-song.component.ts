@@ -40,7 +40,6 @@ export class UserCreateSongComponent implements OnInit {
     avatar: new FormControl(),
     viewSong: new FormControl(),
     timeCreate: new FormControl(),
-    lastTimeEdit: new FormControl()
   })
 
   saveSong() {
@@ -54,7 +53,6 @@ export class UserCreateSongComponent implements OnInit {
       avatar: this.avatar,
       viewSong: view,
       timeCreate: this.songForm.value.timeCreate,
-      lastTimeEdit: this.songForm.value.lastTimeEdit,
       dateCreateSong: dateConvert
     };
     const idUser = this.tokenService.getUser().id;

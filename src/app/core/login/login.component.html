@@ -1,5 +1,4 @@
 <app-navbar-login-resister></app-navbar-login-resister>
-<body>
 <form class="box" *ngIf="!isLoggedIn" name="form" (ngSubmit)="onSubmit()" #f="ngForm" novalidate>
 
   <div class="form-group">
@@ -30,7 +29,6 @@
     <!--    Đăng nhập thất bại: {{errorMessage}}-->
   </div>
 </form>
-
 <div class="lines">
   <div class="line"></div>
   <div class="line"></div>
@@ -52,5 +50,4 @@
   <div class="line"></div>
   <div class="line"></div>
 </div>
-</body>
 

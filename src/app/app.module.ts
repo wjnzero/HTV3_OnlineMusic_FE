@@ -28,11 +28,14 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatMenuModule} from "@angular/material/menu";
 import {MatButtonModule} from "@angular/material/button";
 import {AngMusicPlayerModule} from "ang-music-player";
+import {PlaylistModule} from "./playlist/playlist.module";
 import {NgxAudioPlayerModule} from "./lib/ngx-audio-player/ngx-audio-player.module";
 import {PlaySongComponent} from "./home/play-song/play-song.component";
 import {NgxPaginationModule} from "ngx-pagination";
 import {ListAllComponent} from "./home/list-all/list-all.component";
 import {PlayPlaylistComponent} from "./home/play-playlist/play-playlist.component";
+import {ComponentsModule} from "./components/components.module";
+import {MatPaginatorIntl} from "@angular/material/paginator";
 import {ListSongComponent} from "./song/list-song/list-song.component";
 import {ListNewSongComponent} from "./song/list-new-song/list-new-song.component";
 import {ListOrderViewSongComponent} from "./song/list-order-view-song/list-order-view-song.component";
@@ -88,7 +91,7 @@ import {NavbarMenuModule} from "./home/navbar-menu/navbar-menu.module";
     AngMusicPlayerModule,
     NgxPaginationModule,
   ],
-  providers: [],
+  providers: [MatPaginatorIntl ],
   exports: [
     NavbarMenuComponent,
     ListSongComponent,
