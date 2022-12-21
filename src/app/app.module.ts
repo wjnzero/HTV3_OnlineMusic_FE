@@ -36,15 +36,14 @@ import {ListAllComponent} from "./home/list-all/list-all.component";
 import {PlayPlaylistComponent} from "./home/play-playlist/play-playlist.component";
 import {ComponentsModule} from "./components/components.module";
 import {MatPaginatorIntl} from "@angular/material/paginator";
-import {NavbarMenuModule} from "./home/navbar-menu/navbar-menu.module";
-import {UserPlaylistComponent} from './user/playlist/user-playlist/user-playlist.component';
-import {SearchComponent} from './home/search/search.component';
 import {ListSongComponent} from "./song/list-song/list-song.component";
-import {EditSongComponent} from "./song/edit-song/edit-song.component";
 import {ListNewSongComponent} from "./song/list-new-song/list-new-song.component";
 import {ListOrderViewSongComponent} from "./song/list-order-view-song/list-order-view-song.component";
 import {CommonModule} from "@angular/common";
 import {UserCreateSongComponent} from "./user/song/user-create-song/user-create-song.component";
+import { UserPlaylistComponent } from './user/playlist/user-playlist/user-playlist.component';
+import { SearchComponent } from './home/search/search.component';
+import {NavbarMenuModule} from "./home/navbar-menu/navbar-menu.module";
 
 
 @NgModule({
@@ -54,7 +53,6 @@ import {UserCreateSongComponent} from "./user/song/user-create-song/user-create-
     ListUploadComponent,
     DetailsUploadComponent,
     ListSongComponent,
-    EditSongComponent,
     ListNewSongComponent,
     ListOrderViewSongComponent,
     PosterComponent,
@@ -88,13 +86,9 @@ import {UserCreateSongComponent} from "./user/song/user-create-song/user-create-
     BrowserAnimationsModule,
     MatMenuModule,
     MatButtonModule,
-    AngMusicPlayerModule,
     NgxAudioPlayerModule,
-    NgxPaginationModule,
     CommonModule,
-    ReactiveFormsModule,
     AngMusicPlayerModule,
-    FormsModule,
     NgxPaginationModule,
   ],
   providers: [MatPaginatorIntl ],

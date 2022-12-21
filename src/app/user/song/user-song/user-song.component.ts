@@ -60,17 +60,21 @@ export class UserSongComponent implements OnInit {
 
   getByUserId() {
     this.playlistService.getByUserId(this.userid).subscribe(playlist => {
-      console.log("pll uid: " + playlist[0].id)
       this.playlist = playlist;
     });
   }
 
   delete(id: any) {
     this.songService.delete(id).subscribe(data => {
-      console.log(data)
       this.ngOnInit();
     }, e => {
       console.error(e)
+    });
+    Swal.fire({
+      icon: 'success',
+      title: 'Xoá thành công',
+      showConfirmButton: true,
+      timer: 5000
     });
   }
 
@@ -82,8 +86,8 @@ export class UserSongComponent implements OnInit {
     Swal.fire({
       icon: 'success',
       title: 'Thêm thành công',
-      showConfirmButton: false,
-      timer: 1000
+      showConfirmButton: true,
+      timer: 5000
     });
   }
 }

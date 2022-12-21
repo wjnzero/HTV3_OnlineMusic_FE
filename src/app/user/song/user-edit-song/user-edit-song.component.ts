@@ -23,14 +23,19 @@ export class UserEditSongComponent {
   avatar: any;
 
   constructor(private songService: SongService, private storage: AngularFireStorage, private activateRoute: ActivatedRoute) {
+    // this.activateRoute.paramMap.subscribe((paraMap: ParamMap) => {
+    //   // @ts-ignore
+    //   this.id = +paraMap.get('id');
+    //   this.getSong(this.id);
+    // })
+  }
+
+  ngOnInit(): void {
     this.activateRoute.paramMap.subscribe((paraMap: ParamMap) => {
       // @ts-ignore
       this.id = +paraMap.get('id');
       this.getSong(this.id);
     })
-  }
-
-  ngOnInit(): void {
   }
 
   getSong(id: number) {
@@ -63,8 +68,8 @@ export class UserEditSongComponent {
         Swal.fire({
           icon: 'success',
           title: 'Tải lên thành công',
-          showConfirmButton: false,
-          timer: 1000
+          showConfirmButton: true,
+          timer: 5000
         });
       })
     )
@@ -93,8 +98,8 @@ export class UserEditSongComponent {
         Swal.fire({
           icon: 'success',
           title: 'Tải lên thành công',
-          showConfirmButton: false,
-          timer: 3000
+          showConfirmButton: true,
+          timer: 5000
         });
       })
     )
@@ -120,8 +125,8 @@ export class UserEditSongComponent {
       Swal.fire({
         icon: 'success',
         title: 'Cập nhât thành công',
-        showConfirmButton: false,
-        timer: 1000
+        showConfirmButton: true,
+        timer: 5000
       });
     })
   }

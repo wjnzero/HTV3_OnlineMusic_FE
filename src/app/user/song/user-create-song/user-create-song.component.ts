@@ -40,7 +40,6 @@ export class UserCreateSongComponent implements OnInit {
     avatar: new FormControl(),
     viewSong: new FormControl(),
     timeCreate: new FormControl(),
-    lastTimeEdit: new FormControl()
   })
 
   saveSong() {
@@ -54,7 +53,6 @@ export class UserCreateSongComponent implements OnInit {
       avatar: this.avatar,
       viewSong: view,
       timeCreate: this.songForm.value.timeCreate,
-      lastTimeEdit: this.songForm.value.lastTimeEdit,
       dateCreateSong: dateConvert
     };
     const idUser = this.tokenService.getUser().id;
@@ -63,8 +61,8 @@ export class UserCreateSongComponent implements OnInit {
     Swal.fire({
       icon: 'success',
       title: 'Thêm thành công',
-      showConfirmButton: false,
-      timer: 1000
+      showConfirmButton: true,
+      timer: 5000
     });
     this.songForm.reset();
   }
@@ -87,9 +85,9 @@ export class UserCreateSongComponent implements OnInit {
         })
         Swal.fire({
           icon: 'success',
-          title: 'Upload thành công',
-          showConfirmButton: false,
-          timer: 1000
+          title: 'Tải lên thành công',
+          showConfirmButton: true,
+          timer: 5000
         });
       })
     )
@@ -121,9 +119,9 @@ export class UserCreateSongComponent implements OnInit {
         })
         Swal.fire({
           icon: 'success',
-          title: 'Upload thành công',
-          showConfirmButton: false,
-          timer: 3000
+          title: 'Tải lên thành công',
+          showConfirmButton: true,
+          timer: 5000
         });
       })
     )
