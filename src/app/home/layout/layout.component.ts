@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Track} from "../../lib/ngx-audio-player/model/track";
 import {SongTemp} from "../../model/songTemp";
 import {SongService} from "../../service/song/song.service";
+import {Playlist} from "../../model/playlist";
+import {PlaylistService} from "../../service/playlist/playlist.service";
 
 declare var $: any;
 
@@ -28,8 +30,9 @@ msaapDisablePositionSlider = true;
 msaapPlaylist: Track[] = [
 
 ];
+  playlists: Playlist[] = [];
 
-  constructor(private songService: SongService) {
+  constructor(private songService: SongService,private playlistService: PlaylistService) {
   }
 
   ngOnInit(): void {
@@ -44,6 +47,10 @@ msaapPlaylist: Track[] = [
       }
     });
     console.log(this.msaapPlaylist);
+    this.playlistService.getAllPlaylistsDescLike().subscribe(list => {
+      this.playlists = list;
+    });
+
   }
 
 

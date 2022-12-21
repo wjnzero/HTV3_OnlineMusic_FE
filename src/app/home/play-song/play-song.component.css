@@ -1,8 +1,11 @@
+#layout {
+  background-image: linear-gradient(to bottom, #6f42c1, #976fe0, #ab93c9, #d698b9, #eda1ab, #ffbea3, #eda1ab, #d698b9, #ab93c9);
+}
 
 div#white-player {
   width: 100%;
   max-width: 375px;
-  background-color: #FFFFFF;
+  background-color: #eed3fc;
   box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.12);
   border-radius: 8px;
   margin: 100px auto 50px;
@@ -43,7 +46,7 @@ div#white-player-center img.main-album-art {
   margin-bottom: 50px;
   border-radius: 8px;
   box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.12);
-  width: 280px;
+  width: 350px;
   height: 280px;
 }
 
@@ -66,7 +69,7 @@ div#white-player-center div.time-progress {
 }
 
 div#white-player-center div.time-progress span.current-time {
-  color: #AAAFB3;
+  color: black;
   font-size: 12px;
   display: block;
   float: left;
@@ -114,7 +117,7 @@ div#white-player-center div.time-progress div#progress-container progress#song-p
   div#white-player-center div.time-progress div#progress-container *::-ms-backdrop, div#white-player-center div.time-progress div#progress-container progress#song-played-progress {
     color: #FA6733;
     border: none;
-    background-color: #E1E1E1;
+    background-color: black;
   }
 }
 

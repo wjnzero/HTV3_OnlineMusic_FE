@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {PlaylistService} from "../../service/playlist/playlist.service";
-import {Playlist} from "../../model/playlist";
-import {SongService} from "../../service/song/song.service";
-import {Song} from "../../model/song";
+import {PlaylistService} from "../../../service/playlist/playlist.service";
+import {Playlist} from "../../../model/playlist";
+import {SongService} from "../../../service/song/song.service";
+import {Song} from "../../../model/song";
 
 @Component({
   selector: 'app-list-all',
