@@ -90,6 +90,9 @@ export class PlayPlaylistComponent implements OnInit {
     });
     this.playlistService.getById(this.id).subscribe(res => {
       this.playlist = res;
+      this.playlistService.increaseViewPlaylist(this.playlist?.id).subscribe(() => {
+        console.log('Increase Success');
+      });
       this.playlistService.showSongInPlaylist(this.id).subscribe(songs => {
         this.songList = songs;
         for (let i = 0; i < this.songList.length; i++) {

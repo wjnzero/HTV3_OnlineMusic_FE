@@ -11,4 +11,5 @@ export interface Playlist {
   lastTimeEdit: string;
   users?: User;
   songs?: Song[];
+  view_playlist: string;
 }
