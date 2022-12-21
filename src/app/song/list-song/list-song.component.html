@@ -1,6 +1,8 @@
 <app-navbar-menu></app-navbar-menu>
 <body id="layout" style="text-align:center">
 <div><br></div>
+<div><br></div>
+<div><br></div>
 <div class="container">
   <section class="container">
 <div class="new-most-song mt-5">
@@ -26,36 +28,36 @@
           <td style="color:black"routerLink="search{{song.id}}">{{song.describeSong}}</td>
           <td style="color:black"routerLink="search{{song.id}}">{{song.viewSong}}</td>
           <td>
-            <button style="color:black" class="btn btn-outline-primary" routerLink="song/{{song.id}}"> |⫸</button>
+            <button style="color:black" class="btn btn-outline-primary" routerLink="/songs/song/{{song.id}}"> |⫸</button>
           </td>
-          <td>
-            <button style="color:black" type="button" class="btn btn-outline-primary" data-toggle="modal"
-                    [attr.data-target]="'#myModal' + song.id">Thêm vào danh sách phát</button>
-          </td>
-          <td><!-- The Modal -->
-            <div class="modal" id="{{'myModal' + song.id}}">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <!-- Modal Header -->
-                  <div class="modal-header">
-                    <h4 style="color:black" class="modal-title">Danh sách phát</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  </div>
-                  <!-- Modal body -->
-                  <div class="modal-body">
-                    <div *ngFor="let playlist of playListUser;index as i" (click)="addSongToPlaylist(playlist.id, song.id)">
-                      <button style="color:black" class="btn btn-link">{{playlist.name}}</button>
-                    </div>
-                  </div>
-                  <!-- Modal footer -->
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Thoát</button>
-                  </div>
+<!--          <td>-->
+<!--            <button style="color:black" type="button" class="btn btn-outline-primary" data-toggle="modal"-->
+<!--                    [attr.data-target]="'#myModal'">Thêm vào danh sách phát</button>-->
+<!--          </td>-->
+<!--          <td>&lt;!&ndash; The Modal &ndash;&gt;-->
+<!--            <div class="modal" id="{{'myModal'}}">-->
+<!--              <div class="modal-dialog">-->
+<!--                <div class="modal-content">-->
+<!--                  &lt;!&ndash; Modal Header &ndash;&gt;-->
+<!--                  <div class="modal-header">-->
+<!--                    <h4 style="color:black" class="modal-title">Danh sách phát</h4>-->
+<!--                    <button type="button" class="close" data-dismiss="modal">&times;</button>-->
+<!--                  </div>-->
+<!--                  &lt;!&ndash; Modal body &ndash;&gt;-->
+<!--                  <div class="modal-body">-->
+<!--                    <div *ngFor="let playlist of playListUser;index as i" (click)="addSongToAllPlaylist(playlist.id)">-->
+<!--                      <button style="color:black" class="btn btn-link">{{playlist.name}}</button>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                  &lt;!&ndash; Modal footer &ndash;&gt;-->
+<!--                  <div class="modal-footer">-->
+<!--                    <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Thoát</button>-->
+<!--                  </div>-->
 
-                </div>
-              </div>
-            </div>
-          </td>
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </td>-->
         </tr>
         </tbody>
         <button style="color:black" routerLink="" class="btn btn-outline-primary">Trang chủ</button>
