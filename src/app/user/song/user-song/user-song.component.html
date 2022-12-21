@@ -26,7 +26,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr style="color: black"*ngFor="let song of songs | paginate: { itemsPerPage: 5, currentPage: p },let indexOfElement=index;">
+            <tr style="color: black"*ngFor="let song of songs | paginate: { itemsPerPage: 6, currentPage: p },let indexOfElement=index;">
               <th style="color: #050505" scope="row">{{indexOfElement + 1}}</th>
               <td><img width="40" height="40" src="{{song.avatar}}" class="img thumbnail pull-left mr-2"></td>
               <td style="color: #050505" routerLink="search{{song.id}}">{{song.name}}</td>
