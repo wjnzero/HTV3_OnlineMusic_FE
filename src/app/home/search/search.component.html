@@ -3,7 +3,7 @@
 <div><br></div>
 <div class="container">
   <section class="container">
-    <div style="margin-top: 20px">
+    <div style="margin-top: 1px">
       <div class="new-most-song mt-5">
         <div class="row p-5">
           <div class="col-12">
@@ -21,7 +21,7 @@
               </tr>
               </thead>
               <tbody>
-              <tr *ngFor="let song of songs | paginate: { itemsPerPage: 5, currentPage: p },let indexOfelement=index;">
+              <tr style="color: black" *ngFor="let song of songs | paginate: { itemsPerPage: 5, currentPage: p },let indexOfelement=index;">
                 <th style="color:#211f1e;" scope="row">{{indexOfelement + 1}}</th>
                 <td><img width="40" height="40" src="{{song.avatar}}" class="img thumbnail pull-left mr-2"></td>
                 <td style="color:#211f1e;" routerLink="search{{song.id}}">{{song.name}}</td>
