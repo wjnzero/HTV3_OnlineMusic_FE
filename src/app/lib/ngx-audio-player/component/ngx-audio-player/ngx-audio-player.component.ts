@@ -2,7 +2,7 @@
 import { Component, OnInit, Input, ViewChild, Output, ElementRef, OnChanges, SimpleChanges } from '@angular/core';
 import { MatSlider } from '@angular/material/slider';
 import { MatTableDataSource } from '@angular/material/table';
-import { MatPaginator } from '@angular/material/paginator';
+import {MatPaginator, MatPaginatorIntl} from '@angular/material/paginator';
 import { Subject } from 'rxjs';
 import {Track} from "../../model/track";
 import {AudioPlayerService} from "../../service/audio-player.service";
@@ -16,11 +16,15 @@ export class AudioPlayerComponent implements OnInit, OnChanges {
 
   audioPlayerService: AudioPlayerService;
   repeat: string = 'all';
-  constructor(elem: ElementRef) {
+  constructor(elem: ElementRef,private paginator1: MatPaginatorIntl) {
     if (elem.nativeElement.tagName.toLowerCase() === 'mat-advanced-audio-player') {
       console.warn(`'mat-advanced-audio-player' selector is deprecated; use 'ngx-audio-player' instead.`);
     }
     this.audioPlayerService = new AudioPlayerService();
+    paginator1.itemsPerPageLabel = 'Số bài mỗi trang'
+    // constructor(private paginator: MatPaginatorIntl) {
+    //   paginator.itemsPerPageLabel = 'The amount of data displayed'';
+    // }
   }
 
   @Input()

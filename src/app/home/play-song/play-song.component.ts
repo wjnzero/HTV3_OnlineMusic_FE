@@ -11,6 +11,7 @@ import {PlaylistService} from "../../service/playlist/playlist.service";
 import {CommentsongService} from "../../service/comment/commentsong.service";
 import {Commentsong} from "../../model/commentsong";
 import {FormBuilder, FormGroup} from "@angular/forms";
+import * as moment from "moment/moment";
 
 declare var Amplitude: any;
 
@@ -127,10 +128,13 @@ export class PlaySongComponent implements OnInit {
   }
 
   onEnter() {
+    const now = new Date();
+    const dateConvert = moment(now).format('yyyy-MM-DD');
     const comment = {
       comment_content: this.form?.value.comment,
       userComment: this.user,
-      songComment: this.song
+      songComment: this.song,
+      dateCreate: dateConvert
     };
     this.commentSongService.updateCommentSong(comment).subscribe(res => {
       this.commentSongService.getCommentBySong(this.song?.id).subscribe(data => {

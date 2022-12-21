@@ -75,4 +75,22 @@ export class PlaylistService {
   sortByViewDesc(): Observable<any> {
     return this.httpClient.get(API_URL + `/sortByViewDesc`)
   }
+  // Lấy tổng like của playlist
+  getTotalLikePlaylist(idPlaylist: number): Observable<any> {
+    return this.httpClient.get<any>(API_URL + `/playlist/allLike/${idPlaylist}`)
+  }
+
+  checkLikePlaylist(idPlaylist: number, idUser: number | undefined): Observable<any> {
+    return this.httpClient.get(API_URL + `/playlist/checkLike/${idPlaylist}/${idUser}`)
+  }
+
+  likePlaylist(idPlaylist: number | undefined, idUser: number | undefined): Observable<any> {
+    return this.httpClient.get(API_URL + `/playlist/like/${idPlaylist}/${idUser}`);
+  }
+
+  unlikeLikePlaylist(idPlaylist: number | undefined, idUser: number | undefined): Observable<any> {
+    return this.httpClient.get(API_URL + `/playlist/unlike/${idPlaylist}/${idUser}`);
+  }
+
+
 }

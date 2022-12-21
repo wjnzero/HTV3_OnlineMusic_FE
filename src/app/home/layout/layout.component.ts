@@ -37,6 +37,7 @@ msaapPlaylist: Track[] = [
 
       // @ts-ignore
       for (let i = 0; i < songs.length; i++) {
+        // @ts-ignore
         let temp : Track={link:songs[i].fileMp3, title: songs[i].name, artist:songs[i].avatar }
         // @ts-ignore
         this.msaapPlaylist.push(temp);
