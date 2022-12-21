@@ -22,6 +22,9 @@ export class SearchComponent implements OnInit {
   playListUser: Playlist[] = [];
   name?: string;
   userid: any;
+  p?: number;
+  pl?: number;
+
 
 
   constructor(private songService: SongService,
