@@ -1,7 +1,8 @@
-<!--<div class="container">-->
-<!--  <section class="container">-->
-<body background="https://img.upanh.tv/2022/12/19/nen.png"style="text-align:center">
+<app-navbar-menu></app-navbar-menu>
+<body background="https://img.upanh.tv/2022/12/19/nen.png" style="text-align:center">
 <div><br></div>
+<div class="container">
+  <section class="container">
 <div class="new-most-song mt-5">
   <div class="row p-10">
     <div class="col-12">
@@ -18,7 +19,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let song of songs,let indexOfelement=index;">
+        <tr *ngFor="let song of songs | paginate: { itemsPerPage: 6, currentPage: p },let indexOfelement=index;">
           <th style="color:#efc1ae"scope="row">{{indexOfelement + 1}}</th>
           <td><img width="40" height="40" src="{{song.avatar}}" class="img thumbnail pull-left mr-2"></td>
           <td style="color:#efc1ae"routerLink="search{{song.id}}">{{song.name}}</td>
@@ -59,10 +60,13 @@
         </tbody>
         <button style="color:#efc1ae" routerLink="" class="btn btn-outline-primary">Trang chủ</button>
       </table>
+      <div class="text-center">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
     </div>
   </div>
 </div>
+  </section>
+</div>
 </body>
-<!--  </section>-->
-<!--</div>-->
 

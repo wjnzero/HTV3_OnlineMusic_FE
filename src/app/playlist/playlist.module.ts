@@ -22,12 +22,13 @@ import { AllplaylistComponent } from './allplaylist/allplaylist.component';
     ListsongInOnePlaylistComponent,
     ListLikePlaylistComponent,
     ListOrderViewPlaylistComponent,
-    AllplaylistComponent
+  AllplaylistComponent
   ],
   exports: [
     PlaylistComponent,
     CreatePlaylistComponent,
     ListsongInOnePlaylistComponent
+
   ],
 
   imports: [
