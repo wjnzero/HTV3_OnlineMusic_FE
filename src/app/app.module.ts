@@ -78,6 +78,7 @@ import {NavbarMenuModule} from "./home/navbar-menu/navbar-menu.module";
     ListOrderViewPlaylistComponent,
     ListLikePlaylistComponent,
     SearchComponent],
+
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -4,8 +4,9 @@ import {EditPlaylistComponent} from "./edit-playlist/edit-playlist.component";
 import {NgModule} from "@angular/core";
 import {PlaylistComponent} from "./playlist/playlist.component";
 import {ListsongInOnePlaylistComponent} from "./listsong-in-one-playlist/listsong-in-one-playlist.component";
-import {AuthGuardGuard} from "../guard/auth-guard.guard";
 import {PlaySongComponent} from "../home/play-song/play-song.component";
+import {ListSongComponent} from "../song/list-song/list-song.component";
+import {AllplaylistComponent} from "./allplaylist/allplaylist.component";
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: "findsonginplaylist/:id",
     component: ListsongInOnePlaylistComponent
+  },
+  {
+    path: 'playlistbyuser',
+    component:AllplaylistComponent
   },
 ];
 

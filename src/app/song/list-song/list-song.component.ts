@@ -6,7 +6,6 @@ import {SongTemp} from "../../model/songTemp";
 import {Playlist} from "../../model/playlist";
 import {PlaylistService} from "../../service/playlist/playlist.service";
 import {FormGroup} from "@angular/forms";
-import {allowMangle} from "@angular-devkit/build-angular/src/utils/environment-options";
 import {UserService} from "../../service/user/user.service";
 import {TokenStorageService} from "../../security/service/token-storage.service";
 import {ActivatedRoute} from "@angular/router";
@@ -29,7 +28,6 @@ export class ListSongComponent implements OnInit {
   songForm!: FormGroup;
   userid?: any;
   p?: number;
-
   constructor(private songService: SongService,
               private userService: UserService,
               private tokenService: TokenStorageService,

@@ -15,6 +15,7 @@ import {NavbarMenuComponent} from "./home/navbar-menu/navbar-menu.component";
 import {ListSongComponent} from "./song/list-song/list-song.component";
 import {UserCreateSongComponent} from "./user/song/user-create-song/user-create-song.component";
 import {UserEditSongComponent} from "./user/song/user-edit-song/user-edit-song.component";
+import {AllplaylistComponent} from "./playlist/allplaylist/allplaylist.component";
 
 
 const routes: Routes = [
@@ -25,6 +26,13 @@ const routes: Routes = [
     path: 'playlist',
     loadChildren: () => import('./playlist/playlist.module').then(module => module.PlaylistModule)
   },
+  {
+    path: 'playlistbyuser',
+    component:AllplaylistComponent,
+  },
+  {
+    path: 'playlistbyuser/playlists/play/:id',
+    component:PlayPlaylistComponent },
   {
     path: 'song',
     component:ListSongComponent
