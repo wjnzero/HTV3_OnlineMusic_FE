@@ -4,6 +4,7 @@ import {environment} from "../../../enronments/environment";
 import {Observable} from "rxjs";
 import {Playlist} from "../../model/playlist";
 import {HttpClient} from "@angular/common/http";
+import {Song} from "../../model/song";
 
 
 
@@ -90,6 +91,19 @@ export class PlaylistService {
 
   unlikeLikePlaylist(idPlaylist: number | undefined, idUser: number | undefined): Observable<any> {
     return this.httpClient.get(API_URL + `/playlist/unlike/${idPlaylist}/${idUser}`);
+  }
+  getAllPlaylistsNew(): Observable<Playlist[]> {
+    return this.httpClient.get<Playlist[]>(API_URL + '/playlist/newest');
+  }
+  getAllPlaylistsDescView(): Observable<Playlist[]> {
+    return this.httpClient.get<Playlist[]>(API_URL + '/playlist/mostview');
+  }
+  getAllPlaylistsDescLike(): Observable<Playlist[]> {
+    return this.httpClient.get<Playlist[]>(API_URL + '/playlist/mostlike');
+  }
+  // Tăng 1 lượt view
+  increaseViewPlaylist(idPlaylist: number | undefined): Observable<any> {
+    return this.httpClient.get(API_URL + '/playlist/view/' + idPlaylist);
   }
 
 
