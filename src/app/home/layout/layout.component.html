@@ -13,14 +13,14 @@
     <app-poster></app-poster>
     <div class="row p-3">
       <div class="col-9" style="padding-left: 0">
-        <h2 class="mb-1 text-dark" style="padding-bottom: 20px" ><b>Bài Hát</b></h2>
+        <h2 class="mb-1 text-dark" style="padding-bottom: 20px" ><b>Bài hát</b></h2>
         <app-list-order-view-song></app-list-order-view-song>
         <div class="row p-2"></div>
         <app-list-new-song></app-list-new-song>
       </div>
       <div class="col-3" style="padding-right: 0">
         <div class="sidebar" >
-          <h2 class="mb-1 text-dark" style="padding-bottom: 20px" ><b>BXH Playlist</b></h2>
+          <h2 class="mb-1 text-dark" style="padding-bottom: 20px" ><b>&nbsp;BXH Playlist</b></h2>
           <div *ngFor="let playlist of playlists;index as i">
             <div class="queue-entry flex-space"  *ngIf="i < 6">
               <h3 class="mb-1 text-dark queue-number" style="padding-bottom: 20px"><b>{{i+1}}</b></h3>
@@ -38,7 +38,7 @@
     </div>
     </div>
     <div class="row p-2"></div>
-    <h2 class="mb-1 text-dark" style="padding-bottom: 20px" ><b>Playlist</b></h2>
+<!--    <h2 class="mb-1 text-dark" style="padding-bottom: 20px" ><b>Playlist</b></h2>-->
     <app-list-new-playlist></app-list-new-playlist>
     <div class="row p-2"></div>
     <app-list-order-view-playlist></app-list-order-view-playlist>

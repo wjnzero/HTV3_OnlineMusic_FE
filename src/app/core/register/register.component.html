@@ -4,12 +4,12 @@
   <input formControlName="username" type="text" name="" placeholder="Tên đăng nhập">
   <div *ngIf="registerForm.get('username')?.hasError('required') && registerForm.get('username')?.touched"
        class="text-danger">
-    Không được để trống ô này!
+    Không để trống ô này!
   </div>
   <input formControlName="password" type="password" name="" placeholder="Mật khẩu">
   <div *ngIf="!registerForm.get('password')?.valid && (registerForm.get('password')?.dirty ||registerForm.get('password')?.touched)">
     <div [hidden]="!registerForm.get('password')?.errors?.['required']">
-      <p class="text-danger">Không được để trống ô này!</p>
+      <p class="text-danger">Không để trống ô này!</p>
     </div>
     <div [hidden]="!registerForm.get('password')?.errors?.['minlength']">
       <p class="text-danger">Mật khẩu từ 6-8 ký tự</p>
@@ -21,7 +21,7 @@
   <input formControlName="confirmPassword" type="password" name="" placeholder="Nhập Lại Mật khẩu">
   <div *ngIf="!registerForm.get('confirmPassword')?.valid && (registerForm.get('confirmPassword')?.dirty ||registerForm.get('confirmPassword')?.touched)">
     <div [hidden]="!registerForm.get('confirmPassword')?.errors?.['required']">
-      <p class="text-danger">Không được để trống ô này!</p>
+      <p class="text-danger">Không để trống ô này!</p>
     </div>
   </div>
   <div *ngIf="registerForm.get('confirmPassword')?.touched || (registerForm.get('confirmPassword')?.dirty)">
@@ -32,7 +32,7 @@
   <input formControlName="phone" type="text" name="" placeholder="Số điện thoại">
   <div *ngIf="!registerForm.get('phone')?.valid && (registerForm.get('phone')?.dirty ||registerForm.get('phone')?.touched)">
     <div [hidden]="!registerForm.get('phone')?.errors?.['required']">
-      <p class="text-danger">Không được để trống ô này!</p>
+      <p class="text-danger">Không để trống ô này!</p>
     </div>
     <div [hidden]="!registerForm.get('phone')?.errors?.['pattern']">
       <p class="text-danger">Không đúng định dạng SĐT!</p>
