@@ -1,3 +1,4 @@
+<body id="layout">
 <app-navbar-login-resister>1</app-navbar-login-resister>
 <form class="box" [formGroup]="registerForm" (ngSubmit)="register()">
   <input formControlName="username" type="text" name="" placeholder="Tên đăng nhập">
@@ -39,7 +40,7 @@
   </div>
   <button type="submit" [disabled]="!registerForm.valid">Đăng ký</button>
 </form>
-
+</body>
 <div class="lines">
   <div class="line"></div>
   <div class="line"></div>

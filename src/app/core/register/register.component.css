@@ -1,3 +1,6 @@
+#layout {
+  background-image: linear-gradient(to bottom, #6f42c1, #976fe0, #ab93c9, #d698b9, #eda1ab, #ffbea3, #eda1ab, #d698b9, #ab93c9);
+}
 .box {
   width: 400px;
   padding: 40px;
@@ -5,7 +8,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #191919;
+  background: rgb(80, 72, 94);
   text-align: center;
   box-shadow: -1px 92px 99px -62px rgba(3, 107, 255, 0.27), 0 1px 6px 0 rgba(10, 48, 255, 0.48);
   border-radius: 5px;
