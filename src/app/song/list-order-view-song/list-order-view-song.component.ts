@@ -50,12 +50,12 @@ export class ListOrderViewSongComponent implements OnInit{
             },
             // when window width is <= 640px
             1024: {
-              slidesPerView: 6,
+              slidesPerView: 5,
               spaceBetween: 20
             },
             // when window width is <= 1680px
             2500: {
-              slidesPerView: 6,
+              slidesPerView: 5,
               spaceBetween: 30
             }
           }

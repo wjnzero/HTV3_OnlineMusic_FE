@@ -49,7 +49,7 @@ export class PlaylistComponent implements OnInit {
     if (confirm('Bạn có muốn xóa?')) {
       this.playlistService.delete(id).subscribe(data => {
         console.log(data)
-        alert("Ok");
+        // alert("Ok");
         this.getByUserId()
       }, e => {
         console.error(e)

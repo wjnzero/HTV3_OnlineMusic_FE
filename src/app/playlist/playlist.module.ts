@@ -11,6 +11,7 @@ import { ListLikePlaylistComponent } from '../home/list/list-like-playlist/list-
 import { ListOrderViewPlaylistComponent } from '../home/list/list-order-view-playlist/list-order-view-playlist.component';
 import {NgxPaginationModule} from "ngx-pagination";
 import {NavbarMenuModule} from "../home/navbar-menu/navbar-menu.module";
+import { AllplaylistComponent } from './allplaylist/allplaylist.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import {NavbarMenuModule} from "../home/navbar-menu/navbar-menu.module";
     CreatePlaylistComponent,
     EditPlaylistComponent,
     ListsongInOnePlaylistComponent,
+  AllplaylistComponent
 
   ],
   exports: [

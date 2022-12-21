@@ -34,7 +34,6 @@ import {PlaySongComponent} from "./home/play-song/play-song.component";
 import {NgxPaginationModule} from "ngx-pagination";
 import {ListAllComponent} from "./home/list/list-all/list-all.component";
 import {PlayPlaylistComponent} from "./home/play-playlist/play-playlist.component";
-import {ComponentsModule} from "./components/components.module";
 import {MatPaginatorIntl} from "@angular/material/paginator";
 import {ListSongComponent} from "./song/list-song/list-song.component";
 import {ListNewSongComponent} from "./song/list-new-song/list-new-song.component";
@@ -44,8 +43,8 @@ import {UserCreateSongComponent} from "./user/song/user-create-song/user-create-
 import {ListNewPlaylistComponent} from "./home/list/list-new-playlist/list-new-playlist.component";
 import {ListOrderViewPlaylistComponent} from "./home/list/list-order-view-playlist/list-order-view-playlist.component";
 import {ListLikePlaylistComponent} from "./home/list/list-like-playlist/list-like-playlist.component";
-import { UserPlaylistComponent } from './user/playlist/user-playlist/user-playlist.component';
-import { SearchComponent } from './home/search/search.component';
+import {UserPlaylistComponent} from './user/playlist/user-playlist/user-playlist.component';
+import {SearchComponent} from './home/search/search.component';
 import {NavbarMenuModule} from "./home/navbar-menu/navbar-menu.module";
 
 
@@ -78,6 +77,7 @@ import {NavbarMenuModule} from "./home/navbar-menu/navbar-menu.module";
     ListOrderViewPlaylistComponent,
     ListLikePlaylistComponent,
     SearchComponent],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -96,13 +96,9 @@ import {NavbarMenuModule} from "./home/navbar-menu/navbar-menu.module";
     NgxAudioPlayerModule,
     NgxPaginationModule,
     CommonModule,
-    ReactiveFormsModule,
-    AngMusicPlayerModule,
-    FormsModule,
-    NgxPaginationModule,
     PlaylistModule,
   ],
-  providers: [MatPaginatorIntl ],
+  providers: [MatPaginatorIntl],
   exports: [
     NavbarMenuComponent,
     ListSongComponent,
