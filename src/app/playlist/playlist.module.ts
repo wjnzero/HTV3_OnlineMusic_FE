@@ -7,8 +7,7 @@ import {CreatePlaylistComponent} from "./create-playlist/create-playlist.compone
 import {EditPlaylistComponent} from "./edit-playlist/edit-playlist.component";
 import {PlaylistComponent} from "./playlist/playlist.component";
 import { ListsongInOnePlaylistComponent } from './listsong-in-one-playlist/listsong-in-one-playlist.component';
-import { ListLikePlaylistComponent } from '../home/list/list-like-playlist/list-like-playlist.component';
-import { ListOrderViewPlaylistComponent } from '../home/list/list-order-view-playlist/list-order-view-playlist.component';
+
 import {NgxPaginationModule} from "ngx-pagination";
 import {NavbarMenuModule} from "../home/navbar-menu/navbar-menu.module";
 import { AllplaylistComponent } from './allplaylist/allplaylist.component';
@@ -20,8 +19,6 @@ import { AllplaylistComponent } from './allplaylist/allplaylist.component';
     CreatePlaylistComponent,
     EditPlaylistComponent,
     ListsongInOnePlaylistComponent,
-    ListLikePlaylistComponent,
-    ListOrderViewPlaylistComponent,
   AllplaylistComponent
 
   ],

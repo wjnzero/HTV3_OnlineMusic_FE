@@ -27,12 +27,24 @@ const routes: Routes = [
     loadChildren: () => import('./playlist/playlist.module').then(module => module.PlaylistModule)
   },
   {
+    path: 'songs',
+    component:ListSongComponent,
+  },
+  {
     path: 'playlistbyuser',
     component:AllplaylistComponent,
   },
   {
+    path: 'song/song/song/:id',
+    component:PlaySongComponent
+  },
+  {
     path: 'playlistbyuser/playlists/play/:id',
     component:PlayPlaylistComponent },
+  {
+    path: 'songs/song/:id',
+    component:PlaySongComponent
+  },
   {
     path: 'song',
     component:ListSongComponent
