@@ -4,9 +4,8 @@
 <div class="container">
   <section class="container">
     <div style="margin-top: 20px">
-
       <div class="new-most-song mt-5">
-        <div class="row p-5" style="border: rgba(193,79,250,0.09) solid 2px">
+        <div class="row p-5">
           <div class="col-12">
             <h2 style="color:#efc1ae;" class="font-weight-bold">Bài hát</h2>
             <table class="table table-striped d-print-table-cell">
@@ -22,7 +21,7 @@
               </tr>
               </thead>
               <tbody>
-              <tr *ngFor="let song of songs,let indexOfelement=index;">
+              <tr *ngFor="let song of songs | paginate: { itemsPerPage: 5, currentPage: p },let indexOfelement=index;">
                 <th style="color:#efc1ae;" scope="row">{{indexOfelement + 1}}</th>
                 <td><img width="40" height="40" src="{{song.avatar}}" class="img thumbnail pull-left mr-2"></td>
                 <td style="color:#efc1ae;" routerLink="search{{song.id}}">{{song.name}}</td>
@@ -65,8 +64,10 @@
                 </td>
               </tr>
               </tbody>
-              <button style="color:#efc1ae;" routerLink="" class="btn btn-outline-primary">Trang chủ</button>
             </table>
+            <div class="text-center">
+              <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
           </div>
 
           <div class="col-12">
@@ -76,7 +77,7 @@
                 <thead class="thead-green">
                 </thead>
                 <tbody>
-                <tr *ngFor="let playlist of playlists,let indexOfelement=index;">
+                <tr *ngFor="let playlist of playlists | paginate: { itemsPerPage: 5, currentPage: pl },let indexOfelement=index;">
                   <th style="color:#efc1ae;" scope="row">{{indexOfelement + 1}}</th>
                   <td style="color:#efc1ae;" routerLink="search{{playlist.id}}">{{playlist.name}}</td>
                   <td>
@@ -87,6 +88,9 @@
                 </tr>
                 </tbody>
               </table>
+              <div class="text-center">
+                <pagination-controls (pageChange)="pl = $event"></pagination-controls>
+              </div>
             </div>
           </div>
         </div>
