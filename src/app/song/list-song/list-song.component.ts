@@ -28,6 +28,7 @@ export class ListSongComponent implements OnInit {
   songType: SongType[] = [];
   songForm!: FormGroup;
   userid?: any;
+  p?: number;
 
   constructor(private songService: SongService,
               private userService: UserService,

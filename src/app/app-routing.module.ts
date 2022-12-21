@@ -30,6 +30,10 @@ const routes: Routes = [
     component:ListSongComponent
   },
   {
+    path: 'song/song/:id',
+    component:PlaySongComponent
+  },
+  {
     path: 'song/search/song/:id',
     component:PlaySongComponent },
   {
