@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Observable} from "rxjs";
 import {SongService} from "../../../service/song/song.service";
 import {AngularFireStorage} from "@angular/fire/compat/storage";
@@ -22,7 +22,8 @@ export class UserEditSongComponent {
   fileMp3: any;
   avatar: any;
 
-  constructor(private songService: SongService, private storage: AngularFireStorage, private activateRoute: ActivatedRoute) {
+  constructor(private songService: SongService, private storage: AngularFireStorage, private activateRoute: ActivatedRoute,
+              private formBuilder: FormBuilder) {
     // this.activateRoute.paramMap.subscribe((paraMap: ParamMap) => {
     //   // @ts-ignore
     //   this.id = +paraMap.get('id');
@@ -31,12 +32,31 @@ export class UserEditSongComponent {
   }
 
   ngOnInit(): void {
+    this.songForm = this.formBuilder.group(
+      {
+        id: [''],
+        name: [''],
+        describeSong: [''],
+        avatar: [''],
+        fileMp3: ['']
+      });
     this.activateRoute.paramMap.subscribe((paraMap: ParamMap) => {
       // @ts-ignore
       this.id = +paraMap.get('id');
-      this.getSong(this.id);
+      // this.getSong(this.id);
     })
-  }
+      this.songService.getById(this.id).subscribe(song => {
+        // this.songForm = new FormGroup({
+        //   id: new FormControl(song.id),
+        //   name: new FormControl(song.name),
+        //   describeSong: new FormControl(song.describeSong),
+        //   avatar: new FormControl(),
+        //   fileMp3: new FormControl(),
+        // })
+        this.songForm.patchValue(song)
+      })
+    }
+
 
   getSong(id: number) {
     return this.songService.getById(id).subscribe(song => {

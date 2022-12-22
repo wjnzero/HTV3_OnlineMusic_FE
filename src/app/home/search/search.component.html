@@ -1,5 +1,4 @@
 <app-navbar-menu></app-navbar-menu>
-<body id="layout" style="text-align:center">
 <div><br></div>
 <div class="container">
   <section class="container">
@@ -29,7 +28,7 @@
                 <td style="color:#211f1e;" routerLink="search{{song.id}}">{{song.author!.name}}</td>
                 <td style="color:#211f1e;" routerLink="search{{song.id}}">{{song.viewSong}}</td>
                 <td>
-                  <button style="color:#211f1e;" type="button" class="btn btn-outline-primary" data-toggle="modal"
+                  <button style="color:#211f1e;" type="button" class="btn btn-link" data-toggle="modal"
                           [attr.data-target]="'#myModal' + song.id">Thêm vào danh sách phát
                   </button>
                 </td>
@@ -58,10 +57,8 @@
                     </div>
                   </div>
                 </td>
-                <td>
-                  <button style="color:#211f1e;" class="btn btn-outline-primary" routerLink="song/{{song.id}}"> |⫸
-                  </button>
-                </td>
+                <td><a style="color: #050505" routerLink="song/{{song.id}}" data-tip="play"><i class="fa fa-play-circle"></i>
+                </a></td>
               </tr>
               </tbody>
             </table>
@@ -80,11 +77,10 @@
                 <tr *ngFor="let playlist of playlists | paginate: { itemsPerPage: 5, currentPage: pl },let indexOfelement=index;">
                   <th style="color:#211f1e;" scope="row">{{indexOfelement + 1}}</th>
                   <td style="color:#211f1e;" routerLink="search{{playlist.id}}">{{playlist.name}}</td>
+                  <td><img width="40" height="40" src="{{playlist.avatar}}" class="img thumbnail pull-left mr-2"></td>
                   <td>
-                    <button style="color:#211f1e;" class="btn btn-outline-primary"
-                            routerLink="/playlists/play/{{playlist.id}}"> |⫸
-                    </button>
-                  </td>
+                  <td><a style="color: #050505" routerLink="/playlists/play/{{playlist.id}}" data-tip="play"><i class="fa fa-play-circle"></i>
+                  </a></td>
                 </tr>
                 </tbody>
               </table>
@@ -98,5 +94,5 @@
     </div>
   </section>
 </div>
-</body>
+
 

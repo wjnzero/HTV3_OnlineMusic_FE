@@ -1,5 +1,4 @@
 <app-navbar-menu></app-navbar-menu>
-<body id="layout" style="text-align:center">
 <div><br></div>
 <div><br></div>
 <div><br></div>
@@ -20,7 +19,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let playlist of playlists | paginate: { itemsPerPage: 6, currentPage: p },let indexOfelement=index;">
+            <tr *ngFor="let playlist of playlists | paginate: { itemsPerPage: 7, currentPage: p },let indexOfelement=index;">
               <th style="color:black"scope="row">{{indexOfelement + 1}}</th>
               <td style="color:black"routerLink="search{{playlist.id}}">{{playlist.name}}</td>
               <td><img width="40" height="40" src="{{playlist.avatar}}" class="img thumbnail pull-left mr-2"></td>
@@ -70,5 +69,5 @@
     </div>
   </section>
 </div>
-</body>
+
 

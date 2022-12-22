@@ -42,11 +42,6 @@ export class UserSongComponent implements OnInit {
       this.songs = songs;
       console.log("songs: ", songs)
       // @ts-ignore
-      for (let i = 0; i < songs.length; i++) {
-        let temp: SongTemp = {url: songs[i].fileMp3, title: songs[i].name, cover: songs[i].avatar}
-        // @ts-ignore
-        this.audioList.push(temp);
-      }
     });
     // this.userid = window.localStorage.getItem("idUser");
     this.playlistService.getAll().subscribe(playlist => {

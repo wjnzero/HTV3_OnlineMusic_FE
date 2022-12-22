@@ -99,12 +99,13 @@ import {NavbarMenuModule} from "./home/navbar-menu/navbar-menu.module";
     PlaylistModule,
   ],
   providers: [MatPaginatorIntl],
-  exports: [
-    NavbarMenuComponent,
-    ListSongComponent,
-    ListNewSongComponent,
-    ListOrderViewSongComponent
-  ],
+    exports: [
+        NavbarMenuComponent,
+        ListSongComponent,
+        ListNewSongComponent,
+        ListOrderViewSongComponent,
+        ListNewPlaylistComponent
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

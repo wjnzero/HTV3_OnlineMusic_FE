@@ -8,7 +8,7 @@ import {NgIf} from "@angular/common";
 
 @NgModule({
   declarations: [
-    NavbarMenuComponent,
+    NavbarMenuComponent
   ],
   exports: [
     NavbarMenuComponent,

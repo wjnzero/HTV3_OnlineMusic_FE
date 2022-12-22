@@ -1,6 +1,3 @@
-<body id="layout"
-      style="text-align:center"
->
 <!--<app-navbar-menu></app-navbar-menu>-->
 <app-navbar-menu></app-navbar-menu>
 <div><br></div>
@@ -10,29 +7,32 @@
       <div class="row p-10">
         <div class="col-12">
 
-          <h2 class="font-weight-bold" style="color:#211f1e;" >Danh sách phát của bạn</h2>
-          <button class="btn btn-outline-info" >
-            <a style="color:#211f1e;"routerLink="/playlist/createplaylist">Tạo danh sách</a>
-          </button><br><br>
+          <h2 class="font-weight-bold" style="color:#211f1e;">Danh sách phát của bạn</h2>
+          <button class="btn btn-outline-info">
+            <a style="color:#211f1e;" routerLink="/playlist/createplaylist">Tạo danh sách</a>
+          </button>
+          <br><br>
           <table class="table table-striped d-print-table-cell">
             <thead class="thead-green">
             <tr>
-              <th style="color:#211f1e;"scope="col">STT</th>
-              <th style="color:#211f1e;"scope="col">Tên</th>
-              <th style="color:#211f1e;"scope="col">Ảnh</th>
-              <th style="color:#211f1e;"scope="col">Danh sách</th>
-              <th style="color:#211f1e;"scope="col">Sửa</th>
-              <th style="color:#211f1e;"scope="col">Xóa</th>
+              <th style="color:#211f1e;" scope="col">STT</th>
+              <th style="color:#211f1e;" scope="col">Tên</th>
+              <th style="color:#211f1e;" scope="col">Ảnh</th>
+              <th style="color:#211f1e;" scope="col">Danh sách</th>
+              <th style="color:#211f1e;" scope="col"></th>
+              <th style="color:#211f1e;" scope="col"></th>
               <th scope="col"></th>
             </tr>
             </thead>
             <tbody>
-            <tr style="color: black"*ngFor="let playlist of playlist | paginate: { itemsPerPage: 5, currentPage: p },let indexOfelement=index;">
-              <th style="color:#211f1e;"scope="row">{{indexOfelement + 1}}</th>
-              <td style="color:#211f1e;"routerLink="playlist{{playlist.id}}">{{playlist.name}}</td>
+            <tr style="color: black"
+                *ngFor="let playlist of playlist | paginate: { itemsPerPage: 7, currentPage: p },let indexOfelement=index;">
+              <th style="color:#211f1e;" scope="row">{{indexOfelement + 1}}</th>
+              <td style="color:#211f1e;" routerLink="playlist{{playlist.id}}">{{playlist.name}}</td>
               <td><img width="40" height="40" src="{{playlist.avatar}}" class="img thumbnail pull-left mr-2"></td>
               <td>
-                <button style="color:#211f1e;"type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#song-in-play-list-modal"
+                <button style="color:#211f1e;" type="button" class="btn btn-link" data-toggle="modal"
+                        data-target="#song-in-play-list-modal"
                         (click)="showSongInPlaylist(playlist.id)">
                   Danh sách phát
                 </button>
@@ -42,7 +42,7 @@
                     <div class="modal-content">
                       <!-- Modal Header -->
                       <div class="modal-header">
-                        <h4 style="color:#211f1e;"class="modal-title">Danh sách phát</h4>
+                        <h4 style="color:#211f1e;" class="modal-title">Danh sách phát</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                       </div>
                       <!-- Modal body -->
@@ -59,21 +59,25 @@
                   </div>
                 </div>
               </td>
+              <td><a style="color: #050505" routerLink="/playlists/play/{{playlist.id}}" data-tip="play"><i
+                class="fa fa-play"></i>
+              </a></td>
               <td>
-                <a style="color:#211f1e;" routerLink="/playlist/edit1/{{playlist.id}}" class="btn btn-outline-warning">Sửa</a>
+                <a style="color:#211f1e;" routerLink="/playlist/edit1/{{playlist.id}}" data-tip="edit"><i
+                  class="fa fa-edit"></i></a>
               </td>
-              <td>
-                <button style="color:#211f1e;" (click)="delete(playlist.id)" class="btn btn-outline-danger">Xóa</button>
+              <td style="color: #050505" (click)="delete(playlist.id)" data-tip="delete"><i class="fa fa-trash"></i>
               </td>
-              <td><button style="color:#211f1e;"class="btn btn-outline-primary" routerLink="/playlists/play/{{playlist.id}}">   |⫸</button></td>
             </tr>
             </tbody>
           </table>
           <div class="text-center">
             <pagination-controls (pageChange)="p = $event"></pagination-controls>
           </div>
-          <div class="modal-footer" >
-            <button style="color:#211f1e;" routerLink="" type="button" class="btn btn-outline-info" data-dismiss="modal" >Trang chủ</button>
+          <div class="modal-footer">
+            <button style="color:#211f1e;" routerLink="" type="button" class="btn btn-outline-info"
+                    data-dismiss="modal">Trang chủ
+            </button>
           </div>
           <!--        git chec-->
         </div>
